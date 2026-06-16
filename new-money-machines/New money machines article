@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The New Money Machines: The Apps Built on Crypto Networks — Dragonfly Asset Management</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Source+Sans+3:wght@300;400;500;600;700&family=Source+Serif+4:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0a1118;
+    --bg-elev: #111a23;
+    --bg-card: #0f1820;
+    --rule: #1f2a36;
+    --text: #e6e8ec;
+    --text-muted: #9aa3ad;
+    --text-dim: #6c7682;
+    --gold: #b8976a;
+    --green: #4a9d6e;
+    --display: 'Oswald', sans-serif;
+    --ui: 'Source Sans 3', sans-serif;
+    --body: 'Source Serif 4', serif;
+  }
+
+  * { box-sizing: border-box; }
+
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--body);
+    font-size: 17px;
+    line-height: 1.75;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  .page {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 56px 28px 72px;
+  }
+
+  .masthead {
+    border-bottom: 1px solid var(--rule);
+    padding-bottom: 22px;
+    margin-bottom: 44px;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .brand {
+    font-family: var(--ui);
+    font-size: 13px;
+    letter-spacing: 0.22em;
+    font-weight: 600;
+    color: var(--gold);
+    text-transform: uppercase;
+  }
+  .kicker {
+    font-family: var(--ui);
+    font-size: 13px;
+    color: var(--text-muted);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  .title-block { margin-bottom: 36px; }
+  h1.title {
+    font-family: var(--display);
+    font-weight: 600;
+    font-size: clamp(34px, 5vw, 52px);
+    line-height: 1.1;
+    margin: 0 0 22px;
+    color: var(--text);
+    letter-spacing: -0.005em;
+  }
+  .byline {
+    font-family: var(--ui);
+    font-size: 14px;
+    color: var(--text-muted);
+    letter-spacing: 0.04em;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    flex-wrap: wrap;
+  }
+  .byline .author { color: var(--gold); font-weight: 600; letter-spacing: 0.06em; }
+  .byline .dot { color: var(--text-dim); }
+
+  h2 {
+    font-family: var(--display);
+    font-weight: 500;
+    font-size: clamp(24px, 3vw, 30px);
+    line-height: 1.25;
+    margin: 56px 0 8px;
+    color: var(--gold);
+    letter-spacing: 0.005em;
+  }
+  h2 + .h2-rule {
+    height: 1px;
+    width: 64px;
+    background: var(--gold);
+    border: none;
+    margin: 0 0 22px;
+    opacity: 0.6;
+  }
+
+  p { margin: 0 0 20px; }
+
+  .hero-img {
+    margin: 0 0 44px;
+    border-radius: 4px;
+    overflow: hidden;
+    background: var(--bg-card);
+  }
+  .hero-img img { display: block; width: 100%; height: auto; }
+
+  .figure {
+    margin: 36px 0;
+    background: var(--bg-card);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  .figure img { display: block; width: 100%; height: auto; }
+
+  .pullquote {
+    font-family: var(--body);
+    font-style: italic;
+    font-size: 19px;
+    line-height: 1.55;
+    color: var(--gold);
+    border-left: 3px solid var(--gold);
+    padding: 10px 0 10px 22px;
+    margin: 32px 0;
+    font-weight: 500;
+  }
+  .pullquote.center {
+    text-align: center;
+    border-left: none;
+    border-top: 1px solid var(--gold);
+    border-bottom: 1px solid var(--gold);
+    padding: 26px 16px;
+    margin: 40px 0;
+    color: var(--green);
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 1.5;
+  }
+
+  ul.article-list { list-style: none; padding: 0; margin: 24px 0; }
+  ul.article-list li {
+    position: relative;
+    padding: 8px 0 8px 24px;
+    margin-bottom: 14px;
+    line-height: 1.65;
+  }
+  ul.article-list li::before {
+    content: "•";
+    color: var(--gold);
+    position: absolute;
+    left: 4px;
+    top: 6px;
+    font-size: 20px;
+    line-height: 1;
+  }
+  ul.article-list li strong {
+    color: var(--gold);
+    font-family: var(--ui);
+    font-weight: 600;
+  }
+
+  .emoji-bullet { margin: 14px 0; padding-left: 4px; line-height: 1.65; }
+
+  .footer {
+    margin-top: 72px;
+    padding-top: 24px;
+    border-top: 1px solid var(--rule);
+    font-family: var(--ui);
+    font-size: 12px;
+    color: var(--text-dim);
+    text-align: center;
+    letter-spacing: 0.05em;
+  }
+  .footer span { color: var(--gold); }
+
+  a { color: var(--gold); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  strong { color: var(--text); font-weight: 600; }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="masthead">
+    <span class="brand">Dragonfly Asset Management</span>
+    <span class="kicker">Article · August 2025</span>
+  </div>
+
+  <div class="title-block">
+    <h1 class="title">The New Money Machines: The Apps Built on Crypto Networks</h1>
+    <div class="byline">
+      <span class="author">By PTLIB</span>
+      <span class="dot">·</span>
+      <span>28 August 2025</span>
+      <span class="dot">·</span>
+      <span>9 min read</span>
+    </div>
+  </div>
+
+  <div class="hero-img">
+    <img src="images/img-1.png" alt="The New Money Machines — hero image">
+  </div>
+
+  <p>Ever wondered why a seasoned banker like me — someone who's spent decades at big banks managing a couple of billion — now runs a Crypto Investment Fund? It's not about chasing hype or making wild speculations and I definitely don't fit in with the "Crypto Bro" crowd. Nope. Here's the real kicker for me:</p>
+
+  <p class="pullquote center">"Crypto is just like any other tech boom I've seen. It's young, misunderstood, and often hated — but it's packed with real-world uses that are already making waves."</p>
+
+  <p>Think about it, every new technology goes through the same development stages. Every breakthrough tech I have invested in starts messy. Early experiments flop left and right because most ideas don't catch on with users. But then, a few killer applications emerge, reshaping our lives in ways no one saw coming.</p>
+
+  <p>Crypto is hitting that sweet spot now. We've moved past the Wild West of basic blockchains focused on trading hype. After surviving several global crises and withstanding stomach-churning market ups and downs, blockchain tech has emerged fully battle-tested, scalable, and ready for prime time. Best part? Real Apps are popping up, solving everyday problems — and raking in serious cash.</p>
+
+  <div class="figure">
+    <img src="images/img-2.png" alt="Crypto reaches product-market fit stage">
+  </div>
+
+  <p>When it comes to Crypto, I believe that we are now reaching the most exciting stage of a new technology's development. Why is this exciting you ask? Because I believe that skyrocketing revenues signal that the tech has reached product market fit stage and this means massive growth and adoption is far more certain.</p>
+
+  <h2>Blockchains Paved the Roads; Apps Are Building the Thriving Cities</h2>
+  <hr class="h2-rule">
+
+  <p>In the last cycle, all the excitement in Crypto surrounded the building of blockchain infrastructure – the so-called "Layer 1's" like Ethereum and Solana – the foundational networks for moving data and value. It was a gold rush: tons of projects launched, but most fizzled. A handful won big, thanks to better tech, more users, and that snowball effect where success breeds more success. These "roads" now handle massive traffic, generating billions in fees and valuations in the hundreds of billions. Investors love them for their staying power and growth potential.</p>
+
+  <p>Yet, the whole Crypto market is "only" worth about $2.7 trillion today. Strip out Bitcoin (think digital gold, not a daily transaction hub) and stablecoins, and it's down to $1 trillion. For perspective, global wealth has now hit $471 trillion, per UBS. That's like comparing a local book shop to Amazon!</p>
+
+  <div class="figure">
+    <img src="images/img-3.png" alt="Crypto market breakdown $1 trillion">
+  </div>
+
+  <p>You can break down this $1T into two main categories:</p>
+
+  <p class="emoji-bullet">🔹 Blockchains (infrastructure): the behind-the-scenes plumbing — worth about 70% of the value, pulling in $6 billion in fees last year, mostly from five top networks. That's 70% of the market making 65% of the revenue.</p>
+
+  <p class="emoji-bullet">🔹 Apps (dApps — Decentralised Apps): built on top of blockchains, the stuff users actually touch — just 30% of the value, but generating $3.3 billion in fees. That's 30% of the market making 35% of the revenue.</p>
+
+  <p>Not a huge deal, right? But as investors we look ahead at prospects. We look at why Apps' fees are growing way faster than those of blockchains and why that might continue. It's essentially because blockchains are like utility pipes — just essential plumbing. The real action, users, and money flow through Apps. You don't "use" a blockchain; you fire up an App to trade, game, invest, chat, or shop. It's like the internet: who cares about your ISP when you're there to use Netflix or Instagram? All in all, it's obvious to me that the fees earned by Crypto Apps will continue to skyrocket and gain share from the underlying blockchain!</p>
+
+  <h2>Why Apps Will Eat the Crypto World (and Capture the Value)</h2>
+  <hr class="h2-rule">
+
+  <p>Apps sit right next to users, so they can hook you with cool features, build loyalty, and print money. Check this stunning chart trend: Monthly fees from Apps are skyrocketing past blockchains. It started in early 2024 — Apps' share jumped from 25% to 58% by February 2025! That's explosive growth in just a year.</p>
+
+  <div class="figure">
+    <img src="images/img-4.png" alt="Monthly fees: Apps versus blockchains">
+  </div>
+
+  <p class="pullquote center">So, the shift – while only recent – is massive and shows no signs of slowing! But what's great is that the valuations of these successful Apps haven't caught up to their superior growth prospects just yet.</p>
+
+  <h2>Flipping the Script: From "Fat Protocols" to "Fat Apps"</h2>
+  <hr class="h2-rule">
+
+  <div class="figure">
+    <img src="images/img-5.png" alt="Fat Protocols to Fat Apps">
+  </div>
+
+  <p>Early crypto thinkers pushed the "Fat Protocol Thesis": blockchains (protocols) would hog the value because Apps are easy to copy, and success trickles down to the network. They contrasted it with the web, where Apps like Google and Facebook dominate.</p>
+
+  <p>But guess what? Plus ca change…..As top blockchains standardise (similar speeds, low costs), users pick based on Apps, not the underlying chain. Crypto might mirror the web after all — and that means Apps win big.</p>
+
+  <p>An interesting observation is that as Solana has become the chain with the bulk of users and transactions, App developers have flocked there. Its user boom draws developers, who build hit Apps, pulling in more users. Winner-takes-most in Crypto as in the web: successful chains attract cool Apps and use them to cement their lead.</p>
+
+  <div class="figure">
+    <img src="images/img-6.png" alt="Solana ecosystem growth">
+  </div>
+
+  <h2>Busting the Myth: "Crypto Has No Real-World Use"</h2>
+  <hr class="h2-rule">
+
+  <p>Outsiders say this to me all the time. But the reality I see is that there are numerous very fast-growing Crypto Apps that are starting to see skyrocketing revenues simply because they solve real world problems. As an investor, you quickly learn that success or failure comes down to which product the customer ultimately chooses and is willing to pay for. So I see fast-growing revenues as a positive sign of success for early-stage tech companies and Crypto is no different.</p>
+
+  <p>Let's look at a few examples of Crypto Apps that you have probably never heard of and might not expect to find in this sector:</p>
+
+  <h2>Grass — The "Airbnb" for Your Unused Internet Bandwidth</h2>
+  <hr class="h2-rule">
+
+  <p>Crypto Apps in the AI space are amongst the most exciting investments in blockchain right now. Why? These Apps deliver AI essentials (like data) at bargain prices. Enter Grass (built on Solana): it taps your spare internet bandwidth to scrape public web data, selling it to AI firms for training models. Users earn rewards for sharing — turning waste into wealth.</p>
+
+  <p>Demand is as you can imagine insane: in Q1 2025, Grass scraped 57 million GB. Post-upgrade, volumes surged 320x, hitting eight-figure revenues. At current rates (90% cheaper than rivals), they're likely at $50M+ annualised revenues. And AI's hunger for data? Endless.</p>
+
+  <h2>DePIN: Decentralised Networks Taking on the likes of AT&amp;T and Google Maps</h2>
+  <hr class="h2-rule">
+
+  <div class="figure">
+    <img src="images/img-7.png" alt="DePIN networks overview">
+  </div>
+
+  <p>DePIN (Decentralised Physical Infrastructure Networks) is Crypto's secret weapon. These Apps build global networks for mapping, mobile, GPS, and more — miles faster and cheaper than old-school giants.</p>
+
+  <p>How? Crypto tokens reward contributors, solving the "chicken-and-egg" startup problem.</p>
+
+  <p class="pullquote center">And Depin Apps aren't still at the "nice idea" stage: the top 20 revenue-generating DePINs now make $500m in annualised revenue. What's more, total DePIN revenues grew +33x in 2024 and +100x since 2022</p>
+
+  <p>Bonus: DePIN cash flows are steady, not Crypto's usual rollercoaster. Recurring, non-trading revenue expands the market, smoothing volatility, and attracting serious investors.</p>
+
+  <p>With 1,000+ projects worth $50B+, DePIN proves Crypto fixes real issues. Advantages?</p>
+
+  <ul class="article-list">
+    <li><strong>Cold-Start Fix:</strong> Tokens kickstart supply and demand.</li>
+    <li><strong>Token Magic:</strong> Incentives for everyone.</li>
+    <li><strong>Cost Savings:</strong> Beats Web2 networks hands down.</li>
+  </ul>
+
+  <p class="pullquote center">As Crypto investors, by investing in the tokens of the most attractive Depin Apps, we gain exposure to this attractive and fast-growing real-world use case.</p>
+
+  <h2>Even Newly Launched Crypto Apps are Generating Meaningful Revenue</h2>
+  <hr class="h2-rule">
+
+  <p>Something has changed in the recent months that perhaps reflects the growing maturity of the Crypto sector. Now you're seeing blockchain projects with real revenue numbers even at launch – another sign that the industry is definitely not at the pure speculative stage anymore. Some examples: $HUMA launched with $9M ARR, $PARTI launched with $5M ARR, and $HOME will be launching soon, $7M ARR.</p>
+
+  <p>I believe that early-stage projects which can demonstrate product market fit by generating fast-growing revenues will be particularly sought after and therefore trade at higher valuations, especially now that more seasoned investors are entering the space.</p>
+
+  <h2>None of This is Happening on Bitcoin!</h2>
+  <hr class="h2-rule">
+
+  <p>There are very good reasons to invest in Bitcoin, one of the best stores of value there is! However, holding Bitcoin does not give you much exposure to fast-growing Blockchain Apps, as most Apps are being built on newer blockchains. The slide below shows the rapid decline in Bitcoin's dominance of sector activity: Bitcoin now accounts for less than 3% of the sector's daily active users (down from 95% in 2017), under 0.1% of daily transactions (from 78%), and less than 7% of fees (from 99%). This trend, which has continued into 2025 with Bitcoin generating only about 13% of total blockchain fee revenues (e.g., $922 million out of $6.9 billion in 2024), highlights how innovative Apps on networks like Ethereum and Solana are capturing more user activity, transactions, and earnings. Therefore, diversifying into these ecosystems better positions investors to benefit from the sector's evolving real-world use cases and especially the explosive growth in App revenues going forward.</p>
+
+  <div class="figure">
+    <img src="images/img-8.png" alt="Bitcoin's declining share of sector activity">
+  </div>
+
+  <h2>Final Thoughts</h2>
+  <hr class="h2-rule">
+
+  <p>The evolution of Crypto from speculative infrastructure to revenue-generating applications marks a pivotal turning point for the sector. As we've seen, Apps are not only outpacing blockchains in fee growth but are also delivering tangible, real-world solutions – from AI-driven data scraping with projects like Grass to the scalable, cost-effective networks of DePIN.</p>
+
+  <p>And clearly there is so much more to come: time and again it ends up being a total surprise what customers end up actually using a powerful new technology for — more often than not, it's definitely not in the way the experts would have predicted! Remember how the internet was supposed to be just for academics? But it turned out to be used for TikTok and online shopping! So I am excited to see the birth of some wildly popular Crypto Apps that we cannot yet even imagine.</p>
+
+  <p>However, it is important to note that buying just Bitcoin does not provide much exposure to these fast-growing blockchain Apps, as most Apps are being built on newer blockchains. Dragonfly Digital Assets Fund provides diversified exposure to leading blockchains as well as fast-growing Apps in the Crypto space.</p>
+
+  <p>This shift toward "Fat Apps" underscores a maturing ecosystem where user-centric innovations drive adoption, reduce volatility, and unlock massive economic potential. With revenues soaring and new launches demonstrating immediate product-market fit, Crypto is poised to integrate deeply into everyday life, much like the internet did before it. For investors and innovators alike, the message is clear: the real money machines are here, and they're just getting started.</p>
+
+  <div class="footer">
+    <span>Dragonfly Asset Management</span> · By PTLIB · August 2025
+  </div>
+
+</div>
+</body>
+</html>
