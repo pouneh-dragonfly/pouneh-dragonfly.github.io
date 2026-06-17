@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Network Effects: The Most Important Economic Moat in Crypto | Dragonfly Asset Management</title>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Source+Sans+3:wght@300;400;600;700&family=Source+Serif+4:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0a1118;
+    --bg-card: #0d161e;
+    --gold: #b8976a;
+    --gold-soft: #d4b887;
+    --green: #4a9d6e;
+    --green-soft: #5fb784;
+    --ink: #e8edf2;
+    --ink-body: #c8d0d8;
+    --ink-dim: #8994a0;
+    --border: #1a2530;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--bg);
+    color: var(--ink-body);
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-size: 19px;
+    line-height: 1.8;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  .wrap { max-width: 720px; margin: 0 auto; padding: 56px 28px 80px; }
+
+  .pub-mark {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 600;
+    font-size: 13px;
+    letter-spacing: 0.22em;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 40px;
+  }
+  .pub-mark::after { content: ''; display: block; width: 30px; height: 1px; background: var(--gold); margin-top: 8px; }
+
+  h1.headline {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 600;
+    font-size: 42px;
+    line-height: 1.14;
+    color: var(--ink);
+    letter-spacing: -0.01em;
+    margin-bottom: 22px;
+  }
+  .byline {
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 14px;
+    letter-spacing: 0.04em;
+    color: var(--ink-dim);
+    text-transform: uppercase;
+    padding-bottom: 28px;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 8px;
+  }
+  .byline strong { color: var(--gold-soft); font-weight: 600; }
+
+  p { margin: 26px 0; color: var(--ink-body); }
+  strong, b { color: var(--ink); font-weight: 600; }
+  em { color: var(--gold-soft); font-style: italic; }
+  a { color: var(--gold-soft); text-decoration: none; border-bottom: 1px solid var(--border); }
+  a:hover { color: var(--gold); border-bottom-color: var(--gold); }
+
+  h2 {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 500;
+    font-size: 27px;
+    line-height: 1.28;
+    color: var(--gold-soft);
+    margin: 52px 0 8px;
+    letter-spacing: 0.01em;
+  }
+  h2::after { content: ''; display: block; width: 48px; height: 2px; background: var(--gold); margin-top: 14px; }
+
+  ul { margin: 26px 0; padding-left: 0; list-style: none; }
+  li {
+    position: relative;
+    margin: 16px 0;
+    padding-left: 26px;
+    color: var(--ink-body);
+  }
+  li::before {
+    content: '';
+    position: absolute;
+    left: 4px;
+    top: 14px;
+    width: 7px;
+    height: 7px;
+    background: var(--gold);
+    transform: rotate(45deg);
+  }
+  li strong { color: var(--ink); }
+
+  .lead {
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-size: 21px;
+    line-height: 1.6;
+    color: var(--ink);
+    margin: 36px 0;
+  }
+
+  .pullquote {
+    margin: 40px 0;
+    padding: 6px 0 6px 28px;
+    border-left: 3px solid var(--gold);
+    font-style: italic;
+    font-size: 20px;
+    line-height: 1.55;
+    color: var(--gold-soft);
+  }
+  .pullquote a { color: var(--gold); }
+
+  .green-quote {
+    margin: 48px 0;
+    padding: 28px 24px;
+    text-align: center;
+    border-top: 1px solid var(--gold);
+    border-bottom: 1px solid var(--gold);
+    font-style: italic;
+    font-size: 22px;
+    line-height: 1.5;
+    color: var(--green-soft);
+  }
+
+  figure { margin: 40px 0; }
+  figure img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    background: var(--bg-card);
+  }
+
+  .signoff { margin-top: 48px; padding-top: 28px; border-top: 1px solid var(--border); }
+  .signoff p { font-style: italic; font-size: 15px; color: var(--ink-dim); margin: 14px 0; }
+
+  .foot { margin-top: 64px; padding-top: 28px; border-top: 1px solid var(--border); text-align: center; }
+  .foot-mark {
+    font-family: 'Oswald', sans-serif;
+    font-size: 12px;
+    letter-spacing: 0.28em;
+    color: var(--gold);
+    text-transform: uppercase;
+  }
+
+  @media (max-width: 600px) {
+    .wrap { padding: 40px 20px 60px; }
+    h1.headline { font-size: 30px; }
+    body { font-size: 18px; }
+    .lead { font-size: 19px; }
+    .pullquote, .green-quote { font-size: 19px; }
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+
+    <div class="pub-mark">Dragonfly Asset Management</div>
+
+    <h1 class="headline">Network Effects: The Most Important Economic Moat in Crypto</h1>
+    <div class="byline">By <strong>PTLIB</strong> &nbsp;·&nbsp; 9 October 2023 &nbsp;·&nbsp; 10 min read</div>
+
+    <figure><img src="img-1.png" alt="Network effects title illustration"></figure>
+
+    <p>We as investors instinctively know that identifying sectors and businesses enjoying high growth is a good starting point for finding the most profitable investments. But when you have been a professional investor for decades like me, you realise that high growth potential isn’t actually the only critical variable in making great investments.</p>
+
+    <p>But why is high growth not enough? In a capitalist system, areas of growth and high potential returns attract capital in the form of new competitors, so pretty quickly, you get to a situation where the sizeable returns you thought the business would enjoy from its growth are bid away as competition heats up. This is why the next step in finding great investments is to look at how the company can protect its market position from others. One mental construct for answering this question is whether the company benefits from an economic moat.</p>
+
+    <h2>What is an Economic Moat?</h2>
+
+    <figure><img src="img-2.png" alt="Castle surrounded by a moat"></figure>
+
+    <p>In the medieval period, most castles and forts were surrounded by a deep channel or ‘moat’ filled with water to protect against invaders. The wider the moat, the more difficult it was to storm the castle. In the modern day, Buffett has used the analogy to explain how he identifies the most formidable companies, who are more certain to hold on to their profits and grow them, giving their investors years of compounded growth potential.</p>
+
+    <figure><img src="img-3.png" alt="Economic moat concept illustration"></figure>
+
+    <p>The moat he refers to is basically the sustainable, competitive advantages that protects a company and allows it to earn high profits and shield its market share, thus staying ahead of the rivals over a prolonged period.</p>
+
+    <figure><img src="img-4.png" alt="Competitive advantage illustration"></figure>
+
+    <h2>Why Does it Matter?</h2>
+
+    <p>The economic moat principle is therefore a useful way of assessing just how great a company is at staying ahead and continuing to grow. Looking at the business through the lens of its moat characteristics helps us answer this key question:</p>
+
+    <div class="pullquote">Why do some companies stand out for decades while others wilt away after a few prosperous years?</div>
+
+    <h2>But Like Everything Else, Moats are Changing….</h2>
+
+    <p>The world may be changing fast but in my view, the idea of a moat is still relevant. It’s just the source of the moat may now be different. In the 20th century, the biggest companies in the world were built on moats of economies of scale or government. Standard Oil, for example, built its monopoly by buying up smaller competitor refineries and building an unrivalled global distribution network. Eventually, the company controlled about 90% of all the refineries and pipelines in the United States and could set its own prices. Today, however, the most durable moats are being built on different types of advantages, such as network effects, data, and repeat engagement within a product ecosystem. Google, for example, started its moat by developing a better algorithm for indexing and searching the internet. The company has since strengthened that moat by putting that advantage to work in transportation, shopping, and most importantly, advertising.</p>
+
+    <h2>Growing Reach Puts Network Effect in Play</h2>
+
+    <p>The reason that the “network effect” moat source has become far more relevant is that our world has grown more digital. In a digital world, some sources of moat become irrelevant but network effects which basically describes the phenomenon where the value of a product or service increases as the number of its users grows is still key.</p>
+
+    <div class="green-quote">Network Effect: As more people use a company’s product or service, the value of that product or service increases for both new and existing users.</div>
+
+    <p>The internet is a good example. It originally had few users outside the military and research science spheres, but its expanding user base exploded its reach and impact. More recently, companies like Facebook and Google have been labelled network effect paragons. Morningstar posits that a network effect can help a company increase its advantages over competitors and is often the most important source of a company’s moat. But when do network effects actually kick in?</p>
+
+    <div class="pullquote">The term “critical mass” is often used in connection with the network effect. In game theory, this means that not all game participants need to be convinced for a strategy to succeed, just a very specific portion of them. If this participation threshold is exceeded, the strategy is likely to succeed of its own accord. The network effect works in similar fashion. If the user base for a product or service reaches a critical mass, the network is likely to expand under its own power. Ultimately, however, a company’s ability to monetise a network is also important to consider before network effect can be assigned as a moat source.</div>
+
+    <h2>Network Effect in Action</h2>
+
+    <figure><img src="img-5.png" alt="Network effect companies in action"></figure>
+
+    <p><strong>Visa (V)</strong> is a great example of how the network effect can create a powerful competitive advantage. Visa dominates the global electronic payments industry and has reached essentially universal acceptance in most developed markets. According to the Nilson Report, Visa holds over 50% market share (by purchase volume) in the U.S., Europe, Latin America, and the Middle East/Africa. According to Morningstar, “Visa has almost 16,000 financial institution partners, 3.4 billion Visa cards in circulation, and over 50 million merchants accepting Visa.”</p>
+
+    <p><strong>Alphabet (GOOGL)</strong>, with a global share of over 80%, leads the online search market. The company’s network effect comes primarily from its Google products, which include Search, Android, Maps, Gmail, YouTube, and more. In Morningstar’s view, “Google has the world’s most widely used search engine, and such a large and growing user base has created a network difficult to replicate.”</p>
+
+    <p>Amazon posted annual revenues of $538B in its latest results, a 39% increase in three years. Google has also continued to steadily grow its massive revenues — sales jumped from $181B to $279B in just three years given that it maintains its hold on over 85% of the search engine market. Meanwhile, Facebook has grown from 100M monthly active users in 2008 to over 3.3B in 2023.</p>
+
+    <div class="pullquote">What sets these companies apart? Their <a href="https://www.cbinsights.com/research/report/business-moats-competitive-advantage/">business moats</a> — or key competitive advantages. Amazon, Google, and Facebook have used the power of network effects in particular to gain wide utility quickly.</div>
+
+    <p>By helping products gain traction quickly, network effects can help companies build formidable business moats — or strong competitive advantages that set them apart.</p>
+
+    <p>Below, we take a look at what network effects are and some of the companies that have built moats with them successfully.</p>
+
+    <figure><img src="img-6.png" alt="Companies that built moats with network effects"></figure>
+
+    <h2>Economic Moats in Crypto</h2>
+
+    <p>Even in the Cryptocurrency sector, we can look for superior long-term digital asset investments based on assessing one of the most powerful modern-day economic moats: network effects.</p>
+
+    <p>We know that the network effect is an advantage that has proven to be a powerful economic moat amongst the winners of the Web2 race.</p>
+
+    <div class="green-quote">But importantly it is equally relevant in Web3 and Crypto. Therefore, understanding and recognising the significance of network effects can provide a valuable edge for us as Crypto investors seeking to spot great business models in this new sector that can compound our money over time.</div>
+
+    <h2>Understanding Network Effects: The Positive Feedback Loop</h2>
+
+    <p>We speak of network effects when the value and utility of a product or service increase as more users join the network. In other words, the network becomes more valuable to each user as the user base expands. This positive feedback loop creates a cycle, where increased adoption attracts more users, leading to further growth and reinforcing the network effect.</p>
+
+    <div class="pullquote">“A network effect is when another user makes the service more valuable for every other user. Once your company gets ahead, users won’t find as much value in your competitors’ smaller networks.”</div>
+
+    <figure><img src="img-7.png" alt="Positive feedback loop of network effects"></figure>
+
+    <h2>Types of Network Effects:</h2>
+
+    <ul>
+      <li><strong>Direct Network Effects</strong>: We speak of direct network effects when the value of a product or service increases with the number of users directly interacting with each other. Past examples are social media platforms and messaging apps. As more users join these platforms, the potential for social connections, communication, and transactions multiplies, enhancing the overall user experience and value proposition. Examples of this are Facebook and Whatsapp. If your friends use it to communicate, it’s likely you will also start using it. This effect is also known as Metcalfe’s Law, which states that the value of a network is not only determined by its size but also by the potential for interaction and connectivity among its participants.</li>
+      <li><strong>Indirect Network Effects (two-sided network effects):</strong> Indirect network effects occur when the value of a product or service is derived from the interaction between two distinct user groups. For instance, credit card networks like <strong>Visa</strong>, <strong>Mastercard</strong>, or <strong>Discover</strong> thrive by connecting merchants and consumers. As more merchants accept a particular credit card, it becomes more appealing for consumers to use that card, and vice versa. This interdependence between both sides of the network creates a mutually reinforcing cycle.</li>
+    </ul>
+
+    <h2>More Examples of Indirect Network Effects:</h2>
+
+    <ul>
+      <li>Airbnb in the housing market (landlords &amp; travellers)</li>
+      <li>Uber in the transportation sector (drivers &amp; passengers)</li>
+      <li>eBay in the marketplace sector (sellers &amp; buyers)</li>
+    </ul>
+
+    <h2>Benefits of Network Effects</h2>
+
+    <p>Companies harnessing network effects enjoy several advantages that make them attractive as long-term investments:</p>
+
+    <ul>
+      <li><strong>Competitive Moat</strong>: Network effects create a barrier to entry, as new entrants face the challenge of attracting users away from established networks. The larger and more entrenched a network becomes, the more difficult it is for competitors to replicate its scale and user base, solidifying the company’s market position and protecting it from potential threats.</li>
+      <li><strong>Scaling Potential</strong>: Network effects enable exponential growth opportunities. As the user base expands, the cost per user decreases, allowing companies to achieve economies of scale. This scalability further enhances profitability and provides a strong foundation for sustained growth.</li>
+      <li><strong>Sticky User Base</strong>: Network effects create a sticky user base, where users become reluctant to switch to a competitor’s offering due to the network’s value and the cost associated with rebuilding connections. This leads to higher customer retention rates, lower customer acquisition costs, and increased customer lifetime value, ultimately driving profitability and shareholder returns.</li>
+    </ul>
+
+    <h2>Implications for Crypto Investors</h2>
+
+    <p>Identifying Crypto protocols with robust network effects is an essential skill for digital asset investors seeking to compound their wealth over the long term. Here are a few key considerations to keep in mind:</p>
+
+    <ul>
+      <li><strong>Market Position</strong>: Evaluate the protocol’s position within the overall sector and assess the strength of its network effects. Look for signs of a long-term trend, such as increasing user adoption, expanding user engagement, and positive feedback loops that reinforce the network effect.</li>
+      <li><strong>Competitive Landscape</strong>: Analyse the competitive landscape to identify potential threats and assess the barriers to entry. Consider the protocol’s ability to defend its market position and sustain its network effects against competitors. Look for factors such as higher development activity, switching costs, and network size that create strong moats and inhibit rival companies from easily disrupting the network effect.</li>
+      <li><strong>Growth Potential</strong>: Evaluate the growth potential of the network effect. Consider the overall market size, the protocol’s expansion plans, and its ability to attract and retain users. A rapidly growing user base indicates not only a strong but a growing network effect, while stagnant or declining user numbers may signify weakening network effects or increased competition.</li>
+      <li><strong>Monetisation Strategies</strong>: Look for diverse revenue streams, such as defi, enterprise development, tokenization etc. that align with the network’s unique characteristics.</li>
+      <li><strong>Innovation</strong>: Assess upcoming innovations and technological upgrades to assess whether the network’s weaknesses in the eyes of users are being addressed.</li>
+    </ul>
+
+    <h2>The Network Effect also Applies to DeFi and Other Web3 Apps</h2>
+
+    <p>The network effect isn’t just a useful concept for analysing blockchains but also other investible parts of the Crypto ecosystem. The network effect is also an important factor that creates a cycle of growth and adoption when users and activity on <a href="https://cointelegraph.com/defi-101/defi-a-comprehensive-guide-to-decentralized-finance">decentralized finance (DeFi)</a> or <a href="https://cointelegraph.com/blockchain-for-beginners/what-is-web-3-0-a-beginners-guide-to-the-decentralized-internet-of-the-future">Web3</a> apps increase, ultimately raising the value and utility for all participants.</p>
+
+    <p>For instance, <a href="https://cointelegraph.com/defi-101/what-are-decentralized-exchanges-and-how-do-dexs-work">decentralized exchanges (DEXs)</a> like Uniswap and SushiSwap become more valuable as more users and liquidity providers join, leading to tighter spreads, deeper order books, and better prices for traders.</p>
+
+    <p>Similarly, NFT marketplaces like OpenSea and Rarible benefit from network effects as more creators and collectors join, leading to a wider variety of unique and valuable assets, higher trading volumes, and more visibility for the platform.</p>
+
+    <h2>Final thoughts</h2>
+
+    <p>Network effects serve as a potent economic moat that can not only propel but also protect a Crypto protocol’s growth over the long term and as we know, compounding growth over the longer term is key for superior investment returns. We can even go as far as to say that the success of most Crypto protocols to date can be largely explained by the degree to which they have enjoyed superior network effects.</p>
+
+    <p>As the world becomes ever more digital, the sources of economic moat have changed. But the power of the network effect continues to remain perhaps the critical differentiator to success even in the world of Crypto assets and technology investment generally. In simple terms, a Cryptocurrency’s value rises as more people use it. For instance, the enormous and expanding user base of the Bitcoin network creates a powerful network effect that has increased its market acceptability, liquidity, and value. A self-reinforcing cycle therefore develops when more people use Bitcoin because it becomes more valuable to each individual user as more people use it.</p>
+
+    <p>As we have discussed, it is incredibly hard — though not impossible — for a new and innovative protocol to displace an established protocol that enjoys these large network effects. Therefore, assessing network effects remains a useful mental construct for evaluating the attractions of digital assets as investments.</p>
+
+    <div class="signoff">
+      <p>PTLIB is CIO OF Dragonfly Asset Management.</p>
+      <p>DISCLAIMER: This content is for EDUCATIONAL AND ENTERTAINMENT PURPOSES ONLY and nothing contained in this blog should be construed as investment advice. Any reference to an investment’s past or potential performance is not, and should not be construed as, a recommendation or as a guarantee of any specific outcome or profit.</p>
+    </div>
+
+    <div class="foot">
+      <div class="foot-mark">Dragonfly Asset Management</div>
+    </div>
+
+  </div>
+</body>
+</html>
