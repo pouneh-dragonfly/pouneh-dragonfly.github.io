@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tradfi’s Amazing Pivot towards Crypto! | Dragonfly Asset Management</title>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Source+Sans+3:wght@300;400;600;700&family=Source+Serif+4:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0a1118;
+    --bg-card: #0d161e;
+    --gold: #b8976a;
+    --gold-soft: #d4b887;
+    --green: #4a9d6e;
+    --green-soft: #5fb784;
+    --ink: #e8edf2;
+    --ink-body: #c8d0d8;
+    --ink-dim: #8994a0;
+    --border: #1a2530;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--bg);
+    color: var(--ink-body);
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-size: 19px;
+    line-height: 1.8;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  .wrap { max-width: 720px; margin: 0 auto; padding: 56px 28px 80px; }
+
+  .pub-mark {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 600;
+    font-size: 13px;
+    letter-spacing: 0.22em;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 40px;
+  }
+  .pub-mark::after { content: ''; display: block; width: 30px; height: 1px; background: var(--gold); margin-top: 8px; }
+
+  h1.headline {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 600;
+    font-size: 44px;
+    line-height: 1.12;
+    color: var(--ink);
+    letter-spacing: -0.01em;
+    margin-bottom: 22px;
+  }
+  .byline {
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 14px;
+    letter-spacing: 0.04em;
+    color: var(--ink-dim);
+    text-transform: uppercase;
+    padding-bottom: 28px;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 8px;
+  }
+  .byline strong { color: var(--gold-soft); font-weight: 600; }
+
+  p { margin: 26px 0; color: var(--ink-body); }
+  strong, b { color: var(--ink); font-weight: 600; }
+  em { color: var(--gold-soft); font-style: italic; }
+  a { color: var(--gold-soft); text-decoration: none; border-bottom: 1px solid var(--border); }
+  a:hover { color: var(--gold); border-bottom-color: var(--gold); }
+
+  h2 {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 500;
+    font-size: 27px;
+    line-height: 1.28;
+    color: var(--gold-soft);
+    margin: 52px 0 8px;
+    letter-spacing: 0.01em;
+  }
+  h2::after { content: ''; display: block; width: 48px; height: 2px; background: var(--gold); margin-top: 14px; }
+
+  ul { margin: 26px 0; padding-left: 0; list-style: none; }
+  li { position: relative; margin: 16px 0; padding-left: 26px; color: var(--ink-body); }
+  li::before { content: ''; position: absolute; left: 4px; top: 14px; width: 7px; height: 7px; background: var(--gold); transform: rotate(45deg); }
+  li strong { color: var(--ink); }
+
+  .lead {
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-size: 22px;
+    line-height: 1.5;
+    color: var(--ink);
+    font-style: italic;
+    margin: 32px 0;
+  }
+
+  .pullquote {
+    margin: 40px 0;
+    padding: 6px 0 6px 28px;
+    border-left: 3px solid var(--gold);
+    font-style: italic;
+    font-size: 20px;
+    line-height: 1.55;
+    color: var(--gold-soft);
+  }
+
+  .green-quote {
+    margin: 48px 0;
+    padding: 28px 24px;
+    text-align: center;
+    border-top: 1px solid var(--gold);
+    border-bottom: 1px solid var(--gold);
+    font-style: italic;
+    font-size: 21px;
+    line-height: 1.5;
+    color: var(--green-soft);
+  }
+  .green-quote span { display: block; }
+  .green-quote span + span { margin-top: 16px; }
+
+  figure { margin: 40px 0; }
+  figure img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    background: var(--bg-card);
+  }
+  figcaption {
+    margin-top: 12px;
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 13px;
+    color: var(--ink-dim);
+    text-align: center;
+    font-style: italic;
+  }
+
+  .signoff { margin-top: 48px; padding-top: 28px; border-top: 1px solid var(--border); }
+  .signoff p { font-style: italic; font-size: 15px; color: var(--ink-dim); margin: 14px 0; }
+
+  .foot { margin-top: 64px; padding-top: 28px; border-top: 1px solid var(--border); text-align: center; }
+  .foot-mark { font-family: 'Oswald', sans-serif; font-size: 12px; letter-spacing: 0.28em; color: var(--gold); text-transform: uppercase; }
+
+  @media (max-width: 600px) {
+    .wrap { padding: 40px 20px 60px; }
+    h1.headline { font-size: 30px; }
+    body { font-size: 18px; }
+    .lead { font-size: 19px; }
+    .pullquote, .green-quote { font-size: 19px; }
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+
+    <div class="pub-mark">Dragonfly Asset Management</div>
+
+    <h1 class="headline">Tradfi’s Amazing Pivot towards Crypto!</h1>
+    <div class="byline">By <strong>PTLIB</strong> &nbsp;·&nbsp; 4 September 2023 &nbsp;·&nbsp; 8 min read</div>
+
+    <figure><img src="img-1.png" alt="Tradfi pivot towards Crypto"></figure>
+
+    <div class="green-quote">
+      <span>In 2017 he famously said, “Bitcoin is an index for money laundering — that’s all it is.”</span>
+      <span>Today, he says it’s an “international asset… [that will] transcend any one currency in currency valuation.”</span>
+    </div>
+
+    <p class="lead">If these two statements make your head spin, I can’t blame you.</p>
+
+    <p>The stunning about-face comes from none other than Larry Fink, the founder and CEO of BlackRock, the largest money-management firm in the World. BlackRock boasts nearly $10 trillion in assets under management (AUM). And it’s the largest provider of exchange-traded funds (ETFs), with a 33% market share. Aladdin, its portfolio risk management software, oversees over $21 trillion in assets. Clients include Vanguard and State Street, the Japanese government, and top public companies such as Microsoft, Apple, and Google.</p>
+
+    <p>And not only is BlackRock gargantuan in size, but they are also an influential Wall Street player in Washington. For example, Wally Adeyemo, a former chief of staff at BlackRock, now serves as the Deputy Secretary of the U.S. Treasury. And former BlackRock executive Eric Van Nostrand serves as the acting assistant secretary for economic policy for the Treasury. So there’s no doubt BlackRock is a major player in global finance.</p>
+
+    <h2>But Why the Sudden About Face?</h2>
+
+    <p>Crypto hitherto has had an enormous image problem: there was even a ‘Bitcoin obituaries’ site, which tracked all the articles proclaiming the death of Bitcoin as we know it… in fact there were 15 declarations of Bitcoin’s demise in 2022 alone, according to <a href="https://click.exct.palmbeachgroup.com/?qs=cf9e114b98bc268a921294f75dc8a19977d99f523f6316167c628c091b3bfbffcc152ffd0a99a7663eff2d446ce00a13883adbbce4abb690">Bitcoin Obituaries</a>. But now it seems we are seeing the end of the “end of Crypto” chorus! As we emerge from Crypto Winter, the TradFi giants are increasingly getting into the Crypto space. In today’s article I’d like to explore the reasons why.</p>
+
+    <figure><img src="img-2.png" alt="TradFi giants entering Crypto"></figure>
+
+    <p>I believe this is a very significant development. The fact that Tradfi is pivoting their stance on Crypto will usher in a new era of finance as the new world and old world coexist and benefit each other. In fact, we may well look back at this time as a key inflection point for the Crypto industry.</p>
+
+    <p>Today, I would like to focus on the reasons why this stunning change of heart regarding Crypto has occurred. I believe it’s because seasoned asset managers like Fink now view Crypto as a “dream investment” for their institutional portfolios.</p>
+
+    <h2>The Dream Investment for Asset Managers ?</h2>
+
+    <p>There’s a number of short-term catalysts that will send Bitcoin (and the overall Crypto market) prices higher in the coming months… including the next Bitcoin halving and the likely approval of a spot Bitcoin ETF.</p>
+
+    <p>But there’s one trend that I believe will increase mass adoption over the long term. To understand this trend, we need to think about Bitcoin from the perspective of an institutional investor like Fink. As an asset manager, he wants to generate the highest return possible for BlackRock’s clients while also keeping the risk low. To that end, he’ll look at the correlations between the different asset classes in which BlackRock invests.</p>
+
+    <p>Before I get to that, let me explain what’s meant by “correlation” when managing multi-asset portfolios. In finance, correlation measures the degree to which two securities move in relation to each other. The values range from -1 to +1.</p>
+
+    <ul>
+      <li><strong>Negative 1 shows perfect negative correlation</strong>. The assets move in the opposite direction.</li>
+      <li><strong>Positive 1 shows perfect positive correlation</strong>. The assets move in the same direction.</li>
+    </ul>
+
+    <div class="pullquote">What managers want to avoid is a portfolio of highly correlated assets. While a portfolio like that will do well when the asset classes are rising, it’ll get crushed when the tide turns.</div>
+
+    <p>That’s why the 60/40 portfolio is popular. It consists of a 60% allocation to stocks and a 40% allocation to bonds as these two asset classes were historically seen as largely moving in opposite directions.</p>
+
+    <p>The stock allocation gives you growth potential. The rationale is that in times of healthy economic growth, the allocation to stocks typically produces positive returns for the overall portfolio. But, of course, the stock market can go through drawdowns and also recessions regularly happen. So you balance it out with bonds, which are relatively stable and definitely less volatile compared to stocks, and produce income even in periods of weak economic growth.</p>
+
+    <p>Now people well versed in TradFi know that this widely adopted 60/40 “safe” portfolio allocation was disastrous in recent years as the FED tightened policy at its fastest ever rate, crushing bonds and equities at the same time! I believe this experience went some way towards professional asset managers looking for an alternative investment which may be less correlated to mainstream financial assets.</p>
+
+    <p>For most of its history, Bitcoin has had little correlation to other risk assets such as the S&amp;P 500. That changed, however, over the course of 2022. At one point Bitcoin’s correlation to the S&amp;P 500 reached a high of 0.76. And some worried the dynamic had changed. That investing in Bitcoin and the blockchain wouldn’t be much different than investing in large-cap tech stocks. Fortunately, this seems like it was just a short-term anomaly.</p>
+
+    <p>With the benefit of hindsight, we can attribute the high correlation to the over-leveraged, centralised Crypto firms that blew up during the year like Three Arrows Capital, Celsius, Voyager, and FTX. And now in 2023, as you can see from the chart below, Bitcoin’s correlation to the S&amp;P 500 is back to near zero.</p>
+
+    <figure><img src="img-3.png" alt="Bitcoin correlation to the S&P 500 back to near zero"><figcaption>Source: Panterra Capital</figcaption></figure>
+
+    <p>That’s great news. Any rational money manager seeing the correlated movement between their bond and equity portfolio allocations would seriously consider adding exposure to an asset class that was less correlated to these other financial assets….</p>
+
+    <p>Bitcoin and altcoins are a new fast growing asset class. The added attraction is the sector has very high historical returns. And it’s not correlated to other risk assets such as stocks. For a portfolio manager, that’s a dream investment. And it’s exactly that thought process that I believe is bringing serious players with gargantuan amounts of capital to deploy into the space, and that likely will take the Crypto markets to new all-time highs.</p>
+
+    <p>Again, look no further than BlackRock. It recently put together <a href="https://bitcoinist.com/blackrock-study-optimal-bitcoin-allocation/">a report on portfolio optimization and asset allocation with Bitcoin</a>. Covering the last decade, it found the optimal Bitcoin allocation would have been a massive 84.9%!</p>
+
+    <figure><img src="img-4.png" alt="BlackRock optimal Bitcoin allocation study"></figure>
+
+    <p>Now, we don’t expect portfolio managers to rush out and allocate 85% of their portfolios to Bitcoin. But this kind of reasoned in-depth analysis together with the legitimacy that powerful people like Fink becoming Crypto proponents bring to the Crypto sector should open the door to many more portfolio managers considering including Bitcoin in their portfolios.</p>
+
+    <p>We at Dragonfly have long been preaching the virtues of allocating even a tiny part of your investment dollars to Crypto. Now even BlackRock is driving a narrative that Bitcoin is a must-have for any portfolio. And as Bitcoin goes, so does the rest of the crypto market. What you can see in the graphic below is the work that my team has done which clearly shows that even a tiny (3%) allocation to Crypto would have transformed the return potential of a conventional multi-asset portfolio (despite the sector’s recent bear market and its sometimes dramatic drawdowns).</p>
+
+    <figure><img src="img-5.png" alt="Effect of a 3% Crypto allocation on a multi-asset portfolio"><figcaption>Source: Dragonfly Asset Management</figcaption></figure>
+
+    <h2>Final Thoughts: The Best Investments Are Each-Way Bets!</h2>
+
+    <p>In my 25 years of professional investing experience, I have found the following characteristics distinguish my greatest investment picks: you are early in an explosive growth and adoption trend, the key driver to the growth is efficiency gains, and most importantly, there are a variety of macroeconomic scenarios under which the sector continues to thrive.</p>
+
+    <p>Zooming in on Crypto, we are certainly early in the adoption trend. As the chart shows, Crypto adoption has continued at breakneck speed even during the long bear market:</p>
+
+    <figure><img src="img-6.png" alt="Crypto adoption continuing through the bear market"><figcaption>Source: Real Vision</figcaption></figure>
+
+    <p>Moreover, all the use cases of Crypto I have recently written about share one important characteristic: using blockchain is a cheaper and more efficient way of doing things, just like the existing version of the internet was in its day! This means that use cases are likely to continue to proliferate and therefore so is the exponential growth rate, almost irrespective of what happens to the economy.</p>
+
+    <p>Lastly, though Crypto and Bitcoin offer these attractive growth characteristics similar to any early-stage new technology, investing in Bitcoin also protects against the biggest risks that investors face given how indebted governments are being forced to endlessly print money, devaluing their currencies in the process. With limited supply and not controlled by a central authority, Bitcoin’s hard asset status therefore serves to hedge portfolios against the growing risks found within the traditional financial system. This is perfectly summarised in the following chart comparing Bitcoin’s purchasing power to that of the Dollar. In this way, exposure to Bitcoin and Crypto is an “each-way bet” in the sense that it also protects against the growing currency devaluation risks in the financial system.</p>
+
+    <figure><img src="img-7.png" alt="Bitcoin purchasing power compared to the Dollar"></figure>
+
+    <p>In summary, it is perhaps not surprising that Tradfi is pivoting towards Crypto. As more traditional finance giants start to embrace Crypto, we’re seeing a marriage of the old and new investment worlds. The quick growth of Crypto, its cost-saving benefits, and its protection against unstable financial times have undeniable allure. A sector that was once seen as just play money is now being viewed as a game-changer in the finance world. Influential players are starting to realise that Crypto offers the “holy grail” in investment terms: high returns that are largely uncorrelated with other financial assets. Witnessing this shift, one can’t help but wonder: are we on the brink of the most transformative era in Crypto as it finally becomes a mainstream investment?</p>
+
+    <div class="signoff">
+      <p>PTLIB is CIO OF Dragonfly Asset Management.</p>
+      <p>DISCLAIMER: This content is for EDUCATIONAL AND ENTERTAINMENT PURPOSES ONLY and nothing contained in this blog should be construed as investment advice. Any reference to an investment’s past or potential performance is not, and should not be construed as, a recommendation or as a guarantee of any specific outcome or profit.</p>
+    </div>
+
+    <div class="foot">
+      <div class="foot-mark">Dragonfly Asset Management</div>
+    </div>
+
+  </div>
+</body>
+</html>
