@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GEODNET — The Ground Truth | Dragonfly Asset Management</title>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Source+Sans+3:wght@300;400;600;700&family=Source+Serif+4:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0a1118;
+    --bg-card: #0d161e;
+    --bg-elevated: #111c26;
+    --gold: #b8976a;
+    --gold-soft: #d4b887;
+    --green: #4a9d6e;
+    --green-soft: #5fb784;
+    --red-warning: #c8775f;
+    --ink: #e8edf2;
+    --ink-body: #c8d0d8;
+    --ink-dim: #8994a0;
+    --border: #1a2530;
+    --border-soft: #14202b;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--bg);
+    color: var(--ink-body);
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-size: 17px;
+    line-height: 1.75;
+    -webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale;
+  }
+  .container { max-width: 880px; margin: 0 auto; padding: 60px 48px; }
+
+  /* ---------- COVER ---------- */
+  .cover {
+    min-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 80px 48px;
+    border-bottom: 1px solid var(--border);
+    position: relative;
+  }
+  .cover-eyebrow {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    letter-spacing: 0.28em;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 32px;
+  }
+  .cover-title {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 600;
+    font-size: 72px;
+    line-height: 1.05;
+    color: var(--ink);
+    letter-spacing: -0.01em;
+    margin-bottom: 24px;
+  }
+  .cover-subtitle {
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-style: italic;
+    font-weight: 400;
+    font-size: 26px;
+    line-height: 1.4;
+    color: var(--gold-soft);
+    margin-bottom: 48px;
+    max-width: 720px;
+  }
+  .cover-hero { margin: 8px 0 48px; width: 100%; max-width: 680px; }
+  .cover-hero svg { display: block; width: 100%; height: auto; }
+  .cover-meta {
+    display: flex;
+    gap: 48px;
+    flex-wrap: wrap;
+    padding-top: 32px;
+    border-top: 1px solid var(--border);
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 14px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink-dim);
+  }
+  .cover-meta-item { display: flex; flex-direction: column; gap: 6px; }
+  .cover-meta-label { color: var(--gold); font-weight: 600; font-size: 11px; letter-spacing: 0.18em; }
+  .cover-meta-value {
+    color: var(--ink);
+    font-family: 'Oswald', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    letter-spacing: 0.05em;
+  }
+  .firm-mark {
+    position: absolute;
+    top: 60px;
+    left: 48px;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    letter-spacing: 0.22em;
+    color: var(--gold);
+    text-transform: uppercase;
+  }
+  .firm-mark::after {
+    content: '';
+    display: block;
+    width: 28px;
+    height: 1px;
+    background: var(--gold);
+    margin-top: 8px;
+  }/* ---------- TYPOGRAPHY ---------- */
+  h1 {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 600;
+    font-size: 40px;
+    line-height: 1.15;
+    color: var(--ink);
+    margin: 0 0 32px;
+    letter-spacing: -0.005em;
+  }
+  h1.section-title { padding-top: 48px; border-top: 1px solid var(--border); margin-top: 64px; }
+  h2 {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 500;
+    font-size: 26px;
+    line-height: 1.25;
+    color: var(--gold-soft);
+    margin: 48px 0 20px;
+    letter-spacing: 0.01em;
+  }
+  h3 {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 1.3;
+    color: var(--ink);
+    margin: 32px 0 16px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+  .eyebrow {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 500;
+    font-size: 12px;
+    letter-spacing: 0.28em;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+  p { margin: 0 0 24px; color: var(--ink-body); }
+  p.lead { font-size: 21px; line-height: 1.6; color: var(--ink); font-style: italic; margin-bottom: 36px; }
+  strong, b { color: var(--ink); font-weight: 600; }
+  em { color: var(--gold-soft); font-style: italic; }
+  a { color: var(--gold-soft); text-decoration: none; border-bottom: 1px solid var(--border); }
+  a:hover { color: var(--gold); border-bottom-color: var(--gold); }
+
+  /* ---------- PULL QUOTE ---------- */
+  .pullquote {
+    margin: 40px 0;
+    padding: 28px 36px;
+    border-top: 1px solid var(--gold);
+    border-bottom: 1px solid var(--gold);
+    background: rgba(184, 151, 106, 0.04);
+  }
+  .pullquote p {
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-style: italic;
+    font-size: 22px;
+    line-height: 1.5;
+    color: var(--gold-soft);
+    margin: 0 0 14px;
+  }
+  .pullquote .attribution {
+    font-family: 'Source Sans 3', sans-serif;
+    font-style: normal;
+    font-size: 13px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink-dim);
+    margin: 0;
+  }
+
+  /* ---------- STAT CALLOUT ---------- */
+  .stat-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    margin: 40px 0;
+  }
+  .stat-cell { background: var(--bg-card); padding: 28px 24px; text-align: center; }
+  .stat-figure {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 600;
+    font-size: 38px;
+    color: var(--gold);
+    line-height: 1.1;
+    margin-bottom: 8px;
+    letter-spacing: -0.01em;
+  }
+  .stat-label {
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 12px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink-dim);
+    line-height: 1.4;
+  }
+
+  /* ---------- COMMENTATOR / GREEN CALLOUT ---------- */
+  .commentator { margin: 36px 0; padding: 28px 32px; background: var(--bg-card); border-left: 3px solid var(--green); }
+  .commentator-header {
+    font-family: 'Oswald', sans-serif;
+    font-size: 12px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--green-soft);
+    margin-bottom: 12px;
+    font-weight: 500;
+  }
+  .commentator p { margin-bottom: 12px; font-size: 16px; }
+  .commentator p:last-child { margin-bottom: 0; }
+
+  /* ---------- COMPARISON TABLE ---------- */
+  .compare-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 40px 0;
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 15px;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+  }
+  .compare-table th {
+    background: var(--bg-elevated);
+    padding: 16px 20px;
+    text-align: left;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 500;
+    font-size: 13px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--gold);
+    border-bottom: 1px solid var(--border);
+  }
+  .compare-table td { padding: 14px 20px; border-bottom: 1px solid var(--border-soft); color: var(--ink-body); }
+  .compare-table tr:last-child td { border-bottom: none; }
+  .compare-table td:first-child {
+    color: var(--ink);
+    font-weight: 600;
+    font-family: 'Oswald', sans-serif;
+    letter-spacing: 0.04em;
+    font-size: 14px;
+    text-transform: uppercase;
+  }
+  .compare-table td.figure { font-family: 'Oswald', sans-serif; color: var(--gold-soft); font-weight: 500; font-size: 16px; }
+<!-- ========== EXECUTIVE SUMMARY ========== -->
+  <div class="exec-summary">
+    <div class="eyebrow">Executive Summary</div>
+    <h1>The Precision Location Network That Already Has Customers</h1>
+    <p style="font-family: 'Source Serif 4', Georgia, serif; font-style: italic; font-size: 22px; color: var(--gold-soft); margin: -16px 0 28px; line-height: 1.4;">The map every robot will read from.</p>
+    <p class="lead">Most of what trades under the Decentralised AI banner is a promise about a business that might one day exist. GEODNET is the rarer thing: a network with real customers, a widening revenue base, and a mechanism that converts that revenue directly into rewards for token holders. It is also, by some distance, the largest network of its kind in the world.</p>
+    <p>The problem GEODNET solves is mundane and enormous at once. Ordinary GPS, on a good day, places you within roughly two metres. That is fine for finding a restaurant and useless for a tractor that must not crush a row of vines, a drone threading between buildings, or a robotic mower that should cut your lawn and not your flowerbed. The technology that closes the gap to within a centimetre or two is called real-time kinematics, or RTK, and it has existed for decades. What did not exist, until recently, was a way to blanket the planet with the ground stations RTK requires without spending billions to do it.</p>
+    <p>GEODNET built that coverage in roughly four years by borrowing the oldest idea in Crypto and pointing it at hardware. This approach, using Crypto incentives to build real-world infrastructure, is a subsector known as DePIN, or Decentralised Physical Infrastructure Networks. Rather than a single company funding and installing tens of thousands of base stations, ordinary people buy a small antenna, mount it on a roof, and are paid in GEOD tokens for the correction data it produces. The result is a network of more than twenty-two thousand base stations across over one hundred and fifty countries, assembled at a fraction of the cost an incumbent would have borne, and now roughly twice the combined size of the three legacy players who spent decades building theirs.</p>
+    <p>What should interest investors is not only that GEODNET is another proof of how blockchain architecture lets a network scale at unprecedented speed, but the economics already on display. GEODNET is run by a non-profit foundation, so there is no equity and no dividend. Instead, eighty per cent of the revenue customers pay for data is used to buy GEOD on the open market and burn it permanently. Customer spending now runs at more than eleven million dollars on an annualised basis and has been growing at more than three times a year. Two years ago that figure was around six hundred thousand dollars. The network is, in effect, a buyback machine wired directly to demand from John Deere, DJI, TomTom and a lengthening list of robotics companies - and it is one of the few direct ways to take a long position on the arrival of physical AI.</p>
+    <p>This report sets out how the network works, what the numbers actually say, where the moats are, and where the thesis could break. It is a conviction piece, and we hold a position. It is not a prediction that the market will agree with us soon.</p>
+  </div>
+
+  <!-- ========== 1 ========== -->
+  <h1 class="section-title">1. The Two-Centimetre World</h1>
+
+  <p class="lead">Almost every autonomous machine and robot being built today shares a hidden dependency: it needs to know exactly where it is.</p>
+
+  <p>We have lived with GPS for so long that we tend to assume the problem of location is solved. It is not. The satellite constellations that most people rely on - the American GPS, Europe's Galileo, Russia's GLONASS, China's BeiDou - broadcast from roughly twenty thousand kilometres up, and by the time their signals have crossed the ionosphere and bounced around the atmosphere, the position they yield is accurate to something like two metres in good conditions and considerably worse among tall buildings. For a person holding a phone, two metres is invisible. For a machine or robot built to replace a human, two metres is the difference between competence and catastrophe.</p>
+
+  <p>Consider what that gap rules out. An autonomous tractor applying pesticide to a field needs to follow the same lines to the centimetre, pass after pass, or it wastes chemicals and damages crops. A delivery drone descending to a doorstep cannot be satisfied with the right street. A robotic lawnmower that is confident only to within two metres will mow the neighbour's border. A surveying rig, a construction robot, an automated forklift, a humanoid stacking a shelf - each of them lives or dies on positioning that ordinary GPS simply cannot supply.</p>
+
+  <p>The established fix is real-time kinematics. The idea is elegant: place a stationary receiver, a base station, at a precisely known fixed point, let it measure exactly how the satellite signals are being distorted at that moment, and broadcast a correction to any nearby device. Because the base station knows the truth about its own location, it can tell a moving rover how wrong the raw satellite fix is and by how much. Apply that correction and accuracy collapses from metres to a centimetre or two. The catch has always been geography. A base station only helps devices within a certain radius, so covering a country, let alone a planet, means building and maintaining an enormous, unglamorous estate of fixed antennas. That is expensive, slow, and exactly the sort of capital-intensive grind that has kept precise positioning a niche, premium service for thirty years.</p>
+
+  <div class="figure">
+    <svg viewBox="0 0 820 360" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Comparison of GPS scatter versus RTK precision">
+      <text x="410" y="30" text-anchor="middle" font-family="Oswald, sans-serif" font-size="16" font-weight="600" fill="#b8976a" letter-spacing="3">WHY TWO CENTIMETRES CHANGES EVERYTHING</text>
+
+      <!-- left: GPS -->
+      <text x="210" y="68" text-anchor="middle" font-family="Oswald, sans-serif" font-size="13" font-weight="500" fill="#c8775f" letter-spacing="2">RAW GPS · ~2 METRES</text>
+      <g transform="translate(210,200)">
+        <circle r="110" fill="none" stroke="#1a2530" stroke-width="1"/>
+        <circle r="74" fill="none" stroke="#1a2530" stroke-width="1"/>
+        <circle r="38" fill="none" stroke="#243240" stroke-width="1"/>
+        <circle r="4" fill="#8994a0"/>
+        <g fill="#c8775f">
+          <circle cx="-58" cy="-34" r="4"/><circle cx="42" cy="-66" r="4"/><circle cx="86" cy="18" r="4"/>
+          <circle cx="-78" cy="40" r="4"/><circle cx="24" cy="70" r="4"/><circle cx="-22" cy="-88" r="4"/>
+          <circle cx="64" cy="62" r="4"/><circle cx="-94" cy="-8" r="4"/><circle cx="8" cy="-18" r="4"/>
+          <circle cx="-30" cy="34" r="4"/>
+        </g>
+      </g>
+      <text x="210" y="338" text-anchor="middle" font-family="Source Sans 3, sans-serif" font-size="12" fill="#8994a0">Good enough to find a building. Not a doorstep.</text>
+
+      <!-- right: RTK -->
+      <text x="610" y="68" text-anchor="middle" font-family="Oswald, sans-serif" font-size="13" font-weight="500" fill="#5fb784" letter-spacing="2">GEODNET RTK · ~2 CM</text>
+      <g transform="translate(610,200)">
+        <circle r="110" fill="none" stroke="#1a2530" stroke-width="1"/>
+        <circle r="74" fill="none" stroke="#1a2530" stroke-width="1"/>
+        <circle r="38" fill="none" stroke="#243240" stroke-width="1"/>
+        <circle r="20" fill="none" stroke="#4a9d6e" stroke-width="1.2"/>
+        <circle r="4" fill="#8994a0"/>
+        <g fill="#5fb784">
+          <circle cx="-6" cy="-5" r="4"/><circle cx="7" cy="-3" r="4"/><circle cx="-3" cy="6" r="4"/>
+          <circle cx="9" cy="5" r="4"/><circle cx="-9" cy="2" r="4"/><circle cx="3" cy="9" r="4"/>
+          <circle cx="5" cy="-8" r="4"/><circle cx="-7" cy="-9" r="4"/><circle cx="0" cy="-2" r="4"/>
+          <circle cx="-2" cy="11" r="4"/>
+        </g>
+      </g>
+      <text x="610" y="338" text-anchor="middle" font-family="Source Sans 3, sans-serif" font-size="12" fill="#8994a0">Tight enough for a robot to act on.</text>
+    </svg>
+    <div class="figure-caption"><strong>Figure 1 · The Precision Gap</strong> &nbsp; Raw satellite positioning scatters across roughly two metres; a local RTK correction pulls the same device to within a centimetre or two. Every machine that touches the physical world sits on the right-hand side of this picture, or cannot function at all.</div>
+  </div>
+
+  <p>This is the unfashionable foundation beneath a very fashionable theme. The market spends its enthusiasm on the models and the robots themselves. Far less attention is paid to the boring layer that tells those robots where they are standing. GEODNET is a wager that, as physical intelligence moves from demonstration to deployment, the ground truth of position becomes infrastructure - and that whoever owns the cheapest, densest, most universal version of it owns something close to a toll road.</p>
+
+  <div class="pullquote">
+    <p>"$GEOD is one of the best ways to go long physical intelligence."</p>
+    <p class="attribution">Kyle Samani, Co-Founder of Multicoin Capital — June 2026</p>
+  </div>
+
+  <!-- ========== 2 ========== -->
+  <h1 class="section-title">2. How GEODNET Actually Works</h1>
+
+  <p>GEODNET belongs to a category of Crypto projects known as decentralised physical infrastructure networks, or DePIN. The premise of DePIN is simple and, when it works, quietly radical. Instead of a corporation raising capital to build a network of physical things, the network issues a token and pays ordinary people to build it piece by piece. Each participant buys their own hardware, installs it, and earns tokens for the useful work it performs. The company never has to find the billions, negotiate the leases, or pull the permits. The crowd does it, motivated by being paid in a token that should appreciate as the network it is building becomes more valuable.</p>
+
+  <p>In GEODNET's case the useful work is positioning. A host buys a small satellite mining station, a few hundred dollars of hardware, and mounts it somewhere with a clear view of the sky, typically a rooftop. The station listens to the satellite constellations overhead, measures how their signals are being distorted at that precise spot, and streams that correction data back to the network. In exchange, the host is paid in GEOD. When a customer somewhere within range needs centimetre positioning, the network serves them the correction from the nearest reliable station.</p>
+
+  <p>Two design choices make this more than a clever way to crowdsource antennas. The first is geographic discipline. The network divides the world into hexagonal cells, and within each cell the rewards concentrate on the first reliable station rather than paying endlessly for redundant coverage of the same patch. That nudges hosts to extend the map outward into uncovered ground rather than piling up where coverage already exists. The second is hardware neutrality. GEODNET is not tied to a single manufacturer; stations from dozens of makers can join, which means the network does not depend on any one supplier and benefits from competition driving the cost of a station down over time.</p>
+
+  <p>The economics for a host are deliberately brisk. A higher-specification station has historically earned enough GEOD to pay back its purchase price in a matter of months, after which it is a small, passive income stream attached to a rooftop. That payback is what bootstrapped the network so quickly: for the host, it is a modestly profitable gadget; for GEODNET, it is a node on a global utility that the foundation never had to pay for upfront. Token emissions to hosts are scheduled to reduce over time, on the theory that real customer demand, rather than token rewards, must eventually carry the network. We will return to that transition, because it is also one of the principal risks.</p>
+
+  <div class="commentator">
+    <div class="commentator-header">Context · The DePIN Lineage</div>
+    <p>GEODNET is not the first network of this shape. The DePIN incentive model was pioneered with Helium from around 2019, and the pattern has since been pointed at mapping, energy, storage and compute with varying success. The honest history of the category is littered with networks that bootstrapped impressive hardware footprints and then discovered nobody wanted to pay for the output.</p>
+    <p>What separates GEODNET from that graveyard is the demand side. The correction data it produces is not a speculative service in search of a buyer; it is a drop-in substitute for something agriculture, surveying and robotics companies already pay incumbents for, at materially lower cost. The network had paying customers early, and the question was never whether the data was wanted, only how fast the buyer base would compound.</p>
+  </div>
+
+  <!-- ========== 3 ========== -->
+  <h1 class="section-title">3. The Network in Numbers</h1>
+
+  <p>The single most persuasive fact about GEODNET is the speed at which it overtook everyone else. The three established names in ground-based correction - Trimble, Topcon and Hexagon - have been building RTK networks for two to three decades and have together deployed in the region of twelve thousand base stations. GEODNET began building in earnest around 2022 and now operates more than twenty-two thousand base stations. It did in four years, and at a fraction of the cost, what the incumbents took thirty years and enormous capital budgets to assemble.</p>
+
+  <div class="pullquote">
+    <p>"GEODNET delivered a seventeen-fold increase in ARR in two years, on a node count that itself more than quadrupled."</p>
+  </div>
+
+  <div class="stat-grid">
+    <div class="stat-cell"><div class="stat-figure">22,000+</div><div class="stat-label">Base Stations Deployed</div></div>
+    <div class="stat-cell"><div class="stat-figure">150+</div><div class="stat-label">Countries Covered</div></div>
+    <div class="stat-cell"><div class="stat-figure">11,500</div><div class="stat-label">Cities On Network</div></div>
+    <div class="stat-cell"><div class="stat-figure">~80%</div><div class="stat-label">Of Global Population In Range</div></div>
+  </div>
+
+  <div class="figure">
+    <svg viewBox="0 0 820 400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Incumbent base stations versus GEODNET">
+      <text x="410" y="30" text-anchor="middle" font-family="Oswald, sans-serif" font-size="16" font-weight="600" fill="#b8976a" letter-spacing="3">THE WORLD'S LARGEST RTK NETWORK</text>
+      <line x1="120" y1="340" x2="700" y2="340" stroke="#1a2530" stroke-width="1"/>
+
+      <!-- Incumbents stacked bar (~12K) -->
+      <text x="260" y="372" text-anchor="middle" font-family="Source Sans 3, sans-serif" font-size="12" fill="#8994a0">Three incumbents combined</text>
+      <text x="260" y="388" text-anchor="middle" font-family="Source Sans 3, sans-serif" font-size="11" fill="#6b7480">Trimble · Hexagon · Topcon</text>
+      <!-- stack: total ~12k over 144px => 12px per 1k -->
+      <rect x="210" y="196" width="100" height="60" fill="#3a4654"/>
+      <text x="260" y="231" text-anchor="middle" font-family="Oswald, sans-serif" font-size="13" fill="#c8d0d8">~5K Trimble</text>
+      <rect x="210" y="148" width="100" height="48" fill="#4a5663"/>
+      <text x="260" y="178" text-anchor="middle" font-family="Oswald, sans-serif" font-size="13" fill="#c8d0d8">~4K Hexagon</text>
+      <rect x="210" y="112" width="100" height="36" fill="#5a6672"/>
+      <text x="260" y="135" text-anchor="middle" font-family="Oswald, sans-serif" font-size="13" fill="#c8d0d8">~3K Topcon</text>
+      <text x="260" y="100" text-anchor="middle" font-family="Oswald, sans-serif" font-size="15" fill="#8994a0">~12,000</text>
+
+      <!-- GEODNET bar (22K+) -->
+      <text x="560" y="372" text-anchor="middle" font-family="Source Sans 3, sans-serif" font-size="12" fill="#8994a0">GEODNET</text>
+      <text x="560" y="388" text-anchor="middle" font-family="Source Sans 3, sans-serif" font-size="11" fill="#6b7480">built in roughly four years</text>
+      <rect x="510" y="76" width="100" height="264" fill="#b8976a"/>
+      <text x="560" y="64" text-anchor="middle" font-family="Oswald, sans-serif" font-size="17" font-weight="600" fill="#d4b887">22,000+</text>
+
+      <!-- multiplier note -->
+      <text x="410" y="210" text-anchor="middle" font-family="Oswald, sans-serif" font-size="13" fill="#5fb784" letter-spacing="1">~2x</text>
+      <text x="410" y="228" text-anchor="middle" font-family="Source Sans 3, sans-serif" font-size="11" fill="#6b7480">the field</text>
+    </svg>
+    <div class="figure-caption"><strong>Figure 2 · The Scale Gap</strong> &nbsp; Trimble, Hexagon and Topcon spent two to three decades building roughly twelve thousand base stations between them. GEODNET assembled more than twenty-two thousand in about four years, making it the largest RTK network in the world by a wide margin. Source: GEODNET, June 2026.</div>
+  </div>
+
+  <p>Coverage now reaches more than eighty per cent of the world's population across over ten thousand cities, with the obvious exclusions of sanctioned territories such as China, Russia, Iran and North Korea. Across the United States, the map covers not only every major metropolitan area but the great majority of rural land as well, which matters because agriculture is one of the earliest and largest sources of demand. This is no longer an experiment with promising coverage in a handful of markets. It is a genuinely global utility.</p>
+
+  <p>The growth on the demand side is, if anything, more striking than the hardware. When VanEck published its investment thesis in early 2024, the network had roughly five thousand nodes across sixty countries and was generating annualised recurring revenue of about six hundred and thirty thousand dollars. As of mid-2026, customer spending runs at more than eleven million dollars on an annualised basis. That is something close to a seventeen-fold increase in roughly two years, on a node count that itself more than quadrupled. The supply side and the demand side compounded together.</p>
+
+  <p>Who is actually paying? The customer roster reads like a directory of the physical-AI economy. In agriculture, John Deere uses precise correction in its auto-steering and in a newer unmanned spraying system, and the United States Department of Agriculture has been subsidising farmers to adopt precision techniques that depend on networks like this one. In autonomy, TomTom, which supplies mapping to almost every serious self-driving programme, draws on GEODNET data to sharpen its maps. In consumer robotics, the robotic lawnmower category alone is on track to ship around a million units this year from makers such as Yarbo and Sunseeker, the better ones leaning on centimetre positioning. In drones, the world's largest manufacturer, DJI, builds GEODNET compatibility into many of its models. A robotic mule hauling grapes through a vineyard, an automated sprayer threading between vines in Napa, a surveyor's rig on a building site - all of them are potential meters running on the same network.</p>
+
+  <!-- ========== 4 ========== -->
+  <h1 class="section-title">4. The Token Buy-and-Burn Engine</h1>
+
+  <p>Here is where GEODNET stops resembling a typical software company and starts resembling something stranger and, for a token holder, rather better. The network is operated by a non-profit foundation. There are no shares, no equity, no dividend. So the question that should immediately occur to any investor is the right one: if there is no equity, how does the value of a growing business reach the people who own the token?</p>
+
+  <p>The answer is a buy-and-burn. Eighty per cent of the revenue customers pay for data is used to purchase GEOD, the network's Crypto token, on the open market, and those purchased tokens are then permanently destroyed. The remaining fifth of revenue funds the foundation's engineering and business development. This is, in spirit, a share buyback, but a more aggressive one, because a burned token can never be reissued, whereas a repurchased share sits in treasury and can return. Every dollar of customer demand becomes a standing bid for the token followed by a permanent reduction in supply.</p>
+
+  <p>Crucially, none of this requires trust. Because the purchases and burns happen onchain, anyone can watch them. The cadence is visible in real time, and through the spring of 2026 the network was burning in the region of one hundred and seventy thousand dollars of GEOD in a single strong week. More than fifty-five million GEOD have now been removed from supply since inception. The link between usage and scarcity is not a narrative the team asks you to believe; it is a public ledger you can audit.</p>
+
+  <div class="figure">
+    <svg viewBox="0 0 820 470" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="The GEODNET buy and burn flywheel">
+      <defs>
+        <marker id="arrowGold" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#b8976a"/></marker>
+        <marker id="arrowGreen" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#4a9d6e"/></marker>
+      </defs>
+      <text x="410" y="30" text-anchor="middle" font-family="Oswald, sans-serif" font-size="16" font-weight="600" fill="#b8976a" letter-spacing="3">DEMAND IN, SUPPLY OUT</text>
+
+      <!-- nodes of the cycle -->
+      <g font-family="Oswald, sans-serif">
+        <!-- 1 hosts -->
+        <rect x="60" y="70" width="200" height="62" fill="#0d161e" stroke="#b8976a" stroke-width="1.5" rx="2"/>
+        <text x="160" y="96" text-anchor="middle" font-size="13" fill="#e8edf2">Hosts deploy rooftop</text>
+        <text x="160" y="114" text-anchor="middle" font-size="13" fill="#e8edf2">base stations</text>
+
+        <!-- 2 coverage -->
+        <rect x="560" y="70" width="200" height="62" fill="#0d161e" stroke="#b8976a" stroke-width="1.5" rx="2"/>
+        <text x="660" y="96" text-anchor="middle" font-size="13" fill="#e8edf2">Coverage and data</text>
+        <text x="660" y="114" text-anchor="middle" font-size="13" fill="#e8edf2">quality improve</text>
+
+        <!-- 3 customers pay -->
+        <rect x="560" y="204" width="200" height="62" fill="#0d161e" stroke="#4a9d6e" stroke-width="1.5" rx="2"/>
+        <text x="660" y="230" text-anchor="middle" font-size="13" fill="#e8edf2">Customers pay for</text>
+        <text x="660" y="248" text-anchor="middle" font-size="13" fill="#e8edf2">RTK corrections</text>
+
+        <!-- 4 buyback -->
+        <rect x="310" y="204" width="200" height="62" fill="#0d161e" stroke="#4a9d6e" stroke-width="1.5" rx="2"/>
+        <text x="410" y="230" text-anchor="middle" font-size="13" fill="#e8edf2">80% buys GEOD</text>
+        <text x="410" y="248" text-anchor="middle" font-size="13" fill="#e8edf2">on the open market</text>
+
+        <!-- 5 burn -->
+        <rect x="60" y="204" width="200" height="62" fill="#0d161e" stroke="#4a9d6e" stroke-width="1.5" rx="2"/>
+        <text x="160" y="230" text-anchor="middle" font-size="13" fill="#e8edf2">Tokens burned</text>
+        <text x="160" y="248" text-anchor="middle" font-size="13" fill="#e8edf2">permanently</text>
+
+        <!-- 6 scarcity -->
+        <rect x="60" y="338" width="200" height="62" fill="#0d161e" stroke="#b8976a" stroke-width="1.5" rx="2"/>
+        <text x="160" y="364" text-anchor="middle" font-size="13" fill="#e8edf2">Supply falls, host</text>
+        <text x="160" y="382" text-anchor="middle" font-size="13" fill="#e8edf2">rewards gain value</text>
+      </g>
+
+      <!-- arrows -->
+      <line x1="260" y1="101" x2="552" y2="101" stroke="#b8976a" stroke-width="1.5" marker-end="url(#arrowGold)"/>
+      <line x1="660" y1="132" x2="660" y2="196" stroke="#4a9d6e" stroke-width="1.5" marker-end="url(#arrowGreen)"/>
+      <line x1="560" y1="235" x2="518" y2="235" stroke="#4a9d6e" stroke-width="1.5" marker-end="url(#arrowGreen)"/>
+      <line x1="310" y1="235" x2="268" y2="235" stroke="#4a9d6e" stroke-width="1.5" marker-end="url(#arrowGreen)"/>
+      <line x1="160" y1="266" x2="160" y2="330" stroke="#4a9d6e" stroke-width="1.5" marker-end="url(#arrowGreen)"/>
+      <!-- loop back to hosts -->
+      <path d="M160 338 Q160 235 160 134" fill="none" stroke="#b8976a" stroke-width="1.5" stroke-dasharray="4 4" marker-end="url(#arrowGold)"/>
+      <text x="186" y="300" font-family="Source Sans 3, sans-serif" font-size="11" fill="#8994a0" transform="rotate(-90 186 300)">incentive to expand</text>
+    </svg>
+    <div class="figure-caption"><strong>Figure 3 · The Flywheel</strong> &nbsp; Hosts build coverage; coverage attracts paying customers; four-fifths of that revenue is used to buy and burn GEOD; the resulting scarcity raises the value of the rewards that motivate hosts to extend coverage further. Demand enters as dollars and leaves as a permanent reduction in token supply.</div>
+  </div>
+
+  <p>The most important number in the whole thesis is not the headline revenue but how that revenue behaves once a customer is on board. GEODNET's customers do not arrive at full size; they start small, prove the value on one use case, and then expand. A customer spending in the region of fifty-nine thousand dollars in its first year has historically grown to about a hundred and seventy thousand by the second, a 2.9 times increase from the existing book alone. Set that net revenue retention against a new-customer count that itself jumped from twenty-two in 2024 to one hundred and nine in 2025, and the more-than-threefold annual growth in spending looks less like a spike and more like a structural ramp. On the network's own estimate, the customers already signed represent something in the order of a twenty-six million dollar annual book of business once they mature.</p>
+
+  <div class="figure">
+    <svg viewBox="0 0 820 430" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Net revenue retention and new customers per year">
+      <text x="410" y="30" text-anchor="middle" font-family="Oswald, sans-serif" font-size="16" font-weight="600" fill="#b8976a" letter-spacing="3">CUSTOMERS THAT LAND, THEN EXPAND</text>
+
+      <!-- Left: ARR per customer -->
+      <text x="210" y="64" text-anchor="middle" font-family="Oswald, sans-serif" font-size="13" font-weight="500" fill="#5fb784" letter-spacing="1">SPEND PER CUSTOMER · 2.9x IN YEAR TWO</text>
+      <line x1="90" y1="320" x2="330" y2="320" stroke="#1a2530" stroke-width="1"/>
+      <rect x="120" y="262" width="64" height="58" fill="#3a4654"/>
+      <text x="152" y="342" text-anchor="middle" font-family="Source Sans 3, sans-serif" font-size="11" fill="#8994a0">After 12 months</text>
+      <text x="152" y="252" text-anchor="middle" font-family="Oswald, sans-serif" font-size="15" fill="#c8d0d8">$59K</text>
+      <rect x="236" y="152" width="64" height="168" fill="#4a9d6e"/>
+      <text x="268" y="342" text-anchor="middle" font-family="Source Sans 3, sans-serif" font-size="11" fill="#8994a0">After 24 months</text>
+      <text x="268" y="142" text-anchor="middle" font-family="Oswald, sans-serif" font-size="15" fill="#5fb784">$170K</text>
+
+      <!-- Right: new customers per year -->
+      <text x="610" y="64" text-anchor="middle" font-family="Oswald, sans-serif" font-size="13" font-weight="500" fill="#d4b887" letter-spacing="1">NEW PAYING CUSTOMERS PER YEAR</text>
+      <line x1="490" y1="320" x2="730" y2="320" stroke="#1a2530" stroke-width="1"/>
+      <rect x="520" y="286" width="64" height="34" fill="#3a4654"/>
+      <text x="552" y="342" text-anchor="middle" font-family="Source Sans 3, sans-serif" font-size="11" fill="#8994a0">2024</text>
+      <text x="552" y="276" text-anchor="middle" font-family="Oswald, sans-serif" font-size="15" fill="#c8d0d8">22</text>
+      <rect x="636" y="152" width="64" height="168" fill="#b8976a"/>
+      <text x="668" y="342" text-anchor="middle" font-family="Source Sans 3, sans-serif" font-size="11" fill="#8994a0">2025</text>
+      <text x="668" y="142" text-anchor="middle" font-family="Oswald, sans-serif" font-size="15" fill="#d4b887">109</text>
+      <!-- banner -->
+      <rect x="120" y="382" width="580" height="34" fill="#0d161e" stroke="#4a9d6e" stroke-width="1"/>
+      <text x="410" y="404" text-anchor="middle" font-family="Oswald, sans-serif" font-size="13" fill="#5fb784" letter-spacing="1">~$26M ESTIMATED ANNUAL BOOK OF BUSINESS AT MATURITY · CURRENT CUSTOMERS</text>
+    </svg>
+    <div class="figure-caption"><strong>Figure 4 · Land And Expand</strong> &nbsp; Existing customers nearly tripled their spend between the first and second year, while the number of new logos rose roughly fivefold in a single year. Net revenue retention this strong means the book grows even before a new customer is added. Source: GEODNET, June 2026.</div>
+  </div>
+
+  <!-- ========== 5 ========== -->
+  <h1 class="section-title">5. The Moats</h1>
+
+  <p>A fast-growing network is interesting. A fast-growing network that is hard to dislodge is very attractive to us as investors. GEODNET's defensibility rests on several reinforcing advantages, and it is worth being precise about each rather than waving at the word "monopoly".</p>
+
+  <h3>Network Effects And The Shape Of A Telecom</h3>
+  <p>Positioning coverage is a classic network-effect business. The denser and more universal the network, the more useful it is to any given customer, and the more customers it attracts, the more revenue flows to hosts, which funds still denser coverage. Networks shaped like this - telecoms, essentially - tend toward natural monopoly, because a second network offering the same ubiquity has to replicate the whole estate before it is competitive at all. GEODNET is already the largest and the fastest growing, which in a network-effect market is the position you want to be defending rather than attacking.</p>
+
+  <div class="pullquote">
+    <p>"This thing looks like a natural telecom. Telecoms naturally form monopolies."</p>
+    <p class="attribution">Kyle Samani — All-In Liquidity Summit, June 2026</p>
+  </div>
+
+  <h3>A Structural Cost Advantage</h3>
+  <p>Because hosts fund the hardware and earn Crypto tokens rather than cash salaries, GEODNET carries the lowest cost structure in the industry by a wide margin. Building equivalent coverage the old way - a company buying, installing and maintaining tens of thousands of stations - is estimated to cost several times more. That gap lets GEODNET undercut incumbent pricing while still funding aggressive buybacks, and a competitor cannot simply match the price without first matching the cost structure, which means adopting the very token model they are competing against.</p>
+
+  <div class="commentator">
+    <div class="commentator-header">Commentator · On Replacement Cost</div>
+    <p>The cleanest way to think about a network like this is the one seasoned infrastructure investors apply to power plants and toll roads: what would it cost to rebuild from scratch, and is the asset trading above or below that figure? GEODNET's twenty-two thousand stations were assembled for a small fraction of what an incumbent would have spent in capital, permits and labour to reach the same coverage.</p>
+    <p>An acquirer wanting this footprint cannot buy it cheaply, and cannot build it quickly. The decentralised model is not merely a clever financing trick; it is the moat, because it permanently lowers the cost of the one thing competitors must replicate.</p>
+  </div>
+
+  <h3>Hardware Neutrality And Switching Costs</h3>
+  <p>Because the network admits stations from many manufacturers, it is not hostage to a single supplier and benefits from falling hardware costs as makers compete. On the demand side, once a fleet operator or an equipment manufacturer has integrated GEODNET corrections into their product and their workflow, switching to an alternative means re-engineering and re-testing for a service that is, at best, no cheaper. The sales cycle compounds in GEODNET's favour: the people who run precision at John Deere, DJI and TomTom move in a small world, and a network that becomes the default among them is hard to displace by reputation alone.</p>
+
+  <h3>Capital Returned, Not Consumed</h3>
+  <p>Finally, the buy-and-burn is itself a moat of a kind, because it aligns the token holder with the network's success in a way that pure governance tokens never manage. The asset is not a claim on a someday cash flow; it is a live instrument absorbing real revenue today. That makes the thesis legible to exactly the large pool of seasoned investor capital that normally keeps its distance from Crypto.</p>
+
+  <!-- ========== 6 ========== -->
+  <h1 class="section-title">6. The Valuation Gap</h1>
+
+  <p>As of mid-June 2026, GEOD trades at around twenty-two cents, for a circulating market capitalisation of roughly ninety-five million dollars and a fully diluted valuation of a little over two hundred million. Set that against a network throwing off more than eleven million dollars of annualised customer spending, growing above three times a year, of which four-fifths is converted straight into token buybacks. On a circulating basis the network trades at single-digit multiples of the revenue it is already returning to holders, for an asset compounding at triple-digit rates. That is not the pricing of a business the market believes in; it is the pricing of one the market has not yet bothered to examine.</p>
+
+  <p>The natural public comparison is Trimble, the listed geospatial company whose correction network is similar in node count to where GEODNET stood two years ago and whose equity has historically traded at close to thirty times free cash flow. GEODNET is the purer expression of the same value - a network that owns the data without owning the factories, the salesforce or the inventory - and it is growing far faster, yet it trades at a fraction of that multiple. Part of the discount is the simple fact of being a Crypto token in a nervous market; part is genuine early-stage venture risk, which the next section treats honestly. But a meaningful part is simply that it has stayed under the radar for most investors. That Kyle Samani, the founder of Multicoin, recently chose GEODNET as his pick at the All-In Liquidity Summit should bring fresh eyes, and fresh capital, to help close the discount.</p>
+
+  <div class="compare-table">
+    <thead><tr><th>Metric</th><th>Reading (mid-June 2026)</th></tr></thead>
+    <tbody>
+      <tr><td>Price</td><td class="figure">~$0.22</td></tr>
+      <tr><td>Circulating Market Cap</td><td class="figure">~$95M</td></tr>
+      <tr><td>Fully Diluted Valuation</td><td class="figure">~$203M</td></tr>
+      <tr><td>Annualised Customer Spend</td><td class="figure">$11M+</td></tr>
+      <tr><td>To Buyback &amp; Burn</td><td class="figure">80% of revenue</td></tr>
+      <tr><td>Spend Growth</td><td class="figure">3x+ per year</td></tr>
+      <tr><td>GEOD Burned, All Time</td><td class="figure">55M+</td></tr>
+    </tbody>
+  </div>
+
+  <p>Trimble offers a tempting shortcut to a price target. Applying its roughly thirty times multiple to GEODNET's eight million dollars of annual buy-and-burn would imply a market capitalisation around two and a half times today's. We think that shortcut is unwise, because the two businesses differ so sharply in maturity, scale and growth. If anything, the comparison cuts the other way: GEODNET is growing far faster and already runs roughly double the node count, which a reasonable observer could argue makes it worth substantially more, not less. The most cited external research, VanEck's, lends weight to that view, modelling a per-token value of 9.58 dollars by 2030 on the assumption that the network captures a modest single-digit share of the global correction market at an infrastructure multiple. That figure is an illustration resting on a chain of assumptions, not a forecast. The Dragonfly view is narrower and, we think, sturdier: a network growing this fast, returning capital this transparently, at this valuation, is mispriced relative to what it already is, before any heroic assumptions about what it becomes.</p>
+
+  <div class="pullquote">
+    <p>"It's an unbelievably cheap asset. People aren't paying attention because it's a Crypto bear market."</p>
+    <p class="attribution">Kyle Samani — All-In Liquidity Summit, June 2026</p>
+  </div>
+
+  <!-- ========== 7 ========== -->
+  <h1 class="section-title">7. Momentum</h1>
+
+  <p>The case does not rest on a single moment but on a steady accumulation of evidence that the network is maturing from a Crypto curiosity into recognised infrastructure. A few markers of the last eighteen months are worth setting down in order.</p>
+
+  <p>VanEck, one of the more credible institutional names in digital assets, took a direct position in GEOD through the foundation and published a detailed bull thesis. Through 2024 and 2025 the token went multichain, extending from its original home on Polygon to Solana through a governance-approved bridge, which widened its reach into the deepest pool of DePIN activity in Crypto. In late 2025 the network struck a partnership with a major Indian energy group, planting a flag in one of the largest untapped markets for precise positioning. In early 2026 a Messari report validated the broader DePIN sector and singled out GEODNET's revenue growth even through a period of token-price weakness. By the spring the network had manufactured its first base stations in the United States, hardening a supply chain that had been a quiet vulnerability. And on the second of June 2026, GEODNET became the rare DePIN asset to be pitched from the stage of a mainstream investor event, when Kyle Samani presented it at the All-In Liquidity Summit in Napa.</p>
+
+  <div class="commentator">
+    <div class="commentator-header">Note · On The Samani Pitch</div>
+    <p>It is worth being candid about how that pitch landed. In a room of generalist equity and biotech investors, GEODNET placed last in the audience vote, behind a casino operator and a power producer. The reason was not the business but the wrapper: a room of traditional managers found a Crypto token the hardest of the four to size and to hold, and several said as much.</p>
+    <p>We read that reaction as confirmation rather than warning. The discount exists precisely because the natural buyer of infrastructure with these characteristics is not yet comfortable owning it in this form. That discomfort is the opportunity. As the wrapper becomes more familiar and the revenue record lengthens, the buyer base widens into capital that today cannot participate.</p>
+  </div>
+
+  <!-- ========== 8 ========== -->
+  <h1 class="section-title">8. Risks</h1>
+
+  <p>This is still a relatively early-stage Crypto protocol, and it carries a host of risks. These are the ways the thesis could be wrong, set out plainly.</p>
+
+  <h3>Satellites From Above</h3>
+  <p>The most cited bear argument is that low-earth-orbit constellations could one day deliver centimetre positioning from space, removing the need for ground stations entirely. It is a real long-term question. The counter is cost and physics: launching and maintaining satellites is enormously more expensive than a few hundred dollars of rooftop hardware, and space-based delivery is far more power-hungry, which matters acutely for battery-constrained devices like drones. For the foreseeable future, ground-based correction remains the cheaper and more energy-efficient answer, and a hybrid future in which both coexist is at least as likely as outright replacement. But an investor should hold this risk consciously rather than dismiss it.</p>
+
+  <div class="pullquote">
+    <p>"You're just not going to compete on cost with GEODNET."</p>
+    <p class="attribution">Kyle Samani, on satellite alternatives — June 2026</p>
+  </div>
+
+  <h3>The Halving And The Death-Spiral Scenario</h3>
+  <p>Host rewards are designed to reduce on a schedule. The benign reading is that real customer revenue takes over from token emissions as the reason to host a station. The malign reading, which VanEck itself flagged, is a metastable system: if emissions fall faster than revenue grows, host economics weaken, stations go dark, coverage degrades, customers leave, the burn shrinks, the token falls, and the whole flywheel runs in reverse. The network's defence is the speed of revenue growth, which so far has comfortably outpaced the tapering of rewards. This is the risk we watch most closely, because it is the one the model itself contains.</p>
+
+  <h3>Legal And Structural Questions</h3>
+  <p>The buy-and-burn depends on a foundation continuing to direct the great majority of revenue to the token, and on that structure remaining sound under evolving regulation. A change to the eighty per cent policy, or a regulatory determination that reshaped how revenue may be used, would alter the core mechanism. Token-based value accrual remains a developing area of law in most jurisdictions, and GEODNET is not immune to that uncertainty.</p>
+
+  <h3>Competition, Concentration And Market Beta</h3>
+  <p>An incumbent or a well-capitalised newcomer could attempt to replicate the token model, though doing so means embracing the economics they are trying to beat. Revenue, while growing fast, still rests on a relatively concentrated set of large customers, so the loss or hesitation of a flagship name would be felt. And as a liquid Crypto asset, GEOD carries the market's beta whether or not the network deserves it: through early June 2026 the token fell with the broader DePIN complex even as its fundamentals improved, and it trades well below its early-2025 high. Liquidity is also genuinely thin. Building or exiting a position of any size moves the price, a constraint a serious allocator must respect on the way in and the way out alike.</p>
+
+  <!-- ========== 9 ========== -->
+  <h1 class="section-title">9. Dragonfly's Approach</h1>
+
+  <div class="closing" style="margin-top:0;">
+    <div class="closing-mark">Dragonfly Investment Approach</div>
+    <p>As long-term investors, it is immaterial — perhaps even advantageous — that token investing is not yet the consensus view.</p>
+  </div>
+
+  <p>Dragonfly Asset Management has been investing across the liquid Crypto landscape for close to four years, and Decentralised AI, of which decentralised physical infrastructure is now a central part, has been our highest-conviction thematic exposure for much of that time. The Fund is constructed as a diversified basket of liquid tokens. For each holding we weigh the potential upside against protocol-specific and subsector-specific risks, and we size the position to that balance, with the aim that the basket as a whole delivers venture-style returns through asymmetric upside on the winners. Holding only liquid tokens is a deliberate choice: it lets us reallocate as the landscape shifts, towards a new Decentralised AI leader, an emerging DePIN network, or an opportunity we have not yet identified. The sector moves fast, and in a category this early, liquidity matters even more than breadth.</p>
+
+  <p>Within that book, GEODNET is a high-conviction holding for four reasons. First, it is the category leader in a structurally large market: the largest RTK network in the world, already roughly twice the combined size of the incumbents it is displacing, in a positioning layer that physical AI cannot do without. Second, the revenue is real, fast-growing and returned to holders transparently, with eighty per cent of customer spending converted into an onchain buy-and-burn that anyone can audit. Third, the moat compounds, through network effects, the lowest cost structure in the industry, and switching costs that deepen with every manufacturer that integrates the data. Fourth, the entry price is asymmetric: single-digit multiples of revenue already returned, against a comparator in Trimble that trades many times higher and a demand backdrop, from John Deere to DJI, that is only now accelerating.</p>
+
+  <p>Rarely do we see all four of these qualities in one asset. Most protocols we evaluate have one or two. We size GEODNET with the category's risks firmly in view, building patiently given thin liquidity, watching the relationship between revenue growth and the tapering of host rewards rather than the token price, and judging the network by the onchain burn and the customer ramp. GEODNET will not be the flashiest trade in the cycle; infrastructure compounds slowly, and the team has never been promotional. That is precisely what makes the position attractive. The market is repricing it now, and we do not believe it has finished.</p>
+
+  <!-- ========== 10 ========== -->
+  <h1 class="section-title">10. Conclusion</h1>
+
+  <div class="pullquote">
+    <p>"GEODNET is a unique, revenue-generating business that sagely employs crypto-economics to provide a cheaper, superior service compared to incumbents."</p>
+    <p class="attribution">VanEck Digital Assets Research — April 2024</p>
+  </div>
+
+  <p>Strip away the token mechanics and the Crypto framing and what remains is an old-fashioned infrastructure story. A network of fixed assets, built faster and cheaper than any incumbent managed, now the largest of its kind in the world, throwing off rapidly growing revenue from blue-chip customers, with that revenue wired directly back to the owners of the network. The only unusual features are that the assets sit on strangers' rooftops and the dividend takes the form of a permanent reduction in supply.</p>
+
+  <p>The market currently prices GEODNET as a speculative token in a nervous sector. We think it is closer to a toll road on the movement of machines through physical space, captured early and cheaply because the buyers who belong in it have not yet arrived. The risks are real and we have named them. But the central fact is hard to argue with: this is a network with customers, growth and a transparent link between the two, available at single-digit multiples of the cash it already returns.</p>
+
+  <div class="eyebrow" style="margin-top:48px;">The Bull Case At A Glance</div>
+  <div class="summary-grid">
+    <div class="summary-card"><div class="sc-title">Largest RTK Network</div><div class="sc-body">The biggest ground-based correction network in the world, by a wide margin.</div></div>
+    <div class="summary-card"><div class="sc-title">Network Effects</div><div class="sc-body">A telecom-shaped business that tends toward natural monopoly.</div></div>
+    <div class="summary-card"><div class="sc-title">Growing 3x+ A Year</div><div class="sc-body">Customer spend compounding at more than three times year on year.</div></div>
+    <div class="summary-card"><div class="sc-title">All-Star Customers</div><div class="sc-body">John Deere, DJI, TomTom, USDA and a lengthening robotics roster.</div></div>
+    <div class="summary-card"><div class="sc-title">Physical AI Tailwind</div><div class="sc-body">Demand driven by robotics, drones and autonomy moving into the field.</div></div>
+    <div class="summary-card"><div class="sc-title">Onchain Buybacks</div><div class="sc-body">Around 8.8 million dollars a year of revenue buying and burning GEOD.</div></div>
+    <div class="summary-card"><div class="sc-title">Reasonable Entry</div><div class="sc-body">Single-digit multiples of the revenue already returned to holders.</div></div>
+    <div class="summary-card"><div class="sc-title">Liquid And Onchain</div><div class="sc-body">Trades 24/7, multichain across Polygon and Solana, fully auditable.</div></div>
+  </div>
+
+  <div class="ornament"><span class="ornament-mark">◆</span></div>
+
+  <p style="text-align:center; font-family:'Oswald',sans-serif; font-size:12px; letter-spacing:0.28em; color:var(--ink-dim); text-transform:uppercase; margin-top:40px;">Dragonfly Research · June 2026</p>
+
+  <!-- ========== DISCLAIMER ========== -->
+  <div class="disclaimer">
+    <h3>Important Information</h3>
+    <p>This report has been prepared by Dragonfly Asset Management ("Dragonfly"), the investment manager of the Dragonfly Digital Assets Fund. The Dragonfly Digital Assets Fund is authorised and regulated in the United Kingdom by the Financial Conduct Authority. Dragonfly Asset Management, the management company, is not itself authorised or regulated by the Financial Conduct Authority. This report is intended for professional and institutional investors only and does not constitute investment advice, an offer to sell, or a solicitation of an offer to buy any security or financial instrument.</p>
+    <p>The information contained in this report is based on sources Dragonfly believes to be reliable, but accuracy and completeness are not guaranteed. Views expressed reflect the judgement of Dragonfly as of the date of publication and are subject to change without notice. Past performance is not a reliable indicator of future results. Dragonfly and the Fund hold a position in GEOD.</p>
+    <p>Investments in digital assets, including but not limited to GEODNET (GEOD), are speculative, highly volatile, and may result in the total loss of capital. Digital assets are not protected by the UK Financial Services Compensation Scheme. Investors should consider their own circumstances and consult independent financial, legal, and tax advisers before making any investment decision.</p>
+    <p>This communication is prepared in accordance with MiFID II requirements applicable to investment research and is classified as a marketing communication. It has not been prepared in accordance with legal requirements designed to promote the independence of investment research and is not subject to any prohibition on dealing ahead of the dissemination of investment research.</p>
+    <p>© 2026 Dragonfly Asset Management. All rights reserved.</p>
+  </div>
+
+</div>
+</body>
+</html>
