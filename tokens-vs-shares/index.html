@@ -3,375 +3,214 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Tokens vs. Shares: A New Way to Own the Future of Tech — Dragonfly Asset Management</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Source+Sans+3:wght@300;400;500;600;700&family=Source+Serif+4:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+<title>Tokens vs. Shares: A New Way to Own the Future of Tech | Dragonfly Asset Management</title>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Source+Sans+3:wght@300;400;600;700&family=Source+Serif+4:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
   :root {
     --bg: #0a1118;
-    --bg-elev: #111a23;
-    --bg-card: #0f1820;
-    --rule: #1f2a36;
-    --text: #e6e8ec;
-    --text-muted: #9aa3ad;
-    --text-dim: #6c7682;
+    --bg-card: #0d161e;
     --gold: #b8976a;
+    --gold-soft: #d4b887;
     --green: #4a9d6e;
-    --display: 'Oswald', sans-serif;
-    --ui: 'Source Sans 3', sans-serif;
-    --body: 'Source Serif 4', serif;
+    --green-soft: #5fb784;
+    --ink: #e8edf2;
+    --ink-body: #c8d0d8;
+    --ink-dim: #8994a0;
+    --border: #1a2530;
   }
-
-  * { box-sizing: border-box; }
-
-  html, body {
-    margin: 0;
-    padding: 0;
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
     background: var(--bg);
-    color: var(--text);
-    font-family: var(--body);
-    font-size: 17px;
-    line-height: 1.75;
+    color: var(--ink-body);
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-size: 19px;
+    line-height: 1.8;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
+  .wrap { max-width: 720px; margin: 0 auto; padding: 56px 28px 80px; }
 
-  .page {
-    max-width: 760px;
-    margin: 0 auto;
-    padding: 56px 28px 72px;
+  .pub-mark {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 600; font-size: 13px; letter-spacing: 0.22em;
+    color: var(--gold); text-transform: uppercase; margin-bottom: 40px;
   }
+  .pub-mark::after { content: ''; display: block; width: 30px; height: 1px; background: var(--gold); margin-top: 8px; }
 
-  /* Masthead */
-  .masthead {
-    border-bottom: 1px solid var(--rule);
-    padding-bottom: 22px;
-    margin-bottom: 44px;
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    flex-wrap: wrap;
-    gap: 12px;
-  }
-  .brand {
-    font-family: var(--ui);
-    font-size: 13px;
-    letter-spacing: 0.22em;
-    font-weight: 600;
-    color: var(--gold);
-    text-transform: uppercase;
-  }
-  .kicker {
-    font-family: var(--ui);
-    font-size: 13px;
-    color: var(--text-muted);
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-  }
-
-  /* Title block */
-  .title-block {
-    margin-bottom: 36px;
-  }
-  h1.title {
-    font-family: var(--display);
-    font-weight: 600;
-    font-size: clamp(34px, 5vw, 52px);
-    line-height: 1.1;
-    margin: 0 0 22px;
-    color: var(--text);
-    letter-spacing: -0.005em;
+  h1.headline {
+    font-family: 'Oswald', sans-serif; font-weight: 600; font-size: 42px;
+    line-height: 1.14; color: var(--ink); letter-spacing: -0.01em; margin-bottom: 22px;
   }
   .byline {
-    font-family: var(--ui);
-    font-size: 14px;
-    color: var(--text-muted);
-    letter-spacing: 0.04em;
-    display: flex;
-    align-items: center;
-    gap: 14px;
-    flex-wrap: wrap;
+    font-family: 'Source Sans 3', sans-serif; font-size: 14px; letter-spacing: 0.04em;
+    color: var(--ink-dim); text-transform: uppercase;
+    padding-bottom: 28px; border-bottom: 1px solid var(--border); margin-bottom: 8px;
   }
-  .byline .author {
-    color: var(--gold);
-    font-weight: 600;
-    letter-spacing: 0.06em;
-  }
-  .byline .dot {
-    color: var(--text-dim);
-  }
+  .byline strong { color: var(--gold-soft); font-weight: 600; }
 
-  /* Headings inside body */
+  p { margin: 26px 0; color: var(--ink-body); }
+  strong, b { color: var(--ink); font-weight: 600; }
+  em { color: var(--gold-soft); font-style: italic; }
+  a { color: var(--gold-soft); text-decoration: none; border-bottom: 1px solid var(--border); }
+  a:hover { color: var(--gold); border-bottom-color: var(--gold); }
+
   h2 {
-    font-family: var(--display);
-    font-weight: 500;
-    font-size: clamp(24px, 3vw, 30px);
-    line-height: 1.25;
-    margin: 56px 0 8px;
-    color: var(--gold);
-    letter-spacing: 0.005em;
+    font-family: 'Oswald', sans-serif; font-weight: 500; font-size: 27px;
+    line-height: 1.28; color: var(--gold-soft); margin: 52px 0 8px; letter-spacing: 0.01em;
   }
-  h2 + .h2-rule {
-    height: 1px;
-    width: 64px;
-    background: var(--gold);
-    border: none;
-    margin: 0 0 22px;
-    opacity: 0.6;
-  }
+  h2::after { content: ''; display: block; width: 48px; height: 2px; background: var(--gold); margin-top: 14px; }
 
-  p { margin: 0 0 20px; }
+  ul { margin: 26px 0; padding-left: 0; list-style: none; }
+  li { position: relative; margin: 16px 0; padding-left: 26px; color: var(--ink-body); }
+  li::before { content: ''; position: absolute; left: 4px; top: 14px; width: 7px; height: 7px; background: var(--gold); transform: rotate(45deg); }
+  li strong { color: var(--ink); }
 
-  /* Hero image */
-  .hero-img {
-    margin: 0 0 44px;
-    border-radius: 4px;
-    overflow: hidden;
-    background: var(--bg-card);
-  }
-  .hero-img img {
-    display: block;
-    width: 100%;
-    height: auto;
-  }
-
-  /* Inline figure */
-  .figure {
-    margin: 32px 0;
-    background: var(--bg-card);
-    border-radius: 4px;
-    overflow: hidden;
-  }
-  .figure img {
-    display: block;
-    width: 100%;
-    height: auto;
-  }
-
-  /* Placeholder boxes when no image yet */
-  .img-placeholder {
-    background: var(--bg-elev);
-    border: 1px dashed var(--rule);
-    border-radius: 4px;
-    padding: 56px 24px;
-    text-align: center;
-    font-family: var(--ui);
-    font-size: 13px;
-    color: var(--text-dim);
-    margin: 0 0 44px;
-    letter-spacing: 0.04em;
-  }
-  .img-placeholder.inline { margin: 32px 0; }
-
-  /* Pullquote — gold side-rule, italic */
   .pullquote {
-    font-family: var(--body);
-    font-style: italic;
-    font-size: 19px;
-    line-height: 1.55;
-    color: var(--gold);
-    border-left: 3px solid var(--gold);
-    padding: 10px 0 10px 22px;
-    margin: 32px 0;
-    font-weight: 500;
-  }
-  .pullquote.center {
-    text-align: center;
-    border-left: none;
-    border-top: 1px solid var(--gold);
-    border-bottom: 1px solid var(--gold);
-    padding: 26px 12px;
-    margin: 40px 0;
-    color: var(--green);
-    font-weight: 500;
+    margin: 40px 0; padding: 6px 0 6px 28px; border-left: 3px solid var(--gold);
+    font-style: italic; font-size: 20px; line-height: 1.55; color: var(--gold-soft);
   }
 
-  /* Bulleted list */
-  ul.article-list {
-    list-style: none;
-    padding: 0;
-    margin: 24px 0;
+  .green-quote {
+    margin: 48px 0; padding: 28px 24px; text-align: center;
+    border-top: 1px solid var(--gold); border-bottom: 1px solid var(--gold);
+    font-style: italic; font-size: 21px; line-height: 1.5; color: var(--green-soft);
   }
-  ul.article-list li {
-    position: relative;
-    padding: 8px 0 8px 24px;
-    margin-bottom: 14px;
-    line-height: 1.65;
-  }
-  ul.article-list li::before {
-    content: "•";
-    color: var(--gold);
-    position: absolute;
-    left: 4px;
-    top: 6px;
-    font-size: 20px;
-    line-height: 1;
-  }
-  ul.article-list li strong {
-    color: var(--gold);
-    font-family: var(--ui);
-    font-weight: 600;
-  }
+  .green-quote span { display: block; }
+  .green-quote span + span { margin-top: 16px; }
 
-  /* Footer */
-  .footer {
-    margin-top: 72px;
-    padding-top: 24px;
-    border-top: 1px solid var(--rule);
-    font-family: var(--ui);
-    font-size: 12px;
-    color: var(--text-dim);
-    text-align: center;
-    letter-spacing: 0.05em;
+  figure { margin: 40px 0; }
+  figure img { display: block; width: 100%; height: auto; border: 1px solid var(--border); border-radius: 4px; background: var(--bg-card); }
+
+  .signoff { margin-top: 48px; padding-top: 28px; border-top: 1px solid var(--border); }
+  .signoff p { font-style: italic; font-size: 15px; color: var(--ink-dim); margin: 14px 0; }
+
+  .foot { margin-top: 64px; padding-top: 28px; border-top: 1px solid var(--border); text-align: center; }
+  .foot-mark { font-family: 'Oswald', sans-serif; font-size: 12px; letter-spacing: 0.28em; color: var(--gold); text-transform: uppercase; }
+
+  @media (max-width: 600px) {
+    .wrap { padding: 40px 20px 60px; }
+    h1.headline { font-size: 30px; }
+    body { font-size: 18px; }
+    .pullquote, .green-quote { font-size: 18px; }
   }
-  .footer span { color: var(--gold); }
-
-  a { color: var(--gold); text-decoration: none; }
-  a:hover { text-decoration: underline; }
-
-  strong { color: var(--text); font-weight: 600; }
-  em { color: inherit; }
 </style>
 </head>
 <body>
-<div class="page">
+  <div class="wrap">
 
-  <!-- Masthead -->
-  <div class="masthead">
-    <span class="brand">Dragonfly Asset Management</span>
-    <span class="kicker">Article · January 2026</span>
-  </div>
+    <div class="pub-mark">Dragonfly Asset Management</div>
 
-  <!-- Title -->
-  <div class="title-block">
-    <h1 class="title">Tokens vs. Shares: A New Way to Own the Future of Tech</h1>
-    <div class="byline">
-      <span class="author">By PTLIB</span>
-      <span class="dot">·</span>
-      <span>12 January 2026</span>
-      <span class="dot">·</span>
-      <span>10 min read</span>
+    <h1 class="headline">Tokens vs. Shares: A New Way to Own the Future of Tech</h1>
+    <div class="byline">By <strong>PTLIB</strong> &nbsp;·&nbsp; 12 January 2026 &nbsp;·&nbsp; 10 min read</div>
+
+    <figure><img src="img-1.png" alt="Tokens versus shares"></figure>
+
+    <p>In the world of investing, shares (or stocks) have long been the go-to way to own a piece of a company. Whether you are buying shares in an established business like Apple or Tesla or in an unlisted startup, you’re essentially getting a slice of ownership that comes with potential perks like dividends (a share of profits), voting rights on big decisions, and the chance to benefit from the company’s growth.</p>
+
+    <p>But in the blockchain space, things work a bit differently: instead of shares, projects often issue tokens that are liquid and trade on blockchain networks like Solana or Ethereum. These tokens represent a stake in a decentralised network or protocol, but they’re not exactly the same as traditional shares. Although regulations and valuation methods are still evolving, tokens offer unique advantages and their popularity is increasing.</p>
+
+    <div class="green-quote">Tokens offer investors attractive exposure to explosive growth, much like shares do but with the added benefit that they are liquid and offer access to the exciting earlier stages of growth (previously the preserve of well-connected VC investors).</div>
+
+    <h2>Equity vs Crypto IOUs: Rights, Risks, and Real-World Realities</h2>
+
+    <p>Shares represent actual ownership in a company, conferring legal rights such as entitlement to cash flow (company profits), dividends (periodic distributions), and participation in governance (voting on corporate matters). In cases of company success, shareholders benefit accordingly, whereas failure may result in losses. However, it is important to note that these legal protections are subject to practical limitations. Founders and management retain significant discretion over profit allocation — deciding whether profits are distributed or reinvested — which can materially affect shareholder returns. Consequently, these legal safeguards typically assert their full effect primarily during bankruptcy proceedings, at which point residual value for shareholders, especially in early-stage companies, may be minimal.</p>
+
+    <p>In contrast, tokens often function as “Cryptographic IOUs,” representing a claim to value within a project’s ecosystem rather than direct ownership. For example, in projects such as Helium (token ticker HNT) — a decentralised wireless network — holding tokens enables network participation but does not guarantee the same robust rights afforded to share ownership. As highlighted by Helium CEO Amir Haleem, token holders face uncertainty, as project leadership retains the authority to modify network rules at any time. Nonetheless, even traditional equity holders may encounter analogous risks, since company leadership can alter strategies, adjust spending, or make decisions that influence shareholder value. In essence, the alignment of incentives between tokens and equity is already evident in many startup environments.</p>
+
+    <h2>Shared Incentives: Tokens Already Mimic Start-up Equity</h2>
+
+    <figure><img src="img-2.png" alt="Tokens mimicking start-up equity"></figure>
+
+    <p>As Charlie Munger, one of the World’s most successful investors, pointed out: incentives drive commercial outcomes more reliably than any other factor. Therefore, despite tokens not having the same legal protections as shares, we are increasingly seeing in practice that Crypto protocols invariably take actions in favour of token holders.</p>
+
+    <div class="pullquote">As more projects align incentives between token holders and the underlying business, the lines between tokens and shares are blurring.</div>
+
+    <p>This is because blockchain protocol founders must prioritise token holders just as company founders prioritise shareholders. Tokens, like shares, fund growth, compensate employees, and often make up a significant part of a founder’s net worth. As incentives drive outcomes, protocols increasingly reward token holders, even without the legal protections shares offer. The gap between tokens and shares is narrowing, and these similarities may grow — potentially offering new tangible benefits and valuation uplift to token holders. To illustrate, let’s review the status quo and recent real-world examples.</p>
+
+    <h2>Tokens Evolving: Purpose, Governance, Regulation</h2>
+
+    <p>At the current time, the role of tokens remains largely unstandardised, giving rise to what many describe as a token “identity crisis” — a subject of considerable discussion within the industry. Historically, some tokens functioned primarily as governance tools, allowing holders to vote on protocol changes, whereas others served as utility tokens, facilitating transactions within networks.</p>
+
+    <div class="pullquote">Investors face the challenge that token roles are not yet standardised, but the market is rapidly evolving, with more tokens shifting from purely governance to value capture.</div>
+
+    <p>Increasingly, however, tokens are encompassing multiple roles, linking participation in network governance with the ability to influence a protocol’s future direction. Debates frequently focus on the complexities and inconsistencies of token governance, and the fact that token governance can be messy, with no strict laws like in traditional stocks.</p>
+
+    <p>There is a historical reason why tokens didn’t brazenly shout about how they are tied to protocol value. For much of the 2020s, the U.S. Securities and Exchange Commission (SEC) under Chair Gary Gensler adopted a highly combative stance toward the Crypto industry, treating many tokens as unregistered securities under the Howey Test. Gensler’s approach emphasised enforcement over guidance, leading to high-profile lawsuits against major players like Coinbase, Binance, and Ripple, where the SEC argued that tokens like XRP or those issued in ICOs (Initial Coin Offerings) were essentially securities sold without proper registration, disclosure, or investor protections.</p>
+
+    <div class="pullquote">The SEC’s approach created a chilling effect: projects avoided overtly linking tokens to revenue streams, dividends, or direct economic benefits to evade SEC scrutiny and potential classification as securities, which could trigger hefty fines, delisting, or shutdowns.</div>
+
+    <p>Under Gensler, the SEC’s “regulation by enforcement” strategy — filing over 100 actions against Crypto firms — forced founders to downplay revenue ties, fearing any hint of profit could invite raids under the “investment contract” label. Without a clear regulatory path, tokens were marketed strictly as utilities for governance voting or network access.</p>
+
+    <p>But by 2026, this has all shifted dramatically with a new administration ushering in a dramatically more welcoming regulatory era. A pro-innovation SEC chair replaced Gensler, prioritising collaboration over confrontation. Landmark legislation like the Financial Innovation and Technology for the 21st Century Act (FIT21), passed in 2025, clarified token classifications, carving out exemptions for decentralised networks and utility tokens while providing safe harbours for revenue-sharing models that don’t mimic securities. The Commodity Futures Trading Commission (CFTC) gained expanded oversight for non-security tokens, fostering a balanced framework that encourages on-chain revenue accrual without the fear of retroactive enforcement. This “golden window,” has seen the SEC pivot to guidance documents for token issuers, partnering with industry groups to define “real yield” mechanisms like fee switches and buybacks.</p>
+
+    <div class="green-quote">
+      <span>Projects now openly tout revenue ties, with the administration’s emphasis on blockchain as a strategic tech asset — echoed in executive orders promoting U.S. leadership in digital assets — drawing institutional capital and reducing offshore flight.</span>
+      <span>The result? Tokens are evolving faster, with regulators viewing them as tools for economic growth rather than threats, paving the way for hybrid models that blend Crypto’s agility with equity-like clarity.</span>
     </div>
+
+    <p>Let’s deep dive into how token models are evolving to address longstanding issues of value accrual, investor protections, and regulatory compliance, providing real-world examples of token innovation, explaining the rise of buybacks as a starting point and speculating on future directions toward more equity-like structures.</p>
+
+    <h2>The Evolution of Tokens: From Lacking Rights to Equity-Like Ownership</h2>
+
+    <p>Traditional tokens have long struggled to capture protocol revenues or grant holders meaningful claims on those earnings, eroding trust and making it difficult to assess their long-term worth. This disconnect has fuelled scepticism, as tokens were more often seen as speculative assets than true stakes in a project’s success.</p>
+
+    <h2>Buybacks as an Initial Solution</h2>
+
+    <p>In response, buybacks emerged as an early mechanism to signal commitment and align incentives. By using protocol revenues to repurchase and burn tokens, projects could create sustained buying pressure and demonstrate that holders directly benefit from growth.</p>
+
+    <p>A prime example is Hyperliquid. The exchange committed to ongoing buybacks, which propelled its token’s performance. This wasn’t novel (other protocols had tried discretionary or small-scale buybacks), but Hyperliquid’s approach was aggressive and programmatic, serving as a “big signal to the market that this token is valuable.” It addressed the “why your token is not [expletive]” question by tying revenues directly to token economics. Moreover, the size of the buybacks was significantly larger than anything seen previously in the sector simply due to the fact that Hyperliquid was wildly successful, generating over $840m in 2025, just two years since launch.</p>
+
+    <div class="pullquote">Broader Context: Buybacks gained traction amid a “golden age of application investing,” where apps that generated meaningful revenues could directly benefit token holders. However, the problem remained that these buybacks were often “discretionary” and insufficient, pushing the need for more robust models.</div>
+
+    <h2>Evolving Toward Ownership Coins and Structured Models</h2>
+
+    <p>Encouragingly, tokens are maturing into “ownership coins” — hybrid instruments that blend equity-like benefits (such as transparency, protections, and direct value flow) with blockchain’s liquidity and programmability. This shift, partly driven by regulatory changes, blurs the lines between tokens and traditional shares, attracting higher-quality founders and investors by reducing adverse selection — where only low-ambition projects opt for lax models.</p>
+
+    <h2>Innovative Examples Illustrate This Progression:</h2>
+
+    <ul>
+      <li><strong>Lighter’s USC Corp Model:</strong> Launched its token from a U.S. corporation (USC Corp), explicitly committing to accrue value through revenues and operations. This “onchain company” model avoids full decentralisation pretence, focusing on building profitable businesses with tokens as a liquid stake.</li>
+      <li><strong>MetaDAO’s Stamp Model:</strong> Using for-profit foundations (a departure from non-profit norms), it incorporates market-based governance for key decisions like monthly budgets, while mandating transparency (e.g., fixed $250K USDC stipends for salaries).</li>
+      <li><strong>Solana’s “Everything Chain” Model:</strong> With SOL tokens capturing fees from spot trading, perpetual futures, and listings, akin to a stock exchange’s value accrual.</li>
+    </ul>
+
+    <div class="green-quote">
+      <span>Overall, the token evolution is a maturation process: from buyback “Band-Aids” to structured ownership models, potentially culminating in tokenised equity ecosystems.</span>
+      <span>The big draw? Tokens give earlier and wider access to fast-growing sectors like DeFi and AI networks, with fewer entry barriers than stocks. No brokers or minimum investments are needed, and settlement happens almost instantly.</span>
+    </div>
+
+    <p>Perhaps as a direct result of a shift in regulatory approach, there are many signs that the distinctions between Crypto tokens and company shares are blurring. Many in the industry call this change the “revenue meta”: a bullish shift where tokens transparently accrue real value through fee switches and profit-sharing.</p>
+
+    <h2>What Happens When Token Holders Aren’t Happy: AAVE’s Governance Showdown</h2>
+
+    <p>Despite the lack of clarity and standardisation, it’s a mistake to think token holders don’t already today have the power to effect change. Let’s outline a recent example where token holders used their power.</p>
+
+    <p>Aave is one of the leading decentralised finance (DeFi) lending protocols — already large enough to rank as the 44th largest bank in the World. Aave generates revenue through various streams, primarily from its core activities like interest rate spreads on loans, flash loan fees, and liquidation penalties. These fees have been substantial, with Aave capturing over $885 million in cumulative fees in 2025 alone, representing about 52% of all lending protocol fees across DeFi — more than the next five competitors combined.</p>
+
+    <p>To align incentives, Aave uses a portion of its revenue for ongoing token buybacks, reducing supply and benefiting AAVE holders. However, tensions arose over an estimated $10m in annual “non-protocol” revenue that was diverted away from the DAO (decentralised autonomous organisation) treasury to a private company (Aave Labs). This sparked a governance dispute in late 2025, dubbed Aave’s “civil war,” with the conflict highlighting ambiguities over who owns what: the DAO controls on-chain contracts and risk parameters, but Aave Labs holds the brand, IP, domains and frontend distribution.</p>
+
+    <p>In response to pressure from token holders, on January 2, 2026, Aave Labs committed to sharing non-protocol revenue with token holders via a formal proposal for distributions, buybacks, or rewards, plus safeguards on IP rights. Token holder reactions have been mostly positive, with AAVE’s price gaining 10%. This change potentially positions Aave as a model for enhancing token holder incentives in a maturing ecosystem.</p>
+
+    <div class="pullquote">While investors dislike ambiguity on rights and returns, the situation is not too dissimilar to examples of excessive compensation arrangements of key personnel in small companies. In addition, the magnitude of the fees in question — $10m “diverted” versus $885m earned annually — illustrates that the vast majority of protocol revenues still went to benefit token holders.</div>
+
+    <h2>The Path Forward: Tokens Maturing into Equity-Like Assets</h2>
+
+    <p>Given the monumental change in regulatory approach towards Crypto in the US, projects are now able to openly reference revenue ties, supported by an administration that recognises blockchain technology as a strategic asset for national growth. As a result, tokens are evolving at an accelerated pace, with regulators increasingly viewing them as instruments for economic development rather than sources of risk. This progress is facilitating the emergence of hybrid models that combine the dynamism of Cryptocurrency with the stability characteristics of equity-based systems.</p>
+
+    <p>It’s early, and tokens aren’t perfect yet. And despite progress, challenges and downsides exist for example, some top founders may favour VC-backed “carte blanche” over more stringent token governance constraints. Meanwhile, governance can be chaotic (as seen in Aave’s debates), regulations are evolving, and not all tokens will succeed — many might fade like overhyped stocks. But the incentives are undoubtedly aligning: projects want loyal token holders to maximise token value and drive growth, just like companies court shareholders for similar reasons. As more tokens tie into real cash flows, dividends, and governance, they’ll offer similar attractions to shares, with the added bonus of blockchain’s speed and accessibility.</p>
+
+    <p>For investors, tokens unlock explosive exposure to tomorrow’s breakthroughs — like owning stakes in the new internet’s core infrastructure. They’re not replacing shares, but evolving alongside them, empowering everyday people to claim a slice of the future’s giants.</p>
+
+    <div class="signoff">
+      <p>PTLIB is CIO OF Dragonfly Asset Management.</p>
+      <p>DISCLAIMER: This content is for EDUCATIONAL AND ENTERTAINMENT PURPOSES ONLY and nothing contained in this blog should be construed as investment advice. Any reference to an investment’s past or potential performance is not, and should not be construed as, a recommendation or as a guarantee of any specific outcome or profit.</p>
+    </div>
+
+    <div class="foot">
+      <div class="foot-mark">Dragonfly Asset Management</div>
+    </div>
+
   </div>
-
-  <!-- Hero image -->
-  <div class="hero-img">
-    <img src="images/hero.png" alt="Tokens vs. Shares hero image">
-  </div>
-
-  <!-- Lead paragraphs -->
-  <p>In the world of investing, shares (or stocks) have long been the go-to way to own a piece of a company. Whether you are buying shares in an established business like Apple or Tesla or in an unlisted startup, you're essentially getting a slice of ownership that comes with potential perks like dividends (a share of profits), voting rights on big decisions, and the chance to benefit from the company's growth.</p>
-
-  <p>But in the blockchain space, things work a bit differently: instead of shares, projects often issue tokens that are liquid and trade on blockchain networks like Solana or Ethereum. These tokens represent a stake in a decentralised network or protocol, but they're not exactly the same as traditional shares. Although regulations and valuation methods are still evolving, tokens offer unique advantages and their popularity is increasing.</p>
-
-  <p class="pullquote center">Tokens offer investors attractive exposure to explosive growth, much like shares do but with the added benefit that they are liquid and offer access to the exciting earlier stages of growth (previously the preserve of well-connected VC investors).</p>
-
-  <h2>Equity vs Crypto IOUs: Rights, Risks, and Real-World Realities</h2>
-  <hr class="h2-rule">
-
-  <p>Shares represent actual ownership in a company, conferring legal rights such as entitlement to cash flow (company profits), dividends (periodic distributions), and participation in governance (voting on corporate matters). In cases of company success, shareholders benefit accordingly, whereas failure may result in losses. However, it is important to note that these legal protections are subject to practical limitations. Founders and management retain significant discretion over profit allocation — deciding whether profits are distributed or reinvested — which can materially affect shareholder returns. Consequently, these legal safeguards typically assert their full effect primarily during bankruptcy proceedings, at which point residual value for shareholders, especially in early-stage companies, may be minimal.</p>
-
-  <p>In contrast, tokens often function as "Cryptographic IOUs," representing a claim to value within a project's ecosystem rather than direct ownership. For example, in projects such as Helium (token ticker HNT) — a decentralised wireless network — holding tokens enables network participation but does not guarantee the same robust rights afforded to share ownership. As highlighted by Helium CEO Amir Haleem, token holders face uncertainty, as project leadership retains the authority to modify network rules at any time. Nonetheless, even traditional equity holders may encounter analogous risks, since company leadership can alter strategies, adjust spending, or make decisions that influence shareholder value. In essence, the alignment of incentives between tokens and equity is already evident in many startup environments.</p>
-
-  <h2>Shared Incentives: Tokens Already Mimic Start-up Equity</h2>
-  <hr class="h2-rule">
-
-  <!-- Second article image -->
-  <div class="figure">
-    <img src="images/incentives.png" alt="Shared Incentives illustration">
-  </div>
-
-  <p>As Charlie Munger, one of the World's most successful investors, pointed out: incentives drive commercial outcomes more reliably than any other factor. Therefore, despite tokens not having the same legal protections as shares, we are increasingly seeing in practice that Crypto protocols invariably take actions in favour of token holders.</p>
-
-  <p class="pullquote">As more projects align incentives between token holders and the underlying business, the lines between tokens and shares are blurring.</p>
-
-  <p>This is because blockchain protocol founders must prioritise token holders just as company founders prioritise shareholders. Tokens, like shares, fund growth, compensate employees, and often make up a significant part of a founder's net worth. As incentives drive outcomes, protocols increasingly reward token holders, even without the legal protections shares offer. The gap between tokens and shares is narrowing, and these similarities may grow — potentially offering new tangible benefits and valuation uplift to token holders. To illustrate, let's review the status quo and recent real-world examples.</p>
-
-  <h2>Tokens Evolving: Purpose, Governance, Regulation</h2>
-  <hr class="h2-rule">
-
-  <p>At the current time, the role of tokens remains largely unstandardised, giving rise to what many describe as a token "identity crisis" — a subject of considerable discussion within the industry. Historically, some tokens functioned primarily as governance tools, allowing holders to vote on protocol changes, whereas others served as utility tokens, facilitating transactions within networks.</p>
-
-  <p class="pullquote">Investors face the challenge that token roles are not yet standardised, but the market is rapidly evolving, with more tokens shifting from purely governance to value capture.</p>
-
-  <p>Increasingly, however, tokens are encompassing multiple roles, linking participation in network governance with the ability to influence a protocol's future direction. Debates frequently focus on the complexities and inconsistencies of token governance, and the fact that token governance can be messy, with no strict laws like in traditional stocks.</p>
-
-  <p>There is a historical reason why tokens didn't brazenly shout about how they are tied to protocol value. For much of the 2020s, the U.S. Securities and Exchange Commission (SEC) under Chair Gary Gensler adopted a highly combative stance toward the Crypto industry, treating many tokens as unregistered securities under the Howey Test. Gensler's approach emphasised enforcement over guidance, leading to high-profile lawsuits against major players like Coinbase, Binance, and Ripple, where the SEC argued that tokens like XRP or those issued in ICOs (Initial Coin Offerings) were essentially securities sold without proper registration, disclosure, or investor protections.</p>
-
-  <p class="pullquote">The SEC's approach created a chilling effect: projects avoided overtly linking tokens to revenue streams, dividends, or direct economic benefits to evade SEC scrutiny and potential classification as securities, which could trigger hefty fines, delisting, or shutdowns.</p>
-
-  <p>Under Gensler, the SEC's "regulation by enforcement" strategy — filing over 100 actions against Crypto firms — forced founders to downplay revenue ties, fearing any hint of profit could invite raids under the "investment contract" label. Without a clear regulatory path, tokens were marketed strictly as utilities for governance voting or network access.</p>
-
-  <p>But by 2026, this has all shifted dramatically with a new administration ushering in a dramatically more welcoming regulatory era. A pro-innovation SEC chair replaced Gensler, prioritising collaboration over confrontation. Landmark legislation like the Financial Innovation and Technology for the 21st Century Act (FIT21), passed in 2025, clarified token classifications, carving out exemptions for decentralised networks and utility tokens while providing safe harbours for revenue-sharing models that don't mimic securities. The Commodity Futures Trading Commission (CFTC) gained expanded oversight for non-security tokens, fostering a balanced framework that encourages on-chain revenue accrual without the fear of retroactive enforcement. This "golden window," has seen the SEC pivot to guidance documents for token issuers, partnering with industry groups to define "real yield" mechanisms like fee switches and buybacks.</p>
-
-  <p class="pullquote">Projects now openly tout revenue ties, with the administration's emphasis on blockchain as a strategic tech asset — echoed in executive orders promoting U.S. leadership in digital assets — drawing institutional capital and reducing offshore flight.</p>
-
-  <p class="pullquote">The result? Tokens are evolving faster, with regulators viewing them as tools for economic growth rather than threats, paving the way for hybrid models that blend Crypto's agility with equity-like clarity.</p>
-
-  <p>Let's deep dive into how token models are evolving to address longstanding issues of value accrual, investor protections, and regulatory compliance, providing real-world examples of token innovation, explaining the rise of buybacks as a starting point and speculating on future directions toward more equity-like structures.</p>
-
-  <h2>The Evolution of Tokens: From Lacking Rights to Equity-Like Ownership</h2>
-  <hr class="h2-rule">
-
-  <p>Traditional tokens have long struggled to capture protocol revenues or grant holders meaningful claims on those earnings, eroding trust and making it difficult to assess their long-term worth. This disconnect has fuelled scepticism, as tokens were more often seen as speculative assets than true stakes in a project's success.</p>
-
-  <h2>Buybacks as an Initial Solution</h2>
-  <hr class="h2-rule">
-
-  <p>In response, buybacks emerged as an early mechanism to signal commitment and align incentives. By using protocol revenues to repurchase and burn tokens, projects could create sustained buying pressure and demonstrate that holders directly benefit from growth.</p>
-
-  <p>A prime example is Hyperliquid. The exchange committed to ongoing buybacks, which propelled its token's performance. This wasn't novel (other protocols had tried discretionary or small-scale buybacks), but Hyperliquid's approach was aggressive and programmatic, serving as a "big signal to the market that this token is valuable." It addressed the "why your token is not [expletive]" question by tying revenues directly to token economics. Moreover, the size of the buybacks was significantly larger than anything seen previously in the sector simply due to the fact that Hyperliquid was wildly successful, generating over $840m in 2025, just two years since launch.</p>
-
-  <p class="pullquote">Broader Context: Buybacks gained traction amid a "golden age of application investing," where apps that generated meaningful revenues could directly benefit token holders. However, the problem remained that these buybacks were often "discretionary" and insufficient, pushing the need for more robust models.</p>
-
-  <h2>Evolving Toward Ownership Coins and Structured Models</h2>
-  <hr class="h2-rule">
-
-  <p>Encouragingly, tokens are maturing into "ownership coins" — hybrid instruments that blend equity-like benefits (such as transparency, protections, and direct value flow) with blockchain's liquidity and programmability. This shift, partly driven by regulatory changes, blurs the lines between tokens and traditional shares, attracting higher-quality founders and investors by reducing adverse selection — where only low-ambition projects opt for lax models.</p>
-
-  <h2>Innovative Examples Illustrate This Progression:</h2>
-  <hr class="h2-rule">
-
-  <ul class="article-list">
-    <li><strong>Lighter's USC Corp Model:</strong> Launched its token from a U.S. corporation (USC Corp), explicitly committing to accrue value through revenues and operations. This "onchain company" model avoids full decentralisation pretence, focusing on building profitable businesses with tokens as a liquid stake.</li>
-    <li><strong>MetaDAO's Stamp Model:</strong> Using for-profit foundations (a departure from non-profit norms), it incorporates market-based governance for key decisions like monthly budgets, while mandating transparency (e.g., fixed $250K USDC stipends for salaries).</li>
-    <li><strong>Solana's "Everything Chain" Model:</strong> With SOL tokens capturing fees from spot trading, perpetual futures, and listings, akin to a stock exchange's value accrual.</li>
-  </ul>
-
-  <p class="pullquote">Overall, the token evolution is a maturation process: from buyback "Band-Aids" to structured ownership models, potentially culminating in tokenised equity ecosystems.</p>
-
-  <p class="pullquote">The big draw? Tokens give earlier and wider access to fast-growing sectors like DeFi and AI networks, with fewer entry barriers than stocks. No brokers or minimum investments are needed, and settlement happens almost instantly.</p>
-
-  <p>Perhaps as a direct result of a shift in regulatory approach, there are many signs that the distinctions between Crypto tokens and company shares are blurring. Many in the industry call this change the "revenue meta": a bullish shift where tokens transparently accrue real value through fee switches and profit-sharing.</p>
-
-  <h2>What Happens When Token Holders Aren't Happy: AAVE's Governance Showdown</h2>
-  <hr class="h2-rule">
-
-  <p>Despite the lack of clarity and standardisation, it's a mistake to think token holders don't already today have the power to effect change. Let's outline a recent example where token holders used their power.</p>
-
-  <p>Aave is one of the leading decentralised finance (DeFi) lending protocols — already large enough to rank as the 44th largest bank in the World. Aave generates revenue through various streams, primarily from its core activities like interest rate spreads on loans, flash loan fees, and liquidation penalties. These fees have been substantial, with Aave capturing over $885 million in cumulative fees in 2025 alone, representing about 52% of all lending protocol fees across DeFi — more than the next five competitors combined.</p>
-
-  <p>To align incentives, Aave uses a portion of its revenue for ongoing token buybacks, reducing supply and benefiting AAVE holders. However, tensions arose over an estimated $10m in annual "non-protocol" revenue that was diverted away from the DAO (decentralised autonomous organisation) treasury to a private company (Aave Labs). This sparked a governance dispute in late 2025, dubbed Aave's "civil war," with the conflict highlighting ambiguities over who owns what: the DAO controls on-chain contracts and risk parameters, but Aave Labs holds the brand, IP, domains and frontend distribution.</p>
-
-  <p>In response to pressure from token holders, on January 2, 2026, Aave Labs committed to sharing non-protocol revenue with token holders via a formal proposal for distributions, buybacks, or rewards, plus safeguards on IP rights. Token holder reactions have been mostly positive, with AAVE's price gaining 10%. This change potentially positions Aave as a model for enhancing token holder incentives in a maturing ecosystem.</p>
-
-  <p class="pullquote">While investors dislike ambiguity on rights and returns, the situation is not too dissimilar to examples of excessive compensation arrangements of key personnel in small companies. In addition, the magnitude of the fees in question — $10m "diverted" versus $885 earned annually — illustrates that the vast majority of protocol revenues still went to benefit token holders.</p>
-
-  <h2>The Path Forward: Tokens Maturing into Equity-Like Assets</h2>
-  <hr class="h2-rule">
-
-  <p>Given the monumental change in regulatory approach towards Crypto in the US, projects are now able to openly reference revenue ties, supported by an administration that recognises blockchain technology as a strategic asset for national growth. As a result, tokens are evolving at an accelerated pace, with regulators increasingly viewing them as instruments for economic development rather than sources of risk. This progress is facilitating the emergence of hybrid models that combine the dynamism of Cryptocurrency with the stability characteristics of equity-based systems.</p>
-
-  <p>It's early, and tokens aren't perfect yet. And despite progress, challenges and downsides exist for example, some top founders may favour VC-backed "carte blanche" over more stringent token governance constraints. Meanwhile, governance can be chaotic (as seen in Aave's debates), regulations are evolving, and not all tokens will succeed — many might fade like overhyped stocks. But the incentives are undoubtedly aligning: projects want loyal token holders to maximise token value and drive growth, just like companies court shareholders for similar reasons. As more tokens tie into real cash flows, dividends, and governance, they'll offer similar attractions to shares, with the added bonus of blockchain's speed and accessibility.</p>
-
-  <p>For investors, tokens unlock explosive exposure to tomorrow's breakthroughs — like owning stakes in the new internet's core infrastructure. They're not replacing shares, but evolving alongside them, empowering everyday people to claim a slice of the future's giants.</p>
-
-  <!-- Footer -->
-  <div class="footer">
-    <span>Dragonfly Asset Management</span> · By PTLIB · January 2026
-  </div>
-
-</div>
 </body>
 </html>
