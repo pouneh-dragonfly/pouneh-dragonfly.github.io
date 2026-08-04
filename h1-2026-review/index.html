@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dragonfly Asset Management — 2026 Half-Year Review</title>
+<style>
+  /* ───────────────────────────── BASE ───────────────────────────── */
+  :root {
+    --navy: #0B2340;
+    --navy-deep: #061528;
+    --teal: #1E7A8C;
+    --teal-light: #2E9AAD;
+    --gold: #C89F3C;
+    --gold-soft: #E8D9A8;
+    --paper: #FBF9F4;
+    --ink: #1A1A1A;
+    --grey: #6B7280;
+    --grey-light: #D8D5CE;
+    --border: #E5E0D5;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: Georgia, 'Times New Roman', serif;
+    background: var(--paper);
+    color: var(--ink);
+    line-height: 1.7;
+    font-size: 17px;
+  }
+
+  .report {
+    max-width: 820px;
+    margin: 0 auto;
+    background: #ffffff;
+    box-shadow: 0 4px 40px rgba(11, 35, 64, 0.08);
+  }
+
+  a {
+    color: var(--teal);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    text-decoration-thickness: 1px;
+  }
+  a:hover { color: var(--navy); }
+
+  /* ───────────────────────────── COVER ───────────────────────────── */
+  .cover {
+    background: linear-gradient(135deg, var(--navy-deep) 0%, var(--navy) 50%, #0d2a4d 100%);
+    color: white;
+    padding: 100px 70px 80px;
+    position: relative;
+    overflow: hidden;
+    min-height: 760px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .cover::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 6px;
+    background: linear-gradient(90deg, var(--gold) 0%, var(--gold-soft) 50%, var(--gold) 100%);
+  }
+
+  .cover::after {
+    content: '';
+    position: absolute;
+    bottom: -200px; right: -200px;
+    width: 500px; height: 500px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(200, 159, 60, 0.12) 0%, transparent 70%);
+  }
+
+  .cover-brand {
+    font-family: Georgia, serif;
+    font-size: 13px;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: 400;
+    margin-bottom: 70px;
+  }
+
+  .cover-title {
+    font-size: 46px;
+    font-weight: 400;
+    line-height: 1.15;
+    margin-bottom: 24px;
+    letter-spacing: -0.8px;
+  }
+
+  .cover-subtitle {
+    font-size: 22px;
+    font-style: italic;
+    color: var(--gold-soft);
+    margin-bottom: 60px;
+    line-height: 1.4;
+    font-weight: 300;
+    max-width: 600px;
+  }
+
+  .cover-divider {
+    width: 80px;
+    height: 2px;
+    background: var(--gold);
+    margin: 50px 0 30px;
+  }
+
+  .cover-meta {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.75);
+    line-height: 2;
+    letter-spacing: 1px;
+  }
+
+  .cover-meta strong {
+    color: white;
+    font-weight: 400;
+  }
+
+  .cover-footer {
+    font-size: 11px;
+    color: rgba(255, 255, 255, 0.5);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    border-top: 1px solid rgba(200, 159, 60, 0.3);
+    padding-top: 24px;
+    margin-top: 40px;
+  }
+
+  /* ───────────────────────── BODY SECTIONS ───────────────────────── */
+  .section {
+    padding: 60px 70px;
+  }
+
+  .section.alt {
+    background: linear-gradient(180deg, #FBF9F4 0%, #F5F1E8 100%);
+  }
+
+  h1.section-title {
+    font-family: Georgia, serif;
+    font-size: 32px;
+    font-weight: 400;
+    color: var(--navy);
+    margin-bottom: 8px;
+    line-height: 1.2;
+    letter-spacing: -0.3px;
+  }
+
+  .section-eyebrow {
+    font-family: Georgia, serif;
+    font-size: 11px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 12px;
+    font-weight: 400;
+  }
+
+  .section-rule {
+    width: 60px;
+    height: 2px;
+    background: var(--gold);
+    margin: 20px 0 30px;
+  }
+
+  h2.subhead {
+    font-family: Georgia, serif;
+    font-size: 22px;
+    font-weight: 400;
+    color: var(--teal);
+    margin: 40px 0 16px;
+    font-style: italic;
+  }
+
+  p {
+    margin-bottom: 18px;
+    text-align: justify;
+    hyphens: auto;
+  }
+
+  p.lead {
+    font-size: 19px;
+    line-height: 1.6;
+    color: var(--navy);
+    font-style: italic;
+    margin-bottom: 28px;
+    border-left: 3px solid var(--gold);
+    padding-left: 24px;
+  }
+
+  /* ───────────────────────── SALUTATION / SIGN-OFF ───────────────────────── */
+  .salutation {
+    text-align: left;
+    font-size: 18px;
+    color: var(--navy);
+    margin-bottom: 22px;
+  }
+
+  .signoff { text-align: left; margin-top: 10px; }
+  .signoff p { text-align: left; }
+  .signoff .sig-name {
+    font-family: Georgia, serif;
+    font-size: 24px;
+    font-style: italic;
+    color: var(--navy);
+    margin: 22px 0 4px;
+  }
+  .signoff .sig-role {
+    font-size: 14px;
+    color: var(--grey);
+    letter-spacing: 0.5px;
+    margin-bottom: 2px;
+  }
+  .signoff .sig-firm {
+    font-size: 13px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--navy);
+    margin-bottom: 14px;
+  }
+  .signoff .sig-contact {
+    font-size: 12px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--grey);
+  }
+
+  /* ───────────────────────── PULL QUOTES ───────────────────────── */
+  .pullquote {
+    margin: 50px 30px;
+    padding: 30px 0;
+    border-top: 1px solid var(--gold);
+    border-bottom: 1px solid var(--gold);
+    text-align: center;
+  }
+
+  .pullquote-text {
+    font-size: 22px;
+    line-height: 1.5;
+    color: var(--teal);
+    font-style: italic;
+    margin-bottom: 0;
+    font-weight: 400;
+    text-align: center;
+  }
+
+  /* ───────────────────────── AUTHOR ASIDE ───────────────────────── */
+  .aside {
+    background: linear-gradient(135deg, #F5F1E8 0%, #ECE5D2 100%);
+    border-left: 4px solid var(--gold);
+    padding: 26px 32px;
+    margin: 34px 0;
+    border-radius: 4px;
+  }
+  .aside p {
+    font-size: 16px;
+    color: var(--navy);
+    margin-bottom: 12px;
+  }
+  .aside p:last-child { margin-bottom: 0; }
+
+  /* ───────────────────────── DISCLAIMER ───────────────────────── */
+  .disclaimer {
+    background: #F5F1E8;
+    border-top: 4px solid var(--gold);
+    border-bottom: 4px solid var(--gold);
+    padding: 50px 70px;
+    font-size: 13px;
+    line-height: 1.7;
+    color: var(--grey);
+  }
+
+  .disclaimer h3 {
+    font-family: Georgia, serif;
+    font-size: 14px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--navy);
+    margin-bottom: 20px;
+    font-weight: 400;
+  }
+
+  .disclaimer p {
+    margin-bottom: 14px;
+    text-align: justify;
+  }
+
+  /* ───────────────────────── DATA STRIP ───────────────────────── */
+  .data-strip {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+    margin: 40px 0;
+    background: var(--navy);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+
+  .data-cell {
+    padding: 24px 18px;
+    text-align: center;
+    color: white;
+    border-right: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .data-cell:last-child { border-right: none; }
+
+  .data-value {
+    font-family: Georgia, serif;
+    font-size: 28px;
+    color: var(--gold);
+    margin-bottom: 6px;
+    font-weight: 400;
+    line-height: 1;
+  }
+
+  .data-label {
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.7);
+  }
+
+  /* ───────────────────────── DECORATIVE FLOURISH ───────────────────────── */
+  .flourish {
+    text-align: center;
+    margin: 50px 0;
+    color: var(--gold);
+    font-size: 16px;
+    letter-spacing: 12px;
+  }
+
+  /* ───────────────────────── CLOSING / FOOTER ───────────────────────── */
+  .closing {
+    background: var(--navy);
+    color: white;
+    padding: 70px 70px 50px;
+    text-align: center;
+  }
+
+  .closing-mark {
+    font-size: 14px;
+    letter-spacing: 5px;
+    color: var(--gold);
+    margin-bottom: 24px;
+  }
+
+  .closing-text {
+    font-family: Georgia, serif;
+    font-size: 22px;
+    font-style: italic;
+    line-height: 1.5;
+    max-width: 600px;
+    margin: 0 auto 32px;
+    color: rgba(255, 255, 255, 0.92);
+    font-weight: 300;
+  }
+
+  .closing-attribution {
+    font-size: 11px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-top: 30px;
+  }
+
+  .footer {
+    background: var(--navy-deep);
+    color: rgba(255, 255, 255, 0.55);
+    padding: 30px 70px;
+    font-size: 11px;
+    text-align: center;
+    letter-spacing: 1px;
+  }
+
+  /* ───────────────────────── HERO ILLUSTRATION ───────────────────────── */
+  .hero-inline {
+    background: linear-gradient(180deg, var(--navy-deep) 0%, var(--navy) 100%);
+    padding: 40px 30px 36px;
+    text-align: center;
+    border-radius: 4px;
+    margin: 32px 0 36px;
+  }
+
+  .hero-inline svg {
+    max-width: 480px;
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+  }
+
+  .hero-caption {
+    font-family: Georgia, serif;
+    font-size: 11px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-top: 18px;
+  }
+
+  /* ───────────────────────── PRINT ───────────────────────── */
+  @media print {
+    body { background: white; }
+    .report { box-shadow: none; max-width: none; }
+    .section { page-break-inside: avoid; }
+  }
+
+  /* ───────────────────────── MOBILE ───────────────────────── */
+  @media (max-width: 768px) {
+    .cover, .section, .closing, .disclaimer, .footer { padding-left: 30px; padding-right: 30px; }
+    .cover-title { font-size: 38px; }
+    .cover-subtitle { font-size: 18px; }
+    h1.section-title { font-size: 26px; }
+    .data-strip { grid-template-columns: repeat(2, 1fr); }
+    .data-cell { border-bottom: 1px solid rgba(255, 255, 255, 0.08); }
+    .pullquote { margin: 40px 0; }
+    .pullquote-text { font-size: 18px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="report">
+
+  <!-- ═══════════════════════════ COVER ═══════════════════════════ -->
+  <div class="cover">
+    <div>
+      <div class="cover-brand">Dragonfly Asset Management</div>
+      <h1 class="cover-title">The Price Fell, Onchain Building Rose</h1>
+      <p class="cover-subtitle">How digital assets shed a trillion dollars while Wall Street quietly moved in</p>
+      <div class="cover-divider"></div>
+      <div class="cover-meta">
+        <strong>2026 Half-Year Review</strong><br>
+        Investor Letter · January–June 2026
+      </div>
+    </div>
+    <div class="cover-footer">For Professional Investors Only · Strictly Confidential</div>
+  </div>
+
+  <!-- ═══════════════════════════ IMPORTANT INFORMATION ═══════════════════════════ -->
+  <div class="disclaimer">
+    <h3>Important Information</h3>
+    <p>Information in this communication is intended for use only by professional investors as defined by MiFID II. It is not based on the personal circumstances of any person receiving it and does not constitute investment advice or a solicitation to invest. If you are not a professional investor, please disregard this communication.</p>
+    <p>The Dragonfly Digital Assets Fund is authorised and regulated by the Financial Conduct Authority through its appointed AIFM, AK Jensen Investment Management Ltd (FRN 439744). Dragonfly Asset Management is not itself authorised or regulated by the Financial Conduct Authority. Any reference to regulatory status relates solely to the Fund and its AIFM.</p>
+    <p>Figures, valuations and market data are drawn from public third-party sources believed to be reliable as at the date of writing and have not been independently verified; they are subject to change. The Fund and its principals may hold positions in the assets referenced. Past performance is not a reliable indicator of future results, and the value of investments can fall as well as rise.</p>
+  </div>
+
+  <!-- ═══════════════════════════ OPENING LETTER ═══════════════════════════ -->
+  <div class="section">
+    <div class="section-eyebrow">A Letter to Investors</div>
+    <p class="salutation">Dear Valued Investors,</p>
+
+    <p class="lead">If 2025 was a game of two halves, the first six months of 2026 were a tale of two markets running in opposite directions. On one side, Crypto prices fell hard, extending last year's losses under the weight of macro shocks. On the other, the traditional financial establishment spent the half building on Crypto rails faster than at any point in the technology's history. The gap between how prices fared and what market participants were actually doing has rarely been wider. It is also, we believe, the single most important thing to understand about where this sector is heading.</p>
+
+    <p>Below we set out what happened and why, an update on the Fund, the newest conviction theme in the portfolio, and our view on where Crypto goes from here.</p>
+
+    <div class="hero-inline">
+      <svg viewBox="0 0 600 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Conceptual illustration of falling prices and rising onchain building diverging over the half">
+        <defs>
+          <linearGradient id="hy-gold" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#C89F3C" stop-opacity="0.45"/>
+            <stop offset="100%" stop-color="#E8D9A8"/>
+          </linearGradient>
+          <linearGradient id="hy-cool" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#2E9AAD"/>
+            <stop offset="100%" stop-color="#1E7A8C" stop-opacity="0.55"/>
+          </linearGradient>
+        </defs>
+        <!-- faint grid -->
+        <g stroke="#C89F3C" stroke-width="0.3" opacity="0.16">
+          <line x1="55" y1="60" x2="545" y2="60"/>
+          <line x1="55" y1="150" x2="545" y2="150"/>
+          <line x1="55" y1="240" x2="545" y2="240"/>
+        </g>
+        <!-- price: falling -->
+        <path d="M60,72 C220,82 300,138 545,238" fill="none" stroke="url(#hy-cool)" stroke-width="2.6" stroke-linecap="round"/>
+        <!-- onchain building: rising -->
+        <path d="M60,238 C220,228 300,152 545,72" fill="none" stroke="url(#hy-gold)" stroke-width="2.6" stroke-linecap="round"/>
+        <!-- widening-gap marker at right -->
+        <line x1="545" y1="82" x2="545" y2="228" stroke="#E8D9A8" stroke-width="0.6" stroke-dasharray="3 4" opacity="0.55"/>
+        <!-- endpoint dots -->
+        <circle cx="60" cy="72" r="3" fill="#2E9AAD" opacity="0.7"/>
+        <circle cx="60" cy="238" r="3" fill="#C89F3C" opacity="0.7"/>
+        <circle cx="545" cy="238" r="4.5" fill="#2E9AAD"/>
+        <circle cx="545" cy="72" r="4.5" fill="#C89F3C"/>
+        <!-- line labels -->
+        <text x="360" y="212" font-family="Georgia, serif" font-size="11" letter-spacing="2" fill="#2E9AAD">PRICE</text>
+        <text x="300" y="104" font-family="Georgia, serif" font-size="11" letter-spacing="2" fill="#C89F3C">ONCHAIN BUILDING</text>
+      </svg>
+      <div class="hero-caption">Price Fell · Onchain Building Rose</div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════ PART ONE · THE MARKET ═══════════════════════════ -->
+  <div class="section alt">
+    <div class="section-eyebrow">Part One · The Market</div>
+    <h1 class="section-title">A Trillion-Dollar Drawdown, and Why</h1>
+    <div class="section-rule"></div>
+
+    <h2 class="subhead">The damage</h2>
+    <p>The first half of 2026 was one of the weakest starts to a year in memory. Total Crypto market capitalisation fell from around $3.18 trillion in early January to $2.11 trillion by the end of June, erasing more than a trillion dollars. Bitcoin lost roughly a third over the six months to trade near $58,700, leaving it more than 50% below its October peak of $126,000. But the pain fell hardest on the altcoins where the Fund invests. Ethereum dropped more than 40% to around $1,575, and Solana, XRP and most other major non-Bitcoin assets fell by similar margins. Activity thinned alongside prices, with total value locked across decentralised finance contracting from $114.5 billion to $69.4 billion.</p>
+
+    <div class="data-strip">
+      <div class="data-cell">
+        <div class="data-value">−$1T+</div>
+        <div class="data-label">Crypto Mkt Cap</div>
+      </div>
+      <div class="data-cell">
+        <div class="data-value">−33%</div>
+        <div class="data-label">Bitcoin</div>
+      </div>
+      <div class="data-cell">
+        <div class="data-value">−40%+</div>
+        <div class="data-label">Ethereum</div>
+      </div>
+      <div class="data-cell">
+        <div class="data-value">−39%</div>
+        <div class="data-label">DeFi TVL</div>
+      </div>
+    </div>
+
+    <h2 class="subhead">The cause: a macro regime shift, not a Crypto failure</h2>
+    <p>None of this began in Crypto. Residual weakness from President Trump's late-2025 tariffs on China gave way in early February to a sharp, disorderly sell-off, with Bitcoin falling around 18% intraday to near $60,000 as investors took fright at stretched AI and technology valuations in equities. Crypto's correlation to the stock market rose, and as the higher-beta corner of risk, altcoins amplified every move down. Weeks later, US airstrikes on Iran and fears over the Strait of Hormuz pushed energy prices and inflation higher, dashing hopes of easier monetary policy under new Federal Reserve Chair Kevin Warsh. Bitcoin managed a recovery above $80,000 in the Spring before the broader downtrend reasserted itself.</p>
+
+    <p>The flows into Crypto that had powered the prior rally reversed. US spot Bitcoin ETFs suffered their worst quarter of outflows on record, with June the single worst month, and corporate treasury buying of Bitcoin collapsed to almost nothing outside Strategy, which itself came under valuation pressure. With no broad institutional bid of their own, the altcoins simply followed lower.</p>
+
+    <div class="aside">
+      <p>Compounding these pressures was a powerful rotation of risk capital out of high-growth assets such as Crypto and into the AI buildout. Institutional money and speculative capital chased hyperscaler equities, semiconductors and AI infrastructure at historic scale — with AI-related capital expenditure estimates climbing toward $700 billion for the year. Crypto became a convenient source of funds for the dominant narrative of the period, amplifying the price decline already under way.</p>
+    </div>
+
+    <h2 class="subhead">Meanwhile, the buildout was booming</h2>
+    <p>Sentiment took a further knock in April, when two exploits linked to North Korean actors, one draining around $292 million from Kelp and another around $285 million from Solana-based Drift, accounted for a punishing month for security and hit DeFi tokens hardest. Persistent token unlocks added a steady drip of new supply across the complex throughout. And yet, beneath the falling prices, the most consequential half-year of institutional adoption on record was quietly unfolding. Stablecoins kept growing, closing June above $312 billion, and in one of the year's defining moments, more than 140 companies, including Visa, Mastercard, Stripe, BlackRock, BNY and Google, backed a new dollar stablecoin. BlackRock, New York Life and Allfunds expanded their blockchain presence, Coinbase pushed further into tokenised equities, and the CLARITY Act, the most significant piece of US digital-asset legislation yet, cleared the Senate Banking Committee in May on a bipartisan vote, though its path to law remains uncertain.</p>
+
+    <div class="pullquote">
+      <p class="pullquote-text">Wall Street was not selling Crypto. It was furiously building on blockchain pipes.</p>
+    </div>
+
+    <h2 class="subhead">The tell: this time, the market paid for revenue</h2>
+    <p>The most revealing detail sat in the handful of tokens that rose while everything else fell. Through much of 2025, Crypto tokens were marked down indiscriminately, whatever their revenue trajectory. In 2026 that pattern began to break: a select group of protocols with robust and rising revenues finally saw their real-world success reflected in their price. The clearest example was Fund holding Hyperliquid, whose token gained around 160% in the period as its exchange took commanding share of onchain perpetuals, directed its fees into buybacks, and became one of the first of the altcoin large-caps to win regulated spot ETFs, launched by 21Shares, Bitwise and Grayscale in the late Spring which drew inflows even as Bitcoin and Ether ETFs bled. Two further Fund holdings, Morpho and Venice, along with a handful of other cash-generative names, also finished the half higher. The tokens that rose while the market fell shared a single trait: real fast-rising revenue, transparently accruing to the token holder. That is precisely the distinction an active, fundamentals-driven manager exists to capture, and it is the thread that runs through everything that follows.</p>
+  </div>
+
+  <!-- ═══════════════════════════ PART TWO · INSIDE THE FUND ═══════════════════════════ -->
+  <div class="section">
+    <div class="section-eyebrow">Part Two · Inside the Fund</div>
+    <h1 class="section-title">Down Less, and for the Right Reasons</h1>
+    <div class="section-rule"></div>
+
+    <p class="lead">Despite a punishing first half for digital assets, the Dragonfly Digital Assets Fund experienced a significantly lower drawdown than the wider market, falling −26% to 30 June 2026 against −33% for Bitcoin and −39% for the broader altcoin index. That relative resilience came from the Fund's concentration in a handful of high-conviction, fee-generating names that rose even as the market fell.</p>
+
+    <p>Three holdings led the way. Hyperliquid (HYPE), Venice (VVV) and Morpho (MORPHO), among our largest positions by weight, returned +159%, +71% and +50% respectively over the half, each on the back of rapid growth in real, fee-generating usage rather than sentiment.</p>
+
+    <div class="data-strip">
+      <div class="data-cell">
+        <div class="data-value">+159%</div>
+        <div class="data-label">Hyperliquid</div>
+      </div>
+      <div class="data-cell">
+        <div class="data-value">+71%</div>
+        <div class="data-label">Venice</div>
+      </div>
+      <div class="data-cell">
+        <div class="data-value">+50%</div>
+        <div class="data-label">Morpho</div>
+      </div>
+      <div class="data-cell">
+        <div class="data-value">−26%</div>
+        <div class="data-label">Dragonfly Fund</div>
+      </div>
+    </div>
+
+    <p>The specifics matter, because they show why. Hyperliquid generated $320 million of revenue and $1.34 trillion of trading volume in the half, with an aggressive burn programme removing more than 41 million tokens from circulation by May. Venice's rally was driven by genuine consumer traction, more than 3 million registered users, paired with a deflationary token buy-and-burn model and shrinking emissions that made it one of the standout Crypto-AI tokens of the period. Morpho's strength came from its role as the embedded lending layer behind major platforms, including Robinhood Earn and Coinbase, which together have processed over $1.9 billion in loans and pushed protocol TVL past $7 billion by mid-year, underpinning a durable, institution-driven demand base.</p>
+
+    <p>The common thread across all three is the same one that ran through the market commentary above: fast-rising protocol revenue and real-world adoption translating directly into token value, giving these rallies far more fundamental grounding than typical altcoin momentum. Encouragingly, and <a href="https://medium.com/dragonfly-asset-management/tokens-vs-shares-a-new-way-to-own-the-future-of-tech-536a781edfd0" target="_blank" rel="noopener noreferrer">as we have long argued would happen</a>, more and more protocols are moving to reward their token holders directly, steadily widening the pool of altcoins worth owning.</p>
+
+    <div class="aside">
+      <p>It is not only us who now see these tokens for what they are. In February the $940bn AUM Apollo agreed to buy as much as 9% of Morpho, one of the Fund's own holdings, and BlackRock, the world's largest asset manager, bought Uniswap's tokens while listing its tokenised Treasury fund on that protocol. These firms are no longer just building on the rails; they are taking a direct ownership stake in the protocols, the clearest sign yet that TradFi now sees what we have long argued, that a token is the equity of a decentralised network and the line between shares and tokens is blurring. It is happening amid close to $94 billion of Crypto dealmaking in the first half, around 26 times a year earlier, so when money this experienced buys both the tokens and the businesses while prices sit on the floor, watch what it means, not what the mood says.</p>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════ PART THREE · A NEW THEME ═══════════════════════════ -->
+  <div class="section alt">
+    <div class="section-eyebrow">Part Three · A New Theme</div>
+    <h1 class="section-title">Privacy Becomes Infrastructure</h1>
+    <div class="section-rule"></div>
+
+    <p>The Fund's holdings group into five investment themes, and the newest to enter the portfolio this year is privacy. Every theme starts as a question almost nobody is asking. Ours this half was a simple one: as artificial intelligence works its way into everything we read, write, build and transact, who gets to keep and use all that valuable, and often deeply confidential, data?</p>
+
+    <p>Most of us made our peace with the old bargain long ago. We hand Facebook our holiday snaps and it hands us free software and targeted adverts, and because the photos feel harmless, we never think twice. But the bargain looks very different when the data is not a beach photo but a company's legal strategy, a patient's medical record or the source code a business is built on, and that is precisely what is now being typed into AI models by the billion. Every prompt sent to a mainstream chatbot is stored, owned and used to train someone else's system. Individuals may shrug at that; most companies would be horrified to learn their most sensitive information is sitting on a stranger's servers. The market has not yet priced privacy as critical infrastructure. We think it is about to, and we have built exposure ahead of the shift. The full argument is set out in our latest research report, <a href="https://pouneh-dragonfly.github.io/privacy-july-2026/" target="_blank" rel="noopener noreferrer"><em>Nothing to Hide, Everything to Lose</em></a>.</p>
+
+    <p><strong>Venice</strong> is the answer to a problem ChatGPT never solved. It is what ChatGPT and Claude are, without the surveillance: the same chat, images and video, except it never sees, stores or trains on anything you type, and it adds no censorship of its own, so your conversations stay on your device. That single difference has built a genuinely mainstream consumer product where earlier privacy tools failed, with 3.5 million users, profitability since its first quarter, roughly $90 million of annualised revenue and a $1 billion valuation on its first outside raise. Most of those users have never heard of the VVV token and never need to; they simply wanted the AI everyone else has, without handing over their lives to get it. The rare part sits underneath: every dollar of revenue buys the token on the open market and burns it, so the faster the product grows, the tighter its supply becomes. More than 40% has already gone.</p>
+
+    <div class="data-strip">
+      <div class="data-cell">
+        <div class="data-value">3.5M</div>
+        <div class="data-label">Venice Users</div>
+      </div>
+      <div class="data-cell">
+        <div class="data-value">~$90M</div>
+        <div class="data-label">Annualised Rev</div>
+      </div>
+      <div class="data-cell">
+        <div class="data-value">$1B</div>
+        <div class="data-label">Valuation</div>
+      </div>
+      <div class="data-cell">
+        <div class="data-value">40%+</div>
+        <div class="data-label">VVV Supply Burned</div>
+      </div>
+    </div>
+
+    <p><strong>Targon</strong> solves the same problem one layer down, for the enterprise: think of a numbered Swiss bank account for corporate data, where sensitive AI workloads run sealed inside hardware that neither the operator, nor Targon, nor even the chipmaker can see into, with privacy enforced by the silicon itself. What sets it apart is a rare double endorsement: Intel has co-authored its technical whitepaper and it sits inside NVIDIA's Inception programme, a pairing no other Bittensor subnet can claim, from the two companies whose chips the entire AI industry runs on. The market it addresses is enormous, spanning every industry that cannot legally or commercially hand its data to someone else's cloud, from healthcare and finance to defence and government, and Targon is the first decentralised network built to clear that bar, with paying customers and at a fraction of the cost. Yet it is still priced as a small subnet, exactly the kind of gap an active fund exists to find.</p>
+
+    <p>These are not two bets on the same idea. Venice keeps the individual's AI private; Targon keeps the enterprise's AI private at the compute layer; and alongside them the theme extends to keeping value itself private, in motion and at rest. A single tailwind, the market finally treating privacy as essential rather than optional, lifts all of them, yet each stands on its own product, its own revenue and its own users, thereby providing the Fund with meaningful diversification. As always, we look for these gaps before the market does.</p>
+  </div>
+
+  <!-- ═══════════════════════════ PART FOUR · THE OUTLOOK ═══════════════════════════ -->
+  <div class="section">
+    <div class="section-eyebrow">Part Four · The Outlook</div>
+    <h1 class="section-title">Where Crypto Goes from Here</h1>
+    <div class="section-rule"></div>
+
+    <h2 class="subhead">The builders kept building; the price has catching up to do</h2>
+    <p>Through all the price damage, the builders kept building and therefore the sector's fundamentals and prospects kept improving; what lagged, badly, was the price. Gaps like that tend to close, and we think this one closes upward. The best moment to be an active manager is precisely this: when information is asymmetric, leverage has been washed out and almost everyone has stopped looking. That is Crypto today. Sentiment sits at levels associated with outright capitulation, speculative positioning has collapsed, and the marginal seller looks close to exhausted. What is most striking is how orderly the decline has been. The great washouts of the past were catastrophic blow-ups: Mt Gox in 2014, the collapse of unregulated token offerings in 2018, the FTX fraud in 2022, each the product of an offshore, lightly regulated market with no robust actors. This time major institutions and real regulation are in place, and the deleveraging has been controlled rather than violent. The clearest sign of it was the strain that surfaced in the listed Bitcoin-treasury vehicles, with even Strategy's preferred instruments trading well below face value and the shares themselves changing hands for less than the value of Bitcoin on their balance sheet. That was the last speculative leverage of the prior cycle being wrung out. And important to note that Bitcoin's drawdown itself has been shallower than in cycles past, roughly half from the peak against the seventy to eighty per cent falls of previous downturns, precisely the signature of a market that is maturing rather than breaking.</p>
+
+    <h2 class="subhead">Zooming out: what the data says</h2>
+    <p>The price action of the half tells a story of distress. The data beneath it tells a story of accumulation. The sellers, on the evidence, were retail; the buyers were institutions. Through the entire decline the institutional community of advisers, family offices and funds stayed cautious but never turned bearish, continuing to allocate while retail sold, and that retail cohort now looks spent. Supply held by long-term holders has climbed to an all-time high of nearly 14.85 million coins, meaning the most patient owners spent the drawdown quietly buying what weaker hands were selling. For the first time this cycle, more coins are held at a loss than at a profit, and loss-taking briefly overtook profit-taking, the classic washout seen at the tail of a sell-off rather than the start of one. When the marginal seller is exhausted and the institution keeps buying, you have the ingredients of a bottom. Realised volatility, tellingly, stayed near multi-year lows even as prices fell, orderly repositioning rather than panic. We would not presume to call the exact bottom of the cycle, but the weight of the evidence points to a market at or near its lows.</p>
+
+    <h2 class="subhead">What comes next: $100 trillion moves on chain</h2>
+    <p>What turns a bottom into a bull market is a driver, and for once the driver is obvious rather than speculative. The macro conditions that drove the first-half sell-off, a hawkish Fed and an oil shock, will in all likelihood — as always happens when markets have discounted the present — begin to recede as a fear factor. Looking ahead, perhaps even more importantly, the intense capital pull of the AI trade is unlikely to remain as dominant a headwind. Doubts have started to emerge around stretched AI valuations and the viability of the underlying business models, with hyperscalers' free cash flows coming under material pressure from the scale of the buildout and questions mounting over the timeline and economics of frontier LLM monetisation. As that narrative cools, investors are likely to look to diversify, creating scope for capital to rotate back toward Crypto and other under-owned growth assets.</p>
+
+    <p>However, as we have detailed in the past, the more powerful long-term force likely to drive Crypto prices much higher is structural. The next cycle will not be led by retail buying meme coins. It will be led by the traditional financial system moving itself on chain. Every major financial firm is now building on stablecoins and reorganising around tokenisation, the most senior voices in finance openly expect a great share of the world's assets to migrate on chain over the coming years, and the figures involved are measured not in billions but in the tens of trillions of dollars, with some putting the number as high as a hundred trillion within a handful of years. Put even a fraction of that capital into assets that are, by traditional standards, thinly traded, and the effect on price is profound.</p>
+
+    <p>Assets on chain, though, are only the first-order effect. What matters for the networks the Fund owns is transaction velocity, because value accrues through fees. Moving from a nine-to-four, five-day stock market to one that trades every hour of every day is itself a step change in activity, and history teaches that when the cost and time of settlement collapse, volume does not double, it grows by orders of magnitude. We do not send twice as many emails as we once sent letters; we send a thousand times as many. Layer autonomous AI agents transacting among themselves at speeds no human desk can match on top of that, and the transaction base of this sector could expand many times over:</p>
+
+    <div class="pullquote">
+      <p class="pullquote-text">More assets, more velocity, more fees.</p>
+    </div>
+
+    <div class="aside">
+      <p>Meanwhile, some of the most respected technology investors are starting to see Crypto as essential to the next phase of AI itself, whether that is keeping data private as we use these models, providing cheaper compute and inference through blockchain infrastructure, or giving autonomous AI agents a way to pay one another.</p>
+    </div>
+
+    <p>The last piece is value capture. Under the old US regime most tokens were, in effect, ghost tokens, carrying governance rights but no claim on the economics they generated, because under the previous enforcement regime, any hint of value accrual risked fines or even prison. That has changed. A new generation of protocols now returns revenue to holders directly through buybacks and burns, a dividend in all but name, and the applications leading that shift, the exchanges, lending markets and trading venues at the heart of onchain finance, still trade at only a few billion dollars apiece despite real and growing revenue. As institutional capital arrives and the value-capture story becomes legible, we expect those assets to re-rate materially. Nearer term, passage of the CLARITY Act would be the starting gun, and the market appears to us to be under-pricing its chances.</p>
+
+    <h2 class="subhead">How we are positioned</h2>
+    <p>Almost all of this is being built not on Bitcoin but on the newer networks and applications where the Fund invests. Bitcoin itself has not lost its role; to the institutions steadily adding it to model portfolios it remains digital gold, and it takes only one decisive move to remind the market what a fixed-supply asset does under pressure. But the sharper asymmetry, in our view, sits one layer up, in the revenue-generating protocols the market has punished indiscriminately and is only beginning to understand.</p>
+
+    <div class="pullquote">
+      <p class="pullquote-text">It is worth sitting with the irony that some of the clearest cash flows anywhere in technology today are in Crypto, not in an AI sector where nearly everyone is still subsidising everyone else!</p>
+    </div>
+
+    <p>This transitional half has been painful in price but not in adoption, revenue or usage. What it has really done is separate the speculators from the builders, and leave the Fund holding a portfolio of high-quality, fast-growing protocols positioned for the recovery, the privacy names among them, whose relevance only deepens as institutions come to demand confidentiality. We run long-only, with no leverage and no synthetics, because early-stage sectors reward patience and punish leverage, and we would rather own the fundamentals than trade the fear.</p>
+
+    <div class="pullquote">
+      <p class="pullquote-text">As long-term investors, it is immaterial — perhaps even advantageous — that the case for altcoins is not yet the consensus view.</p>
+    </div>
+
+    <div class="flourish">· · ·</div>
+
+    <p>We appreciate your continued trust and look forward to navigating the rest of 2026 with you.</p>
+
+    <div class="signoff">
+      <p>Warm regards,</p>
+      <p class="sig-name">Pouneh Bligaard</p>
+      <p class="sig-role">Founder &amp; Chief Investment Officer</p>
+      <p class="sig-firm">Dragonfly Asset Management</p>
+      <p class="sig-contact">LinkedIn · X · Web · Email</p>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════ CLOSING ═══════════════════════════ -->
+  <div class="closing">
+    <div class="closing-mark">· DRAGONFLY DIGITAL ASSETS ·</div>
+    <p class="closing-text">"This transitional half has been painful in price but not in adoption, revenue or usage — the half that separated the speculators from the builders."</p>
+    <div class="closing-attribution">2026 Half-Year Review · Dragonfly Asset Management</div>
+  </div>
+
+  <div class="footer">
+    © 2026 Dragonfly Asset Management. All rights reserved.<br>
+    For Professional Investors Only · Strictly Confidential
+  </div>
+
+</div>
+
+</body>
+</html>
