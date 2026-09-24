@@ -1,1 +1,611 @@
-x
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Dragonfly Asset Management deep dive on Grass (GRASS): independently reviewed AI-data revenue, the four-box test, valuation and where it fits the Dragonfly approach.">
+<title>A Profitable Business Priced Like A New Startup</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Source+Sans+3:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap">
+<style>
+  :root{
+    color-scheme: light;
+    --page: #faf7f0;
+    --surface: #ffffff;
+    --surface-2: #f2ede0;
+    --text-primary: #1a1a1a;
+    --text-secondary: #44403a;
+    --text-muted: #7a7566;
+    --border: rgba(26,26,26,0.10);
+    --border-strong: rgba(26,26,26,0.18);
+    --accent: #8a6a3f;
+    --accent-hover: #6b5330;
+    --accent-soft: rgba(138,106,63,0.10);
+    --accent-soft-border: rgba(138,106,63,0.30);
+    --good: #2f7d52;
+    --good-soft: rgba(47,125,82,0.10);
+    --warning: #5c7392;
+    --warning-soft: rgba(92,115,146,0.10);
+    --critical: #b23a2e;
+    --critical-soft: rgba(178,58,46,0.10);
+    --shadow: 0 1px 2px rgba(26,20,10,0.05), 0 8px 24px -14px rgba(26,20,10,0.20);
+  }
+  *{ box-sizing: border-box; }
+  html,body{ margin:0; }
+  body{
+    background: var(--page);
+    color: var(--text-primary);
+    font-family: "Source Sans 3", -apple-system, "Segoe UI", Roboto, sans-serif;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap{ max-width: 880px; margin: 0 auto; padding: 56px 28px 80px; }
+  h1,h2,h3{ font-family: "Oswald", "Arial Narrow", sans-serif; text-wrap: balance; margin: 0; }
+
+  header.masthead{
+    display:flex; flex-direction:column; gap:14px; align-items:center; text-align:center;
+    padding-bottom: 32px; margin-bottom: 40px; border-bottom: 1px solid var(--border);
+  }
+  .brandmark{
+    display:flex; flex-direction:column; align-items:center; gap:2px;
+    background: var(--surface); border:1px solid var(--border); border-radius: 10px;
+    padding: 18px 30px; box-shadow: var(--shadow); margin-bottom: 6px;
+  }
+  .brandmark .brand-icon{ width:64px; height:auto; margin-bottom:6px; }
+  .brandmark .name{ font-family:"Oswald",sans-serif; font-size:19px; font-weight:600; color: var(--text-primary); }
+  .brandmark .sub{ font-size:10.5px; letter-spacing:0.18em; text-transform:uppercase; color: var(--text-muted); }
+  .eyebrow{ font-weight: 700; font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--good); }
+  header.masthead h1{ font-size: clamp(30px, 5vw, 46px); font-weight: 700; color: var(--text-primary); }
+  header.masthead .subhead{ font-family:"Oswald",sans-serif; font-weight:500; font-size: clamp(15px,2vw,19px); color: var(--text-secondary); margin-top:-6px; }
+  header.masthead .thesis{
+    max-width: 62ch; margin: 4px auto 0; font-size: 17.5px; color: var(--text-secondary);
+    font-family: "Source Serif 4", Georgia, serif; font-style: italic; line-height: 1.6;
+  }
+  header.masthead .thesis b{ color: var(--text-primary); font-weight: 600; font-style: normal; }
+  .byline{ font-size: 13.5px; color: var(--text-muted); }
+  .byline b{ color: var(--text-secondary); font-weight:600; }
+  .metarow{ display:flex; flex-wrap:wrap; justify-content:center; gap: 8px 22px; margin-top: 6px; font-size: 12.5px; color: var(--text-muted); }
+  .metarow span b{ color: var(--text-secondary); font-weight: 600; }
+
+  .stats{
+    display:grid; grid-template-columns: repeat(3,1fr); gap:1px;
+    background: var(--border); border:1px solid var(--border); border-radius:10px;
+    overflow:hidden; margin-bottom: 44px; box-shadow: var(--shadow);
+  }
+  .stat{ background: var(--surface); padding: 20px; display:flex; flex-direction:column; gap:6px; }
+  .stat .label{ font-size:11.5px; text-transform:uppercase; letter-spacing:0.06em; color:var(--text-muted); font-weight:600; }
+  .stat .value{ font-family:"Oswald", sans-serif; font-size: 27px; font-weight:600; color: var(--text-primary); font-variant-numeric: tabular-nums; }
+  .stat .value .unit{ font-size: 14px; color: var(--text-secondary); font-family:"Source Sans 3", sans-serif; font-weight:500; }
+  .stat .sub{ font-size: 12.5px; color: var(--text-secondary); }
+
+  section{ margin-bottom: 46px; }
+  .section-head{ margin-bottom: 16px; }
+  .beat-eyebrow{ font-weight:700; font-size:11.5px; letter-spacing:0.1em; text-transform:uppercase; color: var(--accent); margin-bottom:6px; }
+  .section-head h2{ font-size: 25px; font-weight:600; color: var(--text-primary); line-height:1.25; }
+  .section-head .dek{ font-family:"Source Serif 4", Georgia, serif; font-style: italic; font-size: 15.5px; color: var(--text-muted); margin-top:6px; }
+
+  p{ font-size: 15.5px; color: var(--text-secondary); margin: 0 0 15px; }
+  p:last-child{ margin-bottom:0; }
+  strong{ color: var(--text-primary); }
+  a{ color: var(--accent); }
+  a:hover{ color: var(--accent-hover); }
+
+  blockquote.pull{
+    margin: 20px 0; padding: 4px 0 4px 20px; border-left: 3px solid var(--accent);
+    font-family:"Source Serif 4", Georgia, serif; font-style: italic; font-size: 18px; color: var(--text-primary); line-height:1.5;
+  }
+  blockquote.pull cite{ display:block; margin-top:8px; font-family:"Source Sans 3",sans-serif; font-style: normal; font-size:12.5px; color: var(--text-muted); }
+
+  .callout{ background: var(--accent-soft); border:1px solid var(--accent-soft-border); border-radius:10px; padding: 18px 22px; margin: 20px 0; }
+  .callout p{ font-size:15px; color: var(--text-primary); margin:0; font-weight: 500; }
+
+  .table-card{ background: var(--surface); border:1px solid var(--border); border-radius:10px; overflow:hidden; box-shadow: var(--shadow); margin: 16px 0 20px; }
+  .table-scroll{ overflow-x:auto; }
+  table{ width:100%; border-collapse: collapse; min-width: 560px; }
+  thead th{
+    text-align:left; font-size: 10.5px; text-transform:uppercase; letter-spacing:0.05em; font-weight:700;
+    color: var(--text-muted); padding: 12px 14px; border-bottom: 1px solid var(--border-strong); background: var(--surface-2); white-space:nowrap;
+  }
+  thead th.num-col, td.num-col{ text-align:right; }
+  tbody td{ padding: 12px 14px; border-bottom: 1px solid var(--border); font-size: 13.5px; vertical-align: top; color: var(--text-secondary); }
+  tbody tr:last-child td{ border-bottom:none; }
+  tbody tr:hover{ background: var(--surface-2); }
+  tbody tr.total td{ background: var(--surface-2); color: var(--text-primary); font-weight: 600; }
+  td.num-col{ font-variant-numeric: tabular-nums; white-space:nowrap; }
+  .proto{ display:flex; flex-direction:column; gap:2px; }
+  .proto .name{ font-weight:600; color: var(--text-primary); font-family:"Oswald",sans-serif; letter-spacing:0.01em; }
+  .proto .tick{ font-size:11px; color: var(--text-muted); }
+  .footnote{ padding: 12px 16px; font-size:11.5px; color: var(--text-muted); border-top:1px solid var(--border); background: var(--surface-2); }
+
+  /* chart */
+  .chart-card{ background: var(--surface); border:1px solid var(--border); border-radius:10px; box-shadow: var(--shadow); margin: 16px 0 20px; overflow:hidden; }
+  .chart-head{ padding: 16px 18px 0; display:flex; flex-wrap:wrap; justify-content:space-between; gap: 6px 18px; align-items:baseline; }
+  .chart-head h3{ font-size:15px; font-weight:600; color: var(--text-primary); }
+  .legend{ display:flex; gap:14px; font-size:12px; color: var(--text-secondary); }
+  .legend span{ display:inline-flex; align-items:center; gap:6px; }
+  .sw{ width:12px; height:12px; border-radius:2px; display:inline-block; }
+  .sw.solid{ background: var(--accent); }
+  .sw.hatch{ background: repeating-linear-gradient(45deg, var(--accent) 0 2px, var(--accent-soft) 2px 5px); border:1px solid var(--accent); }
+  .chart-body{ padding: 6px 10px 4px; position: relative; }
+  .chart-body svg{ width:100%; height:auto; display:block; }
+  .chart-body .bar{ cursor: default; }
+  .chart-body .bar:hover rect{ filter: brightness(0.92); }
+  .tip{ position:absolute; pointer-events:none; background: var(--text-primary); color: var(--page); font-size:12px; padding:6px 9px; border-radius:6px; white-space:nowrap; transform: translate(-50%, -110%); }
+
+  .scorecard{ display:grid; grid-template-columns: repeat(4,1fr); gap:14px; margin: 20px 0 8px; }
+  .box{ background: var(--surface); border:1px solid var(--border); border-radius:10px; padding:16px; box-shadow: var(--shadow); text-align:center; }
+  .box .num{ font-family:"Oswald",sans-serif; font-size:12px; letter-spacing:0.08em; color: var(--text-muted); text-transform:uppercase; margin-bottom:8px; }
+  .pill{ display:inline-flex; align-items:center; gap:6px; font-size:11px; font-weight:700; letter-spacing:0.04em; padding: 4px 10px 4px 8px; border-radius:20px; white-space:nowrap; margin-bottom:8px; }
+  .pill .dot{ width:7px; height:7px; border-radius:50%; }
+  .pill.off{ background: var(--critical-soft); color: var(--critical); } .pill.off .dot{ background: var(--critical); }
+  .pill.partial{ background: var(--warning-soft); color: var(--warning); } .pill.partial .dot{ background: var(--warning); }
+  .pill.on{ background: var(--good-soft); color: var(--good); } .pill.on .dot{ background: var(--good); }
+  .box h3{ font-size:14.5px; font-weight:600; color: var(--text-primary); margin-bottom:6px; }
+  .box p{ font-size:12px; color: var(--text-secondary); margin:0; }
+
+  .risk{ display:flex; gap:16px; margin: 0 0 22px; }
+  .risk .rn{ flex: 0 0 auto; width:34px; height:34px; border-radius:50%; background: var(--surface-2); border:1px solid var(--border);
+    display:flex; align-items:center; justify-content:center; font-family:"Oswald",sans-serif; font-weight:600; color: var(--accent); font-size:15px; }
+  .risk .rc h3{ font-size:16px; font-weight:600; color: var(--text-primary); margin-bottom:6px; }
+  .risk .rc p{ font-size:14.5px; }
+
+  .cards{ display:grid; grid-template-columns: repeat(2, 1fr); gap:14px; margin: 16px 0 20px; }
+  .card{ background: var(--surface); border:1px solid var(--border); border-radius:10px; padding:18px 20px; box-shadow: var(--shadow); }
+  .card .tag{ font-size:10px; letter-spacing:0.07em; text-transform:uppercase; color: var(--accent);
+    background: var(--accent-soft); border:1px solid var(--accent-soft-border); padding:2px 8px; border-radius:20px; display:inline-block; margin-bottom:8px; font-weight:700; }
+  .card h3{ font-size:15.5px; font-weight:600; margin-bottom:6px; color: var(--text-primary); }
+  .card p{ font-size:13.5px; color: var(--text-secondary); margin:0 0 8px; }
+  .card p:last-child{ margin:0; }
+
+  .methodology{ background: var(--surface); border:1px solid var(--border); border-radius:10px; padding: 24px 26px; box-shadow: var(--shadow); margin-top: 8px; }
+  .methodology h3{ font-size:15px; font-weight:600; margin-bottom:10px; color: var(--text-primary); }
+  .methodology p{ margin:0 0 12px; font-size:13.5px; color: var(--text-secondary); line-height:1.6; }
+  .disclaimer{ font-size:12px; color: var(--text-muted); border-top:1px solid var(--border); padding-top:14px; margin-top:16px; line-height:1.55; }
+  .signoff{ font-family:"Source Serif 4", Georgia, serif; font-style: italic; color: var(--text-secondary); font-size: 14px; margin-top: 14px; border-left: 2px solid var(--accent); padding-left: 14px; }
+
+  .sources{ font-size:12px; color: var(--text-muted); margin-top:36px; padding-top:20px; border-top:1px solid var(--border); }
+  .sources h3{ font-family:"Source Sans 3",sans-serif; font-size:12px; text-transform:uppercase; letter-spacing:0.06em; color:var(--text-muted); margin-bottom:10px; font-weight:700; }
+  .sources ul{ margin:0; padding-left:18px; columns: 2; column-gap: 28px; }
+  .sources li{ margin-bottom:6px; break-inside: avoid; }
+  .sources a{ color: var(--text-secondary); }
+
+
+  /* forecasts graphic */
+  .forecasts{ display:grid; grid-template-columns: 1fr 1fr; gap:14px; margin: 18px 0 20px; }
+  .fc{ background: var(--surface); border:1px solid var(--border); border-radius:10px; box-shadow: var(--shadow); display:flex; flex-direction:column; overflow:hidden; }
+  .fc-head{ padding: 18px 20px 6px; }
+  .fc-head .tag{ font-size:10px; letter-spacing:0.07em; text-transform:uppercase; color: var(--accent); background: var(--accent-soft); border:1px solid var(--accent-soft-border); padding:2px 8px; border-radius:20px; display:inline-block; margin-bottom:8px; font-weight:700; }
+  .fc-head h3{ font-size:16px; font-weight:600; color: var(--text-primary); margin-bottom:6px; }
+  .fc-head p{ font-size:13px; margin:0; }
+  .fc-rows{ padding: 12px 20px 8px; display:flex; flex-direction:column; gap:12px; flex:1; }
+  .fc-row{ display:grid; grid-template-columns: 78px 1fr 92px; gap:10px; align-items:center; }
+  .fc-lab, .fc-val{ display:flex; flex-direction:column; line-height:1.2; }
+  .fc-lab b, .fc-val b{ font-family:"Oswald",sans-serif; font-weight:600; font-size:15px; color: var(--text-primary); font-variant-numeric: tabular-nums; }
+  .fc-lab span, .fc-val span{ font-size:11px; color: var(--text-muted); }
+  .fc-val{ text-align:right; }
+  .fc-track{ height:14px; background: var(--surface-2); border-radius:4px; overflow:hidden; }
+  .fc-bar{ height:100%; background: var(--accent-soft-border); border-radius:0 4px 4px 0; }
+  .fc-bar.now{ background: var(--text-muted); }
+  .fc-bar.target{ background: var(--accent); }
+  .fc-bar.cost{ background: repeating-linear-gradient(45deg, var(--critical) 0 2px, var(--critical-soft) 2px 5px); }
+  .fc-bar.profit{ background: var(--good); }
+  .fc-callout{ margin: 4px 20px 12px; padding: 10px 14px; background: var(--accent-soft); border:1px solid var(--accent-soft-border); border-radius:8px; display:flex; gap:12px; align-items:center; }
+  .fc-callout b{ font-family:"Oswald",sans-serif; font-size:24px; font-weight:600; color: var(--text-primary); }
+  .fc-callout span{ font-size:12.5px; color: var(--text-secondary); }
+  .fc-foot{ padding: 10px 16px; font-size:11px; color: var(--text-muted); border-top:1px solid var(--border); background: var(--surface-2); }
+  @media (max-width: 720px){ .forecasts{ grid-template-columns: 1fr; } }
+  a:focus-visible{ outline: 2px solid var(--accent); outline-offset: 2px; }
+
+  @media (max-width: 640px){
+    .wrap{ padding: 36px 16px 60px; }
+    .stats{ grid-template-columns: 1fr 1fr; }
+    .scorecard{ grid-template-columns: repeat(2,1fr); }
+    .cards{ grid-template-columns: 1fr; }
+    .sources ul{ columns: 1; }
+    .risk{ gap:12px; }
+  }
+  @media (max-width: 420px){ .stats{ grid-template-columns: 1fr; } }
+</style>
+
+</head>
+<body>
+<div class="wrap">
+
+  <header class="masthead">
+    <div class="brandmark">
+      <img class="brand-icon" src="data:image/png;base64,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" alt="Dragonfly logo">
+      <div class="name">Dragonfly</div>
+      <div class="sub">Asset Management</div>
+    </div>
+    <div class="eyebrow">Dragonfly Research &middot; AI Data Deep Dive</div>
+    <h1>A Profitable Business Priced Like A New Startup</h1>
+    <div class="subhead">Grass (GRASS): the AI data business hiding inside a Solana token</div>
+    <p class="thesis">Most Crypto tokens sell a story and hope the revenue follows. Grass did it the other way round. It quietly built a data business that sells the open web, cleaned and packaged, to the world's biggest AI labs, and on 21 September it opened the books: <b>$32.1 million of revenue in fifteen months, independently reviewed, with $65-75 million expected this year.</b> The token still trades at roughly four and a half times this year's expected fees. The market is pricing a new start-up. We think it is looking at a profitable business.</p>
+    <div class="byline">Written by <b>Pouneh Bligaard</b>, Founder &amp; CIO, Dragonfly Asset Management &middot; 24 September 2026</div>
+    <div class="metarow">
+      <span>Primary sources: <b>grass.io, Regen Financial revenue review, July 2026 holder call</b></span>
+      <span>Also drawing on: <b>Austin Barack (RockawayX), Yan Liberman (Delphi Ventures)</b></span>
+      <span>For: <b>professional investors only</b></span>
+    </div>
+  </header>
+
+  <div class="stats">
+    <div class="stat">
+      <div class="label">Booked revenue, Mar 2025 to Jun 2026</div>
+      <div class="value">$32.1<span class="unit">M</span></div>
+      <div class="sub">Every work order independently reviewed by Regen Financial, 21 Sept 2026</div>
+    </div>
+    <div class="stat">
+      <div class="label">2025 revenue</div>
+      <div class="value">$17<span class="unit">M</span></div>
+      <div class="sub">From close to zero in Q1 2025 to ~$12.8M in Q4 alone</div>
+    </div>
+    <div class="stat">
+      <div class="label">2026 revenue guide</div>
+      <div class="value">$65-75<span class="unit">M</span></div>
+      <div class="sub">Training data only, roughly 4x 2025's $17M; excludes Live Context Retrieval</div>
+    </div>
+    <div class="stat">
+      <div class="label">Circulating market cap</div>
+      <div class="value">~$318<span class="unit">M</span></div>
+      <div class="sub">677M tokens at $0.47 (CoinGecko, 24 Sept); 88% below the all-time high</div>
+    </div>
+    <div class="stat">
+      <div class="label">Market cap / 2026 fees</div>
+      <div class="value">4.5<span class="unit">x</span></div>
+      <div class="sub">On the $70M midpoint of company guidance; about 11x the trailing twelve months</div>
+    </div>
+    <div class="stat">
+      <div class="label">Monthly active nodes</div>
+      <div class="value">8.5<span class="unit">M</span></div>
+      <div class="sub">Up from ~3M at the October 2024 airdrop (Grass, Nov 2025 holder call)</div>
+    </div>
+  </div>
+
+  <section>
+    <div class="section-head">
+      <div class="beat-eyebrow">01 &middot; The Plain-English Version</div>
+      <h2>Eight Million Mystery Shoppers</h2>
+      <div class="dek">Why the AI labs cannot simply collect the web themselves, and why a phone app in a Manila flat can.</div>
+    </div>
+    <p>Every AI model is built from the public internet: news sites, forums, product pages, videos, reviews. You would think collecting it is easy. It is not, because the websites fight back. When a big tech company sends its scraping robots out from a datacentre, it is like a coach party of men in identical suits arriving at a small shop at once. The bouncer spots them in seconds and closes the door. Sites block datacentre addresses, throttle them, or quietly serve them a worse version of the page.</p>
+    <p>Grass solves this by sending mystery shoppers instead. It pays ordinary households to install an app on their phone, laptop or browser that shares the spare internet capacity they are not using. When an AI customer needs a page, the request goes out through one of those homes. To the website, it looks exactly like a real person browsing from a real living room, because technically it is. Grass describes the result as traffic that is "indistinguishable from real user traffic", and its founders have said that on some days there are not enough nodes to meet inbound demand.</p>
+    <p>Think of it as Airbnb for your broadband. The spare room is the bandwidth you are not using while you sleep or work. Grass rents it out, and the app steps aside the moment you start streaming or downloading something heavy. The network touches only public pages, never your passwords, files or logged-in accounts. By its own count, Grass grew from around 3 million participants at its October 2024 airdrop to <strong>8.5 million monthly active nodes</strong> by November 2025, with mobile making up roughly 38% of activity.</p>
+    <blockquote class="pull">"Bandwidth is the road; your data is the cargo in your own truck. Grass only borrows road access."<cite>Grass, "What Does Grass Actually Do With Your Connection?", 26 August 2026</cite></blockquote>
+    <p>One detail matters for anyone modelling the network. At the July holder call, the team disclosed that about <strong>150,000 users generated roughly 90% of traffic</strong>. So while the 8.5 million figure makes for a good headline, the working network is a much smaller group of high-quality, well-placed nodes. That is normal for any marketplace, and it is also the right number to watch.</p>
+  </section>
+
+  <section>
+    <div class="section-head">
+      <div class="beat-eyebrow">02 &middot; The Crypto You Don't See</div>
+      <h2>Nobody Downloads Grass For The Blockchain</h2>
+      <div class="dek">Users see an app that pays them. AI labs see an invoice. Crypto is the plumbing that made both possible, and made it happen fast.</div>
+    </div>
+    <p>Grass belongs to a corner of Crypto called <strong>DePIN</strong>, short for Decentralised Physical Infrastructure Networks. The idea is simple. Instead of one company spending billions building infrastructure itself, a network rewards thousands or millions of ordinary people with tokens for each contributing a small piece of it. Helium did this for wireless hotspots, Filecoin for data storage, and GEODNET, which we covered in an earlier report, for satellite positioning stations on rooftops. Grass does it for home internet connections.</p>
+    <p>Think of an old-fashioned barn-raising. No farmer can afford to build a barn alone in a day, but if the whole village turns up with one plank each, it goes up by sunset. The token is the promise that everyone who brought a plank owns a share of the barn. That promise is what gets the village to turn up before there is a harvest to pay anyone with.</p>
+    <p>Grass is <strong>built on Solana</strong>, the high-speed, low-cost blockchain we regard as having won the performance lane among layer-1s. GRASS is a Solana token, the network records its data sessions as a rollup that settles on Solana, and since 22 July 2026 users have had an in-app Grass Wallet on Solana with passkey sign-in and staking from a single GRASS. Solana matters here for a practical reason: paying millions of people small amounts, and logging millions of scraping sessions, only works when each transaction costs a fraction of a cent.</p>
+    <p>Most users never think about any of this, and neither do the customers. Nobody thinks about Visa's network when they tap a card; they just see the payment go through. A Grass user sees an app that earns while their laptop sleeps. An AI lab sees a dataset and an invoice in dollars. The Crypto sits underneath, doing four jobs no ordinary start-up could have done as cheaply or as quickly.</p>
+    <div class="cards">
+      <div class="card"><span class="tag">1 &middot; The cold start</span><h3>Supply before there were customers</h3><p>Every marketplace needs sellers before buyers, and buyers before sellers. Grass paid early users in points that became ownership, long before it had revenue. Its first airdrop, 10% of all tokens, went to over 2 million users in October 2024. A normal company would have had to pay cash for bandwidth it could not yet sell.</p></div>
+      <div class="card"><span class="tag">2 &middot; Paying the world</span><h3>Micro-payments to millions of homes</h3><p>Sending a few dollars to millions of people across the globe is uneconomic through banks and card networks. On Solana it is routine. Grass's latest reward round is paid in USDC, a dollar stablecoin, straight into users' wallets, with no new tokens issued.</p></div>
+      <div class="card"><span class="tag">3 &middot; Receipts for data</span><h3>Provenance the labs can check</h3><p>Scraping sessions are checkpointed onchain with zero-knowledge proofs, a tamper-proof record of what was collected, where and when. As AI labs face harder questions about where their training data came from, that record becomes part of the product.</p></div>
+      <div class="card"><span class="tag">4 &middot; Capital-light scale</span><h3>A global network on a start-up budget</h3><p>Wynd Labs raised roughly $14.5M of venture funding in total. From that base, Grass built an 8.5 million-node network and a business guiding to $65-75M of fees this year. Bright Data, the incumbent in this market, took over a decade to reach $300M of annual revenue.</p></div>
+    </div>
+    <p>The timeline tells the story. Grass launched its first app in 2023. It had around 3 million participants by the October 2024 airdrop and 8.5 million monthly active nodes a year later. Revenue went from close to zero in early 2025 to a 2026 guide of $65-75 million. That is the speed Crypto buys: the network grew to global scale first, and the business had something to sell the moment the AI labs came asking.</p>
+    <blockquote class="pull">Users do not need to care that Grass is a Crypto app. The point is that without Crypto, there would not have been an app to care about.</blockquote>
+  </section>
+
+  <section>
+    <div class="section-head">
+      <div class="beat-eyebrow">03 &middot; The Refinery</div>
+      <h2>Grass Doesn't Sell Crude. It Sells Jet Fuel.</h2>
+      <div class="dek">The token looks like a bandwidth app. The money is made one step further down the pipe.</div>
+    </div>
+    <p>Raw web pages are crude oil. They are messy, full of adverts, duplicates, broken formatting and junk. No frontier lab wants to buy a billion raw pages. They want the refined product: clean, deduplicated, labelled, structured datasets they can feed straight into training.</p>
+    <p>That is what Grass actually sells. Behind the consumer app sits its own datacentre and GPU "refinery", which processes what the nodes collect into AI-ready datasets across text, images, audio and video. By November 2025 its repository had passed <strong>250 petabytes</strong>, and a May 2025 upgrade (called Sion) extended the pipeline from text into full multimodal data. The nodes are the oil wells. The refinery is where the margin lives.</p>
+    <p>There is also a provenance layer, which is where the Crypto rails earn their place. Scraping sessions are checkpointed onchain with zero-knowledge proofs, creating a permanent record of where each piece of data came from and when. For an AI lab facing copyright questions and regulators asking "where did your training data come from?", a verifiable receipt for every page is worth more than it sounds.</p>
+    <p>This is also why the story is so easy to miss. On the outside, Grass looks like any other DePIN token with a big node count. On the inside, it is a business-to-business data company with invoices, enterprise buyers and 60-day payment terms. Delphi Ventures' Yan Liberman titled his July essay on it exactly that way: <em>"The AI Data Business Hiding Inside a Token."</em></p>
+  </section>
+
+  <section>
+    <div class="section-head">
+      <div class="beat-eyebrow">04 &middot; The Traction</div>
+      <h2>From Zero To $32 Million, With Receipts</h2>
+      <div class="dek">Revenue went from almost nothing in early 2025 to eight figures a half. On 21 September, an outside firm checked every order.</div>
+    </div>
+    <p>In the first quarter of 2025, Grass had, in its own words, "close to no meaningful revenue". Then the labs started buying. The team reported roughly $2.75 million in Q2 2025, $4.3 million in Q3 and a projected $12.8 million in Q4. A company that tripled its revenue in one quarter and still traded as "just another DePIN token" invited one obvious question: is any of this real?</p>
+    <div class="chart-card">
+      <div class="chart-head">
+        <h3>Grass revenue by half-year, $M</h3>
+        <div class="legend"><span><i class="sw solid"></i>Reported</span><span><i class="sw hatch"></i>Implied by 2026 guide</span></div>
+      </div>
+      <div class="chart-body" id="revchart">
+        <svg viewBox="0 0 640 300" role="img" aria-label="Bar chart of Grass revenue: H1 2025 $2.7M, H2 2025 $14.3M, H1 2026 $14.5M booked, H2 2026 implied $50.5M to $60.5M from the full-year guide.">
+          <defs>
+            <pattern id="hatch" patternUnits="userSpaceOnUse" width="6" height="6" patternTransform="rotate(45)">
+              <rect width="6" height="6" fill="rgba(138,106,63,0.10)"/>
+              <rect width="2.2" height="6" fill="#8a6a3f"/>
+            </pattern>
+          </defs>
+          <g font-family="Source Sans 3, sans-serif" font-size="12" fill="#7a7566">
+            <line x1="60" x2="620" y1="250" y2="250" stroke="rgba(26,26,26,0.30)" stroke-width="1"/>
+            <line x1="60" x2="620" y1="182.3" y2="182.3" stroke="rgba(26,26,26,0.08)"/>
+            <line x1="60" x2="620" y1="114.6" y2="114.6" stroke="rgba(26,26,26,0.08)"/>
+            <line x1="60" x2="620" y1="46.9" y2="46.9" stroke="rgba(26,26,26,0.08)"/>
+            <text x="52" y="254" text-anchor="end">0</text>
+            <text x="52" y="186.3" text-anchor="end">20</text>
+            <text x="52" y="118.6" text-anchor="end">40</text>
+            <text x="52" y="50.9" text-anchor="end">60</text>
+            <text x="130" y="272" text-anchor="middle">H1 2025</text>
+            <text x="270" y="272" text-anchor="middle">H2 2025</text>
+            <text x="410" y="272" text-anchor="middle">H1 2026</text>
+            <text x="550" y="272" text-anchor="middle">H2 2026E</text>
+            <text x="130" y="288" text-anchor="middle" font-size="11">holder call</text>
+            <text x="270" y="288" text-anchor="middle" font-size="11">holder call</text>
+            <text x="410" y="288" text-anchor="middle" font-size="11">Regen, booked</text>
+            <text x="550" y="288" text-anchor="middle" font-size="11">guide less H1</text>
+          </g>
+          <g class="bar" data-tip="H1 2025: $2.7M (July 2026 holder call)">
+            <rect x="98" y="240.9" width="64" height="9.1" rx="3" fill="#8a6a3f"/>
+            <rect x="92" y="150" width="76" height="100" fill="transparent"/>
+          </g>
+          <g class="bar" data-tip="H2 2025: $14.3M (July 2026 holder call)">
+            <rect x="238" y="201.6" width="64" height="48.4" rx="3" fill="#8a6a3f"/>
+            <rect x="232" y="150" width="76" height="100" fill="transparent"/>
+          </g>
+          <g class="bar" data-tip="H1 2026: $14.53M booked per Regen ($17M stated on the July call)">
+            <rect x="378" y="200.8" width="64" height="49.2" rx="3" fill="#8a6a3f"/>
+            <rect x="372" y="150" width="76" height="100" fill="transparent"/>
+          </g>
+          <g class="bar" data-tip="H2 2026 implied: $50.5-60.5M (2026 guide $65-75M less $14.53M H1)">
+            <rect x="518" y="62.2" width="64" height="187.8" rx="3" fill="url(#hatch)" stroke="#8a6a3f" stroke-width="1"/>
+            <line x1="550" x2="550" y1="45.2" y2="79.1" stroke="#1a1a1a" stroke-width="1.5"/>
+            <line x1="542" x2="558" y1="45.2" y2="45.2" stroke="#1a1a1a" stroke-width="1.5"/>
+            <line x1="542" x2="558" y1="79.1" y2="79.1" stroke="#1a1a1a" stroke-width="1.5"/>
+            <rect x="512" y="40" width="76" height="210" fill="transparent"/>
+          </g>
+          <g font-family="Oswald, sans-serif" font-size="13" font-weight="600" fill="#1a1a1a" text-anchor="middle">
+            <text x="130" y="233">$2.7M</text>
+            <text x="270" y="194">$14.3M</text>
+            <text x="410" y="193">$14.5M</text>
+            <text x="600" y="66" text-anchor="start" font-size="12">~$55M</text>
+          </g>
+        </svg>
+        <div class="tip" id="tip" hidden></div>
+      </div>
+      <div class="footnote">H1 and H2 2025 as stated on the 7 July 2026 holder call. H1 2026 is Regen Financial's booked figure ($14.53M); the team cited ~$17M on the July call. H2 2026E is the $65-75M full-year training-data guide minus booked H1, shown as the midpoint with the range as a whisker. It is guidance, not a result.</div>
+    </div>
+    <p>On 21 September, Grass answered that question. It published an independent review by Regen Financial of Grass DataCo Ltd, the entity that holds the customer contracts. Regen looked at <strong>100% of work orders</strong> across two periods and traced each one to a cash receipt.</p>
+    <div class="table-card">
+      <div class="table-scroll">
+        <table>
+          <thead><tr><th>Period</th><th class="num-col">Booked revenue</th><th class="num-col">Traced to cash</th><th class="num-col">Not yet cash</th><th class="num-col">Cash conversion</th></tr></thead>
+          <tbody>
+            <tr><td><div class="proto"><span class="name">14 Mar to 31 Dec 2025</span></div></td><td class="num-col">$17.59M</td><td class="num-col">$16.24M</td><td class="num-col">$1.35M</td><td class="num-col">92%</td></tr>
+            <tr><td><div class="proto"><span class="name">1 Jan to 30 Jun 2026</span></div></td><td class="num-col">$14.53M</td><td class="num-col">$11.35M</td><td class="num-col">$3.18M</td><td class="num-col">78%</td></tr>
+            <tr class="total"><td>Combined</td><td class="num-col">$32.11M</td><td class="num-col">$27.59M</td><td class="num-col">$4.52M</td><td class="num-col">86%</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="footnote">Source: Regen Financial, Grass DataCo Ltd revenue summary (grass.io, published 21-22 Sept 2026). Of the $4.52M not yet traced, $2.75M is work in progress not yet invoiced and $1.78M is invoiced and awaiting payment. Regen states this is a due diligence engagement, not an audit, review or assurance engagement.</div>
+    </div>
+    <p>Two things stand out. First, the gap between booked and banked is explained line by line: unbilled work in progress plus invoices still inside roughly 60-day terms on long contracts. It is the normal shape of an enterprise data business, not disputed revenue. Second, the lower H1 2026 conversion (78%) fits a business whose biggest orders arrive late in the half. Those invoices simply had not come due by 30 June.</p>
+    <p>Who is paying? Grass does not name customers, since labs treat their training data sources as trade secrets. The team describes buyers as leading private AI labs, Fortune 100 companies including members of the "Magnificent Seven", and specialist developers, and says it has had repeat business from "nearly every AI customer". Repeat purchasing matters more than any logo: a lab that comes back for a second dataset has tested the first one inside a real model.</p>
+    <blockquote class="pull">A company that trebled revenue in a quarter could be asked to prove it was real. Grass has now proved the revenue. The open question is when the token gets paid.</blockquote>
+  </section>
+
+  <section>
+    <div class="section-head">
+      <div class="beat-eyebrow">05 &middot; Reading The Numbers</div>
+      <h2>Don't Judge A Toy Shop By Its January Takings</h2>
+      <div class="dek">Why "growth has stalled" is the wrong read of H1 2026, and what H2 now has to deliver.</div>
+    </div>
+    <p>Put H2 2025 ($14.3 million) next to H1 2026 ($14.5 million booked) and Grass looks as if it has stopped growing. That comparison is the one Yan Liberman argues is wrong, and we agree. AI labs buy training data the way retailers buy stock before Christmas: in large batches, timed to their own training cycles, which tend to cluster in the second half of the year. Comparing one half with the next is like judging a toy shop by comparing December with January.</p>
+    <p>The fair comparison is like for like. On Regen's booked figure, H1 2026 was <strong>5.4 times</strong> H1 2025. On the ~$17 million the team cited in July, it was nearly 7 times. The team also said roughly $15 million of work it expected in H1 slipped into Q3.</p>
+    <div class="callout"><p>One number to reconcile. The July call put H1 2026 at ~$17 million; Regen's review of booked revenue for the same half shows $14.53 million. The difference may be timing or definitions (orders signed versus revenue booked), but it has not been explained publicly. We use the lower, independently reviewed figure throughout.</p></div>
+    <p>That makes H2 the whole test. To hit the $65-75 million training-data guide, Grass needs roughly <strong>$50-60 million in the second half</strong>, three and a half to four times what it booked in H1. Austin Barack's read of the July call was ~$52 million expected in H2, which annualises to over $100 million. The slipped $15 million helps, and so does the seasonality. But this is a guide, not a result, and the next data point (Q3) will tell us a great deal.</p>
+    <p>On costs, the picture is healthier than most tokens we look at. Ongoing cash operating costs run at about $2-3 million a month, mostly compute, storage and bandwidth; headcount is only around a fifth of spend, covering 45 full-time staff at Wynd Labs. The team pre-bought compute and storage in 2025, which it says now saves over $2.5 million a month. If the $70 million midpoint lands, Liberman estimates roughly <strong>$40 million of 2026 operating profit</strong>. Grass says the business is profitable today.</p>
+  </section>
+
+  <section>
+    <div class="section-head">
+      <div class="beat-eyebrow">06 &middot; The Next Product</div>
+      <h2>From Selling Encyclopaedias To Selling A Newswire</h2>
+      <div class="dek">Training data is today's income. Live Context Retrieval is the significant upside catalyst.</div>
+    </div>
+    <p>Today, Grass mostly sells encyclopaedias: large, one-off datasets that a lab buys, trains on, and comes back for next season. That is good business, but it is lumpy, and in the long run synthetic data may replace some of it.</p>
+    <p>Live Context Retrieval (LCR) is the newswire subscription. When an AI model or agent is asked a question about today, the price of a flight, a new product page, this morning's headlines, it needs to fetch the live web at that moment. LCR uses the same residential network and the same refinery to deliver that fresh context in real time, per query. If AI agents end up living on the open web, as most of the industry expects, that is recurring, metered demand rather than a seasonal batch order.</p>
+    <p>Grass has been working on this for a while. In November 2025 it said a search-results product was in trials with three major SEO firms and one leading AI lab. At the July 2026 call, the team said LCR products would launch "later this summer". As of this note, we have not seen a public launch with pricing, so we treat LCR as upside that is not in any number above.</p>
+    <p>The category is real and well funded. Two private AI search companies raised large rounds in May 2026: <strong>Exa at a $2.2 billion valuation</strong> and <strong>Parallel at about $2 billion</strong>. The closest incumbent to Grass's core business is Bright Data, a residential proxy and web-data company, which passed <strong>$300 million of annual recurring revenue</strong> in November 2025, growing about 50% a year and serving 14 of the top 20 LLM labs. Grass's 2026 guide is already roughly a quarter of that, from a standing start eighteen months ago.</p>
+    <div class="cards">
+      <div class="card"><span class="tag">Training data (today)</span><h3>The encyclopaedia</h3><p>Large, cleaned multimodal datasets sold to frontier labs. Seasonal and lumpy, concentrated in H2 training cycles.</p><p>This is the entire $65-75M 2026 guide.</p></div>
+      <div class="card"><span class="tag">LCR (next)</span><h3>The newswire</h3><p>Live web context fetched at the moment an AI model or agent needs it. Recurring and metered per query.</p><p>Not in the P&amp;L yet. Exa and Parallel show the category's size.</p></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-head">
+      <div class="beat-eyebrow">07 &middot; The Money</div>
+      <h2>Three Boxes Ticked. The Fourth Is The Opportunity.</h2>
+      <div class="dek">Our standing test for any token: growing users, network effects, real revenue, and a mechanism that returns it to holders.</div>
+    </div>
+    <p>Every token we look at faces the same four questions: is the user base growing; does each new user make the network more valuable to the others; is there real, sustainable revenue; and is there a live or imminent mechanism that returns that revenue to holders? A token can pass the first three and still be highly investable while it waits for the fourth. That gap is exactly what our fee switch screen looks for. Grass sits squarely in it.</p>
+    <div class="scorecard">
+      <div class="box"><div class="num">Box 1</div><span class="pill on"><span class="dot"></span>GROWING</span><h3>Users</h3><p>Nodes up from ~3M to 8.5M monthly active; repeat orders from nearly every AI customer.</p></div>
+      <div class="box"><div class="num">Box 2</div><span class="pill on"><span class="dot"></span>BUILDING</span><h3>Network effects</h3><p>More homes in more places lift success rates, which wins more buyers, which funds more rewards.</p></div>
+      <div class="box"><div class="num">Box 3</div><span class="pill on"><span class="dot"></span>VERIFIED</span><h3>Revenue</h3><p>$32.1M booked in fifteen months and independently reviewed. Guide of $65-75M for 2026.</p></div>
+      <div class="box"><div class="num">Box 4</div><span class="pill off"><span class="dot"></span>NOT YET</span><h3>Mechanism</h3><p>No standing buyback or revenue share. Cash is being reinvested; a small 2025 buyback was a one-off.</p></div>
+    </div>
+    <p><strong>Box 1, users.</strong> Supply is growing fast (3 million to 8.5 million nodes), and demand is growing faster, with more inbound work than the network can always serve. The measure we care about most is on the buyer side: repeat purchases from frontier labs.</p>
+    <p><strong>Box 2, network effects.</strong> This is a two-sided marketplace. Every new home in a new city or country makes the network harder to block and more useful to buyers, especially for location-specific data. More buyers mean more rewards, now paid in USDC, which attracts more homes. The 250-petabyte archive also compounds: each dataset sold makes the next one cheaper to produce.</p>
+    <p><strong>Box 3, revenue.</strong> Checked, and now independently checked. Few tokens in our universe can show an outside firm reviewing every single customer order.</p>
+    <p><strong>Box 4, the mechanism.</strong> Not yet. Grass is doing what a farmer does in the early years: ploughing the harvest back into more fields before paying a dividend. Most revenue is being reinvested, especially in owning its own compute. The team did run a small buyback in late 2025 (about $100,000 completed and $250,000 in progress, funded from prior-quarter revenue), but it has not made this a standing policy.</p>
+    <p>The structure is the key to believing Box 4 will come. Customer revenue flows to <strong>Grass DataCo Ltd, a wholly owned subsidiary of the Grass Foundation</strong>, not to Wynd Labs, the development company that builds the product and runs sales as a vendor. The team's line since launch is that there is no equity company sitting above the token and that long-term value belongs to the token. Liberman's argument is that this makes reinvestment the right call for now: with no equity sidecar, growth compounds towards the token either way, and capital return should come earlier than at a normal start-up, though not from day one.</p>
+    <p>We would add one point of care. Wynd Labs did raise venture money (a $3.5 million seed in December 2023 and a Series A led by Hack VC in September 2024, with Polychain, Delphi and Brevan Howard among investors), and early investors hold 25.2% of token supply. That is consistent with the token being the value vehicle, since the investors' upside is in the token too, but it means Wynd Labs is a real company with its own economics. How much of DataCo's revenue flows to Wynd Labs as vendor fees is the number we would most like to see next.</p>
+    <blockquote class="pull">Box four is the switch. When revenue this large and this verified starts reaching holders, the token stops being priced as a startup and starts being priced as a business.</blockquote>
+  </section>
+
+  <section>
+    <div class="section-head">
+      <div class="beat-eyebrow">08 &middot; Valuation</div>
+      <h2>Grown-Up Earnings, Start-Up Multiple</h2>
+      <div class="dek">We value on circulating market cap, never fully diluted value. On that basis, Grass trades at about 4.5x this year's expected fees.</div>
+    </div>
+    <p>At $0.47 on 24 September, with 677 million tokens circulating, Grass has a circulating market cap of about <strong>$318 million</strong>. The price has bounced 47% in a week on the Regen news, but it remains 88% below its all-time high of $3.89. That is roughly <strong>4.5x the $65-75 million</strong> of fees expected for 2026, about 11x the trailing twelve months to June, and about 8x the operating profit the business could make this year if the guide lands. For a business guiding to four times growth, and profitable today, the multiples are unusually low for Crypto and even more so for AI.</p>
+    <p>Two of the most followed public analysts on Grass have put numbers on what happens if it delivers. We show both below, translated onto the same circulating-market-cap basis we use for everything else.</p>
+    <div class="forecasts">
+      <div class="fc">
+        <div class="fc-head">
+          <span class="tag">Forecast 1 &middot; the price path</span>
+          <h3>Austin Barack, CIO, RockawayX Liquid</h3>
+          <p>Grass sits at both training and inference, grows at triple digits and trades on ~6x forward revenue. His chart levels are $0.61 and $0.90; his fair value, if H2 and LCR land, is <strong>about $1.50</strong>.</p>
+        </div>
+        <div class="fc-rows">
+          <div class="fc-row">
+            <div class="fc-lab"><b>$0.47</b><span>Today</span></div>
+            <div class="fc-track"><div class="fc-bar now" style="width:31.3%"></div></div>
+            <div class="fc-val"><b>$318M</b><span>4.5x fees</span></div>
+          </div>
+          <div class="fc-row">
+            <div class="fc-lab"><b>$0.61</b><span>First target</span></div>
+            <div class="fc-track"><div class="fc-bar" style="width:40.7%"></div></div>
+            <div class="fc-val"><b>$413M</b><span>5.9x &middot; +30%</span></div>
+          </div>
+          <div class="fc-row">
+            <div class="fc-lab"><b>$0.90</b><span>Second target</span></div>
+            <div class="fc-track"><div class="fc-bar" style="width:60%"></div></div>
+            <div class="fc-val"><b>$609M</b><span>8.7x &middot; +91%</span></div>
+          </div>
+          <div class="fc-row">
+            <div class="fc-lab"><b>$1.50</b><span>Fair value</span></div>
+            <div class="fc-track"><div class="fc-bar target" style="width:100%"></div></div>
+            <div class="fc-val"><b>$1.0bn</b><span>14.5x &middot; +219%</span></div>
+          </div>
+        </div>
+        <div class="fc-foot">Circulating market cap at each price (677M tokens) and multiple of the $70M fee midpoint. Source: @AustinBarack on X, 22-23 Sept 2026.</div>
+      </div>
+      <div class="fc">
+        <div class="fc-head">
+          <span class="tag">Forecast 2 &middot; the earnings math</span>
+          <h3>Yan Liberman, Delphi Ventures</h3>
+          <p>Judge H1 against H1, not against H2. Around $70M of 2026 revenue, less roughly $2.5M a month of costs, leaves <strong>about $40M of operating profit</strong>, and the token is the value vehicle because there is no equity company above it.</p>
+        </div>
+        <div class="fc-rows">
+          <div class="fc-row">
+            <div class="fc-lab"><b>Revenue</b><span>2026E</span></div>
+            <div class="fc-track"><div class="fc-bar" style="width:100%"></div></div>
+            <div class="fc-val"><b>~$70M</b><span>~4x 2025</span></div>
+          </div>
+          <div class="fc-row">
+            <div class="fc-lab"><b>Costs</b><span>~$2.5M/month</span></div>
+            <div class="fc-track"><div class="fc-bar cost" style="width:42.9%"></div></div>
+            <div class="fc-val"><b>~$30M</b><span>mostly compute</span></div>
+          </div>
+          <div class="fc-row">
+            <div class="fc-lab"><b>Profit</b><span>operating</span></div>
+            <div class="fc-track"><div class="fc-bar profit" style="width:57.1%"></div></div>
+            <div class="fc-val"><b>~$40M</b><span>~57% margin</span></div>
+          </div>
+        </div>
+        <div class="fc-callout"><b>~8x</b><span>today's $318M circulating market cap divided by ~$40M of 2026 operating profit</span></div>
+        <div class="fc-foot">Source: @YanLiberman on X, 14 Jul and 21 Sept 2026. Profit estimate is his, contingent on the $70M landing.</div>
+      </div>
+    </div>
+    <p>Both analysts hold the token, and both say so. We treat their numbers as a picture of what success looks like, not as a forecast of our own. Two technical points complete the picture: fully diluted value is about $469 million, with roughly 32% of supply still vesting through 2028; and Liberman's "adjusted" float, which excludes the Foundation's treasury, lands at around $325 million at today's price, close to our circulating figure.</p>
+    <p>Our own read is simpler. At under 5x fees that are now independently reviewed, the market is not pricing Grass as a profitable data company. It is pricing it as a new start-up that might have a data company inside it. The Regen review narrows that gap. H2 delivery and a Box 4 mechanism would close it.</p>
+  </section>
+
+  <section>
+    <div class="section-head">
+      <div class="beat-eyebrow">09 &middot; The Risks</div>
+      <h2>Five Ways This Goes Wrong</h2>
+      <div class="dek">The revenue question is largely answered. These are the questions that remain.</div>
+    </div>
+    <div class="risk"><div class="rn">1</div><div class="rc"><h3>A review is not an audit</h3><p>Regen reviewed every customer work order, which is strong evidence the revenue exists. It expressed no opinion on the financial statements as a whole, and the $17M versus $14.5M H1 gap has not been explained. A full audit of DataCo would remove this risk.</p></div></div>
+    <div class="risk"><div class="rn">2</div><div class="rc"><h3>H2 has to be three to four times H1</h3><p>The whole 2026 case rests on $50-60M landing in the second half. Seasonality and slipped orders make that plausible, but a handful of large lab contracts moving by a quarter would make the year look like a miss. Customer concentration is likely high and is not disclosed.</p></div></div>
+    <div class="risk"><div class="rn">3</div><div class="rc"><h3>The token may wait a long time to be paid</h3><p>There is no standing buyback or revenue share, and reinvestment is the stated policy. Wynd Labs is a separate company paid as a vendor. Holders need to see both a capital-return mechanism and clear disclosure of how much revenue stays inside DataCo.</p></div></div>
+    <div class="risk"><div class="rn">4</div><div class="rc"><h3>Synthetic data, website defences and LCR execution</h3><p>Synthetic data and model distillation could replace some demand for raw web corpora. Websites may get better at spotting residential scraping, and legal pressure on AI data collection is rising. Grass's answer is LCR, which is not launched at scale and competes with well-funded players such as Exa, Parallel and Bright Data.</p></div></div>
+    <div class="risk"><div class="rn">5</div><div class="rc"><h3>Supply overhang and a noisy name</h3><p>About 32% of supply is still vesting through 2028, including investor and contributor allocations, which will add selling pressure. And unrelated "Touch Grass" meme tokens pollute search results and price screens; always check you are looking at the Solana GRASS token linked from grass.io.</p></div></div>
+  </section>
+
+  <section>
+    <div class="section-head">
+      <div class="beat-eyebrow">10 &middot; The Dragonfly View</div>
+      <h2>Where Grass Fits In The Dragonfly Approach</h2>
+      <div class="dek">An application, not a blockchain. Real revenue, not a roadmap. And a fee switch the market has not priced.</div>
+    </div>
+    <p>Our approach is to hold a diversified basket of liquid tokens, sizing each position on its balance of risk and reward, with the aim of venture-style returns across the basket as a whole. We are long-only, use no leverage, and value every token on its circulating market cap, never on fully diluted value. Grass fits that framework on each count.</p>
+    <p><strong>It is an application, and applications are where the money is.</strong> Our view is that the layer-1 war is largely over, with Solana winning the high-performance lane, and that applications, not base layers, are Crypto's new cash machines. Grass is an application built on the winning chain, selling into the fastest-growing market in technology. It is also the supply side of the AI economy: where AI applications such as Venice sell answers, Grass sells the raw material those answers are built from.</p>
+    <p><strong>It passes three of our four boxes, and the fourth is the opportunity.</strong> Growing users, network effects and independently reviewed revenue are all in place. What is missing is a standing mechanism that returns that revenue to holders. That is exactly the profile our fee switch screen looks for: a large, real revenue base that has not yet been shared with the token. When protocols in that position flip the switch, the market tends to re-rate them from a start-up multiple to a business multiple. We would rather be positioned before that moment than after it.</p>
+    <p><strong>It is priced as a start-up, not as a business.</strong> At roughly 4.5x this year's expected fees and about 8x potential operating profit, Grass is cheap against both Crypto and AI peers, even before any value is given to Live Context Retrieval.</p>
+    <p><strong>Sizing reflects the risks.</strong> Our rule is that higher-risk positions are held at smaller-than-average size, with liquidity as the active lever. Grass carries real execution risk, above all the H2 revenue test, so this is a case for starting small and adding on evidence. Daily trading volume of around $30 million gives us the liquidity to do both.</p>
+    <div class="cards">
+      <div class="card"><span class="tag">Watch 1</span><h3>The H2 print</h3><p>Q3 and full-year revenue against the $65-75M guide. The single most important data point.</p></div>
+      <div class="card"><span class="tag">Watch 2</span><h3>The switch</h3><p>A formal buyback, burn or revenue-share policy for GRASS holders. This would complete the four boxes.</p></div>
+      <div class="card"><span class="tag">Watch 3</span><h3>A full audit</h3><p>An audited set of DataCo accounts, including disclosure of vendor fees paid to Wynd Labs.</p></div>
+      <div class="card"><span class="tag">Watch 4</span><h3>LCR goes live</h3><p>A public launch with pricing and paying customers, turning the upside catalyst into recurring revenue.</p></div>
+    </div>
+    <p>The market still sees a DePIN token with a big node count. We see a profitable AI data company that happens to be owned through a token, trading at a start-up price. That gap is the investment case.</p>
+    <p class="signoff">As long-term investors, it is immaterial, perhaps even advantageous, that this is not yet the consensus view.</p>
+  </section>
+
+  <section>
+    <div class="methodology">
+      <h3>Methodology &amp; sourcing</h3>
+      <p>Revenue figures for 14 March 2025 to 30 June 2026 are taken directly from Regen Financial's revenue summary of Grass DataCo Ltd, published by Grass on 21 September 2026. Half-year and quarterly figures for 2025, the 2026 guide, operating costs, headcount, node-traffic concentration and LCR timing come from Grass's official recaps of its November 2025 and July 2026 token holder calls. Price, circulating supply and market cap are from CoinGecko on 24 September 2026; allocation and vesting data from Tokenomist. Funding history is from Blockworks, DL News and Tokenomist; airdrop participation from Grass's own published figures. Bright Data, Exa and Parallel figures are from press reports cited below and are private-company comparisons for category size, not valuation targets for GRASS.</p>
+      <p>Dragonfly calculations: cash conversion in the Regen table, trailing twelve-month revenue (H2 2025 from the July call plus H1 2026 from Regen), the H2 2026 figure implied by the guide, and all multiples on circulating market cap. Analyst views from Austin Barack and Yan Liberman are summarised from their public posts on X; both disclose holdings. A Cointelegraph interview clip with Kyle Samani, circulating in the same week, does not discuss Grass and has not been used as a source. One third-party explainer claimed GRASS stakers receive USDC revenue after a July 2026 vote; we could not confirm this from any Grass source (the USDC Stage 2 rewards go to bandwidth contributors, not stakers) and have excluded it.</p>
+      <div class="disclaimer">Dragonfly Asset Management has prepared this document for professional investors only. It is intended for general information and does not constitute investment advice or a recommendation to buy, sell, or hold any digital asset. Digital asset investments carry a high degree of risk, including the risk of total loss. Past performance is not indicative of future results. Dragonfly Asset Management and its principals may hold positions in the assets discussed. Prepared by Dragonfly Asset Management, which is not itself FCA-regulated; the Dragonfly Digital Assets Fund it manages is FCA-authorised via AIFM AK Jensen Investment Management Ltd (FRN 439744). Company-reported figures and all figures drawn from social media are self-reported and flagged as such in the text; Regen Financial's work is due diligence, not an audit. Re-verify every number from a live source before sizing a position.</div>
+    </div>
+  </section>
+
+  <div class="sources">
+    <h3>Sources</h3>
+    <ul>
+      <li><a href="https://www.grass.io/resources/grass-attestation-h1-2026.pdf">Regen Financial, Grass DataCo revenue summary (PDF)</a></li>
+      <li><a href="https://x.com/grass/status/2102080420237963752">@grass on X, revenue and structure post, 21 Sept 2026</a></li>
+      <li><a href="https://www.grass.io/learn/july-7-grass-token-holder-and-network-participant-call/">Grass, July 7 holder call recap</a></li>
+      <li><a href="https://www.grass.io/learn/grass-token-holder-and-network-participants-call-1">Grass, holder call #1 recap, 24 Nov 2025</a></li>
+      <li><a href="https://www.grass.io/learn/what-does-grass-actually-do-with-your-connection/">Grass, "What Does Grass Actually Do With Your Connection?"</a></li>
+      <li><a href="https://www.grass.io/learn/how-your-stage-2-rewards-allocation-works/">Grass, Stage 2 rewards allocation</a></li>
+      <li><a href="https://www.grass.io/learn/grass-wallet/">Grass, Introducing the Grass Wallet</a></li>
+      <li><a href="https://www.coingecko.com/en/coins/grass">CoinGecko, Grass (GRASS)</a></li>
+      <li><a href="https://tokenomist.ai/grass">Tokenomist, GRASS allocation and vesting</a></li>
+      <li><a href="https://www.kucoin.com/news/flash/grass-reports-booked-revenue-of-14-53m-for-first-half-of-2026">KuCoin News, Grass H1 2026 revenue, 22 Sept 2026</a></li>
+      <li><a href="https://x.com/YanLiberman/article/2073009827580629239">Yan Liberman, "Grass: The AI Data Business Hiding Inside a Token", 3 Jul 2026</a></li>
+      <li><a href="https://x.com/YanLiberman/status/2077008911501070797">Yan Liberman on X, seasonality thread, 14 Jul 2026</a></li>
+      <li><a href="https://x.com/YanLiberman/status/2102089893073633301">Yan Liberman on X, Regen reaction, 21 Sept 2026</a></li>
+      <li><a href="https://x.com/AustinBarack/status/2102186600369147995">Austin Barack on X, $1.50 fair value, 22 Sept 2026</a></li>
+      <li><a href="https://x.com/AustinBarack/status/2074548253350084935">Austin Barack on X, holder call recap, 7 Jul 2026</a></li>
+      <li><a href="https://x.com/AustinBarack/status/2079247953189814689">Austin Barack on X, LCR and H2 seasonality, 20 Jul 2026</a></li>
+      <li><a href="https://www.youtube.com/watch?v=oTDtrC8D8_U">The Rollup, Austin Barack AI bull thesis (Grass 11:45-14:16)</a></li>
+      <li><a href="https://www.alphaplease.com/p/live-context-retrieval-grasss-game">Alpha Please, Live Context Retrieval interview, Oct 2024</a></li>
+      <li><a href="https://www.datawallet.com/crypto/what-is-grass">Datawallet, Grass architecture explainer</a></li>
+      <li><a href="https://blockworks.com/news/grass-data-verification-depin-funding">Blockworks, Hack VC leads Grass Series A, Sept 2024</a></li>
+      <li><a href="https://www.dlnews.com/articles/defi/vcs-fund-company-behind-ai-training-network-grass/">DL News, Wynd Labs seed round, Dec 2023</a></li>
+      <li><a href="https://www.calcalistech.com/ctechnews/article/sjeyg2ezwe">Calcalist, Bright Data crosses $300M ARR, Nov 2025</a></li>
+      <li><a href="https://siliconangle.com/2026/05/20/exa-labs-raises-250m-2-2b-valuation-ai-search-tools/">SiliconANGLE, Exa raises at $2.2bn, May 2026</a></li>
+      <li><a href="https://finance.yahoo.com/sectors/technology/articles/parallel-systems-hits-2b-valuation-183305892.html">Yahoo Finance, Parallel hits $2bn valuation</a></li>
+    </ul>
+  </div>
+
+</div>
+
+<script>
+(function(){
+  var box = document.getElementById('revchart');
+  var tip = document.getElementById('tip');
+  if(!box || !tip) return;
+  box.querySelectorAll('.bar').forEach(function(g){
+    g.addEventListener('mousemove', function(e){
+      var r = box.getBoundingClientRect();
+      tip.textContent = g.getAttribute('data-tip');
+      tip.style.left = (e.clientX - r.left) + 'px';
+      tip.style.top = (e.clientY - r.top) + 'px';
+      tip.hidden = false;
+    });
+    g.addEventListener('mouseleave', function(){ tip.hidden = true; });
+  });
+})();
+</script>
+
+</body>
+</html>
