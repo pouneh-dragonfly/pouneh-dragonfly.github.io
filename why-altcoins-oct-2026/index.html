@@ -1,1 +1,445 @@
-x
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Why Altcoins? | Dragonfly Asset Management</title>
+<meta name="description" content="The under-the-radar networks carrying the next $100 trillion. A Dragonfly Asset Management sector report by Pouneh Bligaard, October 2026.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400;1,8..60,500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#faf7f0; --card:#ffffff; --surface2:#f2ede0;
+  --ink:#1a1a1a; --ink2:#44403a; --muted:#7a7566;
+  --accent:#8a6a3f; --accent-strong:#6b5330;
+  --green:#2f7d52; --red:#b23a2e; --blue:#5c7392;
+  --bar-neutral:#b3a991; --rule:#e2dccd;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:'Source Sans 3',Arial,sans-serif;font-size:19px;line-height:1.65}
+a{color:var(--accent-strong)}
+.wrap{max-width:780px;margin:0 auto;padding:0 20px}
+.wide{max-width:960px;margin:0 auto;padding:0 20px}
+
+/* masthead */
+.masthead{padding:56px 0 40px;border-bottom:1px solid var(--rule)}
+.brand{display:inline-flex;align-items:center;gap:16px;background:var(--card);border:1px solid var(--rule);padding:14px 22px 14px 16px;margin-bottom:40px}
+.brand img{width:64px;height:auto;display:block}
+.brand .name{font-family:'Oswald',sans-serif;font-weight:500;font-size:24px;letter-spacing:.5px;color:var(--ink2);line-height:1.1}
+.brand .sub{font-size:11px;letter-spacing:3px;color:var(--muted);text-transform:uppercase;font-weight:600}
+.kicker{font-family:'Oswald',sans-serif;font-size:14px;letter-spacing:3px;text-transform:uppercase;color:var(--accent);margin:0 0 12px}
+h1{font-family:'Oswald',sans-serif;font-weight:500;font-size:clamp(46px,9vw,84px);line-height:1.02;margin:0 0 20px;letter-spacing:.5px;text-transform:uppercase}
+.thesis{font-family:'Source Serif 4',Georgia,serif;font-style:italic;font-size:clamp(21px,3.2vw,26px);line-height:1.4;color:var(--ink2);margin:0 0 28px;max-width:720px}
+.byline{font-family:'Source Serif 4',Georgia,serif;font-style:italic;font-size:17px;color:var(--muted)}
+.byline b{font-style:normal;font-family:'Source Sans 3',sans-serif;color:var(--ink2);font-weight:600}
+
+/* stat tiles */
+.tiles{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:40px 0 8px}
+.tile{background:var(--card);border-top:3px solid var(--accent);padding:18px 18px 16px}
+.tile .num{font-family:'Oswald',sans-serif;font-size:38px;line-height:1.05;color:var(--accent-strong)}
+.tile .lbl{font-size:15px;line-height:1.4;color:var(--ink2);margin-top:6px}
+
+/* sections */
+section{padding:56px 0 8px}
+.eyebrow{display:flex;align-items:center;gap:14px;font-family:'Oswald',sans-serif;font-size:14px;letter-spacing:3px;text-transform:uppercase;color:var(--accent);margin:0 0 10px}
+.eyebrow::after{content:"";flex:1;height:1px;background:var(--accent);opacity:.45}
+h2{font-family:'Oswald',sans-serif;font-weight:500;font-size:clamp(30px,5vw,40px);line-height:1.12;margin:0 0 22px;text-transform:uppercase;letter-spacing:.3px}
+h3{font-family:'Oswald',sans-serif;font-weight:500;font-size:22px;letter-spacing:.3px;margin:30px 0 8px;color:var(--ink2);text-transform:uppercase}
+p{margin:0 0 18px}
+.lede{font-size:21px;color:var(--ink2)}
+.drop::first-letter{font-family:'Oswald',sans-serif;float:left;font-size:74px;line-height:.85;padding:6px 10px 0 0;color:var(--accent)}
+
+/* pull quotes */
+.pull{margin:30px 0;padding:22px 26px;background:var(--card);border-left:4px solid var(--accent)}
+.pull q{display:block;font-family:'Source Serif 4',Georgia,serif;font-style:italic;font-size:24px;line-height:1.4;color:var(--ink);quotes:"\201C" "\201D"}
+.pull cite{display:block;margin-top:10px;font-style:normal;font-size:13px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);font-weight:600}
+
+/* aside / sidebar */
+.aside{background:linear-gradient(135deg,#fffdf8,var(--surface2));border-left:4px solid var(--accent);padding:22px 26px;margin:30px 0}
+.aside h4{font-family:'Oswald',sans-serif;font-weight:500;font-size:18px;letter-spacing:1.5px;text-transform:uppercase;margin:0 0 8px;color:var(--accent-strong)}
+.aside p:last-child{margin-bottom:0}
+
+/* charts */
+.figure{background:var(--card);border:1px solid var(--rule);padding:24px 24px 18px;margin:30px 0}
+.figure .ftitle{font-family:'Oswald',sans-serif;font-size:17px;letter-spacing:1.5px;text-transform:uppercase;color:var(--ink2);margin:0 0 4px}
+.figure .fsub{font-size:15px;color:var(--muted);margin:0 0 16px}
+.figure .src{font-size:13px;color:var(--muted);margin:14px 0 0;line-height:1.5}
+.hbar{display:grid;grid-template-columns:150px 1fr 76px;align-items:center;gap:12px;margin:7px 0;font-size:15.5px}
+.hbar .lab{color:var(--ink2);line-height:1.25}
+.hbar .lab.hl{color:var(--accent-strong);font-weight:700}
+.hbar .track{height:24px;position:relative}
+.hbar .fill{height:100%;background:var(--bar-neutral);border-radius:0 4px 4px 0;min-width:3px;transition:filter .15s}
+.hbar .fill.hl{background:var(--accent)}
+.hbar .fill.dark{background:var(--ink2)}
+.hbar .val{font-variant-numeric:tabular-nums;font-weight:600;color:var(--ink2)}
+.hbar:hover .fill{filter:brightness(.88)}
+.hbar.tall .track{height:34px}
+.legend{display:flex;flex-wrap:wrap;gap:18px;font-size:14px;color:var(--ink2);margin-top:12px}
+.legend span{display:inline-flex;align-items:center;gap:7px}
+.legend i{width:14px;height:14px;display:inline-block;border-radius:2px}
+.vbars{display:flex;align-items:flex-end;gap:22px;height:260px;border-bottom:1px solid var(--ink2);padding-top:30px}
+.vbar{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;height:100%}
+.vbar .v{font-family:'Oswald',sans-serif;font-size:24px;color:var(--ink2);margin-bottom:6px}
+.vbar .b{width:100%;max-width:120px;background:var(--bar-neutral);border-radius:4px 4px 0 0}
+.vbar .b.hl{background:var(--accent)}
+.vbar .b.dark{background:var(--ink2)}
+.vbar:hover .b{filter:brightness(.88)}
+.vlabels{display:flex;gap:22px;margin-top:8px}
+.vlabels div{flex:1;text-align:center;font-size:14px;color:var(--ink2);line-height:1.3}
+
+/* data strip */
+.strip{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--rule);border:1px solid var(--rule);margin:28px 0}
+.strip div{background:var(--card);padding:16px 16px 14px}
+.strip .num{font-family:'Oswald',sans-serif;font-size:32px;color:var(--accent-strong);line-height:1.1}
+.strip .lbl{font-size:14.5px;color:var(--ink2);line-height:1.35;margin-top:4px}
+
+/* closing */
+.closing{background:#2b2924;color:#f4efe3;margin-top:64px;padding:64px 0 56px}
+.closing h2{color:#f4efe3}
+.closing p{color:#ddd5c4}
+.closing .signoff{font-family:'Source Serif 4',Georgia,serif;font-style:italic;font-size:23px;line-height:1.45;color:#e6c99b;border-left:3px solid #c4a06a;padding-left:20px;margin:28px 0}
+.closing .eyebrow{color:#d8b47e}
+.closing .eyebrow::after{background:#d8b47e}
+.author{display:flex;gap:18px;align-items:flex-start;background:rgba(255,255,255,.05);border-left:3px solid #c4a06a;padding:20px 22px;margin-top:30px}
+.author p{margin:0;font-size:16.5px}
+.author b{color:#f4efe3}
+footer{background:#22201c;color:#a39c8c;font-size:13.5px;line-height:1.6;padding:36px 0 48px}
+footer h4{font-family:'Oswald',sans-serif;font-weight:500;letter-spacing:2px;text-transform:uppercase;color:#d8cfbd;font-size:14px;margin:22px 0 8px}
+footer a{color:#d8b47e}
+footer ol{padding-left:20px;margin:0}
+footer li{margin-bottom:4px}
+.toc{font-size:16px;color:var(--ink2);columns:2;column-gap:32px;margin:30px 0 0;padding:20px 24px;background:var(--surface2)}
+.toc a{color:var(--ink2);text-decoration:none;display:block;padding:3px 0;break-inside:avoid}
+.toc a:hover{color:var(--accent-strong)}
+.toc span{color:var(--accent);font-family:'Oswald',sans-serif;margin-right:8px}
+
+@media (max-width:700px){
+  body{font-size:18px}
+  .tiles,.strip{grid-template-columns:repeat(2,1fr)}
+  .hbar{grid-template-columns:104px 1fr 62px;gap:8px;font-size:14px}
+  .figure{padding:18px 14px 14px}
+  .toc{columns:1}
+  .vbars,.vlabels{gap:10px}
+  .vbar .v{font-size:19px}
+  .vlabels div{font-size:12.5px}
+  .pull q{font-size:21px}
+}
+</style>
+</head>
+<body>
+
+<header class="masthead">
+<div class="wrap">
+<div class="brand"><img src="data:image/png;base64,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" alt="Dragonfly emblem"><div><div class="name">Dragonfly</div><div class="sub">Asset Management</div></div></div>
+<p class="kicker">Sector report · October 2026</p>
+<h1>Why Altcoins?</h1>
+<p class="thesis">The under-the-radar networks carrying the next $100 trillion of assets, the AI agents that will pay on them, and why the winners will win big.</p>
+<p class="byline">Written by <b>Pouneh Bligaard</b>, Founder and Chief Investment Officer · 20 minute read</p>
+</div>
+<div class="wide">
+<div class="tiles">
+<div class="tile"><div class="num">~$1tr</div><div class="lbl">The entire altcoin sector, excluding Bitcoin and stablecoins</div></div>
+<div class="tile"><div class="num">$100tr+</div><div class="lbl">Of stocks, bonds and funds that can move onto these networks</div></div>
+<div class="tile"><div class="num">1bn</div><div class="lbl">AI agents expected by 2029, acting 217bn times a day</div></div>
+<div class="tile"><div class="num">5 of 6</div><div class="lbl">Fastest companies ever to $100m revenue run on blockchain</div></div>
+</div>
+</div>
+</header>
+
+<main>
+<div class="wrap">
+
+<section id="prologue">
+<p class="eyebrow">Prologue</p>
+<h2>Everyone and their uncle</h2>
+<p class="drop lede">When we started Dragonfly, I spent the first two years explaining to people what a Bitcoin was. Not why it mattered, or what it was for. What it <i>was</i>. At dinner parties, in board rooms, at the school gate. It was, after all, the only thing in Crypto anyone had heard of.</p>
+<p>Then the questions moved on. What is a token? Is it a share? Why on earth would anyone need one? The polite answer took twenty minutes. The honest answer was shorter: you don’t need one yet, but you will.</p>
+<p>These days I barely get to finish a sentence. Everyone and their uncle is storming in. BlackRock is publishing papers on “machine-native money”. Twenty-one of the world’s largest banks, Bank of America, Citi and Goldman Sachs among them, are building a shared dollar token. Nasdaq will list shares as tokens. The Clearing House, which has settled US bank payments since 1853 and moves over $2 trillion a day, is building onchain.</p>
+<p>Go figure.</p>
+<p>So this report is for anyone who has arrived at the party a little late and is wondering which room the drinks are in. The short answer: not the one with Bitcoin in it. Bitcoin is wonderful and it has found its job. But the users, the transactions, the fees and, increasingly, the profits have moved next door, into a small and widely misunderstood sector worth about $1 trillion. The altcoins.</p>
+<nav class="toc" aria-label="Contents">
+<a href="#short-answer"><span>01</span>The short answer</a>
+<a href="#bitcoin"><span>02</span>Why not just buy Bitcoin?</a>
+<a href="#tokenisation"><span>03</span>Engine one: tokenisation</a>
+<a href="#agents"><span>04</span>Engine two: AI agents</a>
+<a href="#tolls"><span>05</span>Roads and tolls</a>
+<a href="#revenue"><span>06</span>Traction: the revenue stage</a>
+<a href="#payback"><span>07</span>The payback era</a>
+<a href="#winners"><span>08</span>Winners take most</a>
+<a href="#valuation"><span>09</span>How big could this get?</a>
+<a href="#risks"><span>10</span>Risks</a>
+<a href="#fit"><span>11</span>How this fits the Dragonfly approach</a>
+<a href="#conclusion"><span>12</span>Conclusion</a>
+</nav>
+</section>
+
+<section id="short-answer">
+<p class="eyebrow">01 · The short answer</p>
+<h2>A small sector with a giant job</h2>
+<p>Strip out Bitcoin and the stablecoins and the whole altcoin market is worth roughly $1 trillion. That is smaller than several individual technology companies. Yet these networks are being asked to do two enormous jobs at once.</p>
+<p>The first is to carry the world’s assets. Stocks, bonds, funds and commodities are starting to move onto blockchain rails, and the pool they are drawn from runs to hundreds of trillions of dollars. The second is to be the payment system for artificial intelligence. Agents, the pieces of software that will soon run errands, trade, buy data and rent computing power on our behalf, need money that works like software. Crypto networks are the only practical way for them to pay each other instantly, in tiny amounts, across borders.</p>
+<p>On top of those rails, applications are already earning real money, some of them millions of dollars a day, and for the first time they are paying it back to the people who own their tokens. Most of the roughly 1,500 investable protocols will fail, just as most early internet companies did. The winners will be enormous. That combination, a giant opportunity and brutal dispersion, is exactly why this sector rewards professional research.</p>
+</section>
+
+<section id="bitcoin">
+<p class="eyebrow">02 · Why not just buy Bitcoin?</p>
+<h2>Bitcoin is gold. Altcoins are the rails.</h2>
+<p>Bitcoin proved one thing brilliantly: you can move value across the internet the way you move data. It was the first use of the technology. Everything people have built with it since shows up in the long contest between Bitcoin and the altcoins, the newer, programmable blockchain networks that came after it.</p>
+<p>For most of the past nine years, that contest was one-way traffic. Bitcoin kept winning, while the altcoins produced a string of failed experiments with no product-market fit, most of them on Ethereum, the first network of its kind.</p>
+<p>Ethereum launched with the promise of programmable money, and for a while everyone believed it. Then reality arrived. In 2017 a game about collecting cartoon cats, CryptoKitties, froze the entire network. The initial coin offering boom followed and ended with the regulators. DeFi summer in 2020 and 2021 promised a new financial system, but the eye-catching yields were paid in freshly printed tokens and collapsed with them. Crypto was, frankly, a solution looking for a problem. The standing joke was: “you don’t need a token for that.”</p>
+<p>What changed is that the technology finally works, and two genuine problems arrived for it to solve. Matt Hougan, Chief Investment Officer of Bitwise, a leading Crypto asset manager and ETF issuer, makes the comparison with early online video: it buffered, it froze, and sensible people asked why they would bother when they had a television. Blockchains have just passed their buffering stage. Throughput is massive, costs are reliably low, and accounts are easy to use.</p>
+<div class="pull"><q>The Nasdaq isn’t moving onto Bitcoin. It’s moving onto altcoin rails.</q></div>
+<p>The data tells the same story. Bitcoin still holds more than half the sector’s value, but almost none of its activity.</p>
+<div class="figure" role="img" aria-label="Bitcoin's share of Crypto: 55% of value, under 7% of fees, under 3% of daily users, under 0.1% of transactions.">
+<p class="ftitle">Bitcoin’s share of Crypto</p>
+<p class="fsub">Value has stayed with Bitcoin. Activity has moved to the rails.</p>
+<div class="hbar" title="Value: 55%"><div class="lab">Value</div><div class="track"><div class="fill dark" style="width:55%"></div></div><div class="val">55%</div></div>
+<div class="hbar" title="Fees paid: under 7%"><div class="lab hl">Fees paid</div><div class="track"><div class="fill hl" style="width:7%"></div></div><div class="val">&lt;7%</div></div>
+<div class="hbar" title="Daily active users: under 3%"><div class="lab hl">Daily users</div><div class="track"><div class="fill hl" style="width:3%"></div></div><div class="val">&lt;3%</div></div>
+<div class="hbar" title="Daily transactions: under 0.1%"><div class="lab hl">Transactions</div><div class="track"><div class="fill hl" style="width:.4%"></div></div><div class="val">&lt;0.1%</div></div>
+<p class="src">In 2017 Bitcoin had 95% of users, 78% of transactions and 99% of fees. Source: Artemis, via Dragonfly Asset Management.</p>
+</div>
+<p>We have nothing against Bitcoin. It has found its product-market fit as digital gold, and investors can own it cheaply through an exchange-traded fund. Our fund does not hold it, for a simple reason: specialist research adds little to a single, well-understood asset. It adds a great deal in a sector of 1,500 networks and applications where the activity, and the opportunity, now lives.</p>
+</section>
+
+<section id="tokenisation">
+<p class="eyebrow">03 · Engine one: tokenisation</p>
+<h2>Putting the magazine on the internet</h2>
+<p>Ran Neuner, founder of Crypto Banter, one of the world’s most watched Crypto channels, is among the sector’s sharpest storytellers. His favourite analogy comes from his early career in media. When the internet arrived, publishers took their magazines and simply put them online, page for page. Forbes went from paper to screen. Nothing about the content changed, only the rails it travelled on. The paper readership slowly died, and the genuinely new businesses, social media among them, came later, built on rails that the migration had paid for.</p>
+<p>Tokenisation is step one of exactly that story. Real-world assets, as the industry calls them, are today’s stocks, bonds, funds and commodities moved onto better rails. Onchain they trade around the clock, settle in seconds and can be split into tiny pieces. Once they live there, the new businesses can begin.</p>
+<p>Matt Hougan is the best guide to why this migration is happening now, and his point is about how disruption always works. Sceptics ask why anyone would trade a tokenised share when they already have a perfectly good brokerage account. At 11 o’clock on a Tuesday morning in New York, he concedes, you probably wouldn’t. But after hours, at weekends, on holidays, or in the minutes after Nvidia reports its earnings, the only place to trade is onchain. Disruption never attacks the mainstream first. It starts at the edges.</p>
+<p>His favourite example came when war broke out with Iran. Traditional markets were shut, and the only liquid oil market in the world was on Hyperliquid, a decentralised exchange. That kind of moment forces people out of their comfort zone. Once they try the new thing, Hougan observes, they never go back.</p>
+<div class="pull"><q>I think DeFi is just finance.</q><cite>Matt Hougan, Chief Investment Officer, Bitwise</cite></div>
+<p>Most of us in the industry now believe the same. Settlement shows why. A share traded on a US exchange settles the next business day, and in some markets it takes several days. A tokenised share on a decentralised exchange settles in a second. Hougan expects half of today’s jargon to disappear: DeFi will simply be finance, and Crypto will simply be how markets work.</p>
+<h3>The addressable market just grew a hundredfold</h3>
+<p>For years, Crypto applications could only trade or lend against other Crypto assets, a market of roughly $2-3 trillion. Hougan’s point is that the moment these apps moved into stocks and bonds, their addressable market grew “literally by 100x”. Global equities are worth around $110 trillion and bonds around $300 trillion. Drawn on a single scale, the altcoin sector barely registers.</p>
+<div class="figure" role="img" aria-label="Global bonds about $300 trillion, global equities about $110 trillion, all Crypto $2.9 trillion, altcoins about $1 trillion.">
+<p class="ftitle">$1 trillion of rails for a $400 trillion world</p>
+<p class="fsub">Market value, US$ trillion, one scale</p>
+<div class="hbar tall" title="Global bonds: about $300tr"><div class="lab">Global bonds</div><div class="track"><div class="fill dark" style="width:100%"></div></div><div class="val">~300</div></div>
+<div class="hbar tall" title="Global equities: about $110tr"><div class="lab">Global equities</div><div class="track"><div class="fill dark" style="width:36.7%"></div></div><div class="val">~110</div></div>
+<div class="hbar tall" title="All Crypto: $2.9tr"><div class="lab">All Crypto</div><div class="track"><div class="fill" style="width:1%"></div></div><div class="val">2.9</div></div>
+<div class="hbar tall" title="Altcoins: about $1tr"><div class="lab hl">Altcoins</div><div class="track"><div class="fill hl" style="width:.4%"></div></div><div class="val">~1</div></div>
+<p class="src">Sources: Bitwise (bonds); Dragonfly Asset Management (equities; total Crypto $2.9tr at end September 2026). Altcoins are total Crypto less Bitcoin and stablecoins.</p>
+</div>
+<h3>The banks have arrived</h3>
+<p>This is no longer a Crypto story. It has become a banking one, and the past few months have brought a remarkable run of evidence. Twenty-one global banks are building a single dollar token for launch in 2027. The Clearing House has chosen Quant to power a tokenised deposit network backed by 25 of the largest US banks. Nasdaq plans to trade shares as tokens from the second quarter of 2027, with the same ticker and settlement through the DTC. Circle’s Arc network is live, with BlackRock and Visa among its validators. The SEC has granted a five-year innovation exemption for tokenised securities venues.</p>
+<p>The incumbents are also buying their way in. More than $22 billion of mergers between traditional finance and Crypto have been agreed since January 2024, from Robinhood’s purchase of Bitstamp to Stripe buying Bridge and Mastercard buying BVNK. Robinhood’s most telling move was technical rather than financial: when it launched its own blockchain, it plugged in Uniswap and Morpho, two decentralised apps, from day one. Hougan reads this as Wall Street concluding that the way to scale is to build on these apps, not to copy them.</p>
+<div class="strip">
+<div><div class="num">$31bn</div><div class="lbl">Real-world assets onchain, three times a year ago</div></div>
+<div><div class="num">1.9m</div><div class="lbl">Holders of tokenised shares, up 1,360% since January</div></div>
+<div><div class="num">13×</div><div class="lbl">Growth in tokenised stocks in a year, to $3.2bn</div></div>
+<div><div class="num">$16tr</div><div class="lbl">BCG’s tokenisation forecast for 2030</div></div>
+</div>
+<p>Today’s $31 billion of real-world assets onchain is a rounding error against BCG’s base case of $16 trillion by 2030. Nor is BCG alone in forecasting growth on this scale: Standard Chartered sees $30 trillion by 2034. Over the long run the pool is the $400 trillion or so of bonds and equities in the chart above. We are at the magazine-on-the-internet stage. The “social media” of this explosive transformation has not even been invented yet.</p>
+</section>
+
+<section id="agents">
+<p class="eyebrow">04 · Engine two: AI agents</p>
+<h2>Networks built for the machines</h2>
+<p>The second engine is bigger, and stranger. For the past three years the stock market has been funding the infrastructure of artificial intelligence: chips, data centres, power stations, frontier models. The question that follows is simple. What is all of that infrastructure actually for? AI, in its rawest form, is a bunch of agents. And agents are going to transact.</p>
+<p>The numbers are hard to grasp. The world’s human workforce is about 3.3 billion people, and the average person does roughly one online transaction a day. IDC, the research firm, expects more than a billion AI agents to be deployed by 2029, executing over 217 billion actions a day. We would happily take the over on both figures. Anyone already running a small team of agents knows that most of them would buy things if they could.</p>
+<div class="figure" role="img" aria-label="About 3 billion human online transactions a day versus 217 billion AI agent actions a day by 2029.">
+<p class="ftitle">Online actions per day</p>
+<p class="fsub">Billions</p>
+<div class="hbar tall" title="People today: about 3bn a day"><div class="lab">3.3bn people today</div><div class="track"><div class="fill" style="width:1.4%"></div></div><div class="val">~3</div></div>
+<div class="hbar tall" title="AI agents by 2029: 217bn a day"><div class="lab hl">1bn agents by 2029</div><div class="track"><div class="fill hl" style="width:100%"></div></div><div class="val">217</div></div>
+<p class="src">Sources: IDC FutureScape 2026 (agents and actions); workforce and transaction estimate as cited by Ran Neuner.</p>
+</div>
+<div class="pull"><q>It’s like it was built for the machines.</q><cite>Raoul Pal, former Goldman Sachs and GLG macro investor and founder of Real Vision, on blockchains and AI agents</cite></div>
+<h3>Why agents can’t use a bank</h3>
+<p>Ask why agents will pay in Crypto and the answer comes in four parts. First, they are strangers. My agent does not know your agent, or who owns it, so payment has to be guaranteed by code rather than by trust. Second, they need it now: an agent buys a piece of data and pays for it in the same second, with no overnight settlement. Third, they cross borders. When a Chinese agent meets an Indian one, the banks don’t talk to each other. A blockchain does, and the receiving agent can swap the payment into whatever currency its owner wants in a fraction of a second. Fourth, they pay in cents. Chainalysis finds that 87% of agent payments on x402, the leading protocol, are under ten cents. Card fees make that impossible.</p>
+<p>Ran tells a lovely story about testing the idea. At a summit in New York he begged developers and bankers to tell him he was wrong. One finally offered an alternative: give each agent a prepaid debit card with spending limits, the way you would for a child. Ran’s reply was that this is simply a smart contract with a preloaded wallet, which is to say, a blockchain. Another sceptic insisted agents would settle on Cloudflare. Cloudflare, it turns out, has built the x402 protocol for agent payments, alongside Coinbase.</p>
+<p>Then BlackRock published its own answer. Its September paper, <a href="https://decrypt.co/379070/blackrock-ai-agents-crypto-next-demand-wave">“The Machine-Native Economy”</a>, describes digital assets as “machine-native money” and argues that card networks and bank transfers are poorly suited to the always-on, sub-cent payments agents will make. When the world’s largest asset manager writes your thesis for you, you take notice.</p>
+<div class="strip">
+<div><div class="num">138.5m</div><div class="lbl">x402 agent payments on Base by Q3 2026, from 58,800 a year earlier</div></div>
+<div><div class="num">87%</div><div class="lbl">Of x402 payments worth under ten cents</div></div>
+<div><div class="num">$300bn+</div><div class="lbl">Stablecoins in circulation</div></div>
+<div><div class="num">$11tr</div><div class="lbl">Adjusted stablecoin volume in 2025</div></div>
+</div>
+<p>We should be candid: genuinely autonomous agent spending is still small. TRM Labs estimates it in the thousands of dollars a month on x402 today. But the rails are being laid ahead of the traffic, by Visa, Mastercard, Google, Cloudflare and Stripe, which is how every network business is built.</p>
+<div class="aside">
+<h4>Two glimpses of the machine economy</h4>
+<p>Agents may not even use our clocks. Humans need days and time zones because the sun rises; agents don’t. A loan between two agents could simply be repayable at block 9,000, not on a Tuesday. Picture, too, agents borrowing against the only asset they own, their computing power, with no human in the loop. Trying to size it today is like cavemen making fire with sticks while someone tries to describe social media.</p>
+</div>
+</section>
+
+<section id="tolls">
+<p class="eyebrow">05 · Roads and tolls</p>
+<h2>The Nasdaq built the roads. Altcoins collect the tolls.</h2>
+<p>The last year was painful for Crypto investors, and it is worth being honest about why. Capital and talent stampeded towards the fastest horse in the tech race: AI. The Nasdaq soared, Crypto fell, and plenty of holders wondered why they hadn’t switched horses. The answer reframes the whole picture. The Nasdaq rally was the world paying for the roads: data centres, chips, energy and models. That infrastructure exists so that agents can transact. The tolls on the traffic are worth far more than the cost of building the roads.</p>
+<p>Ran’s favourite illustration is a simple instruction. Tell your agent: “Here is $10,000, get me the best yield for a year.” A human would lock the money away for twelve months, because humans are inefficient and like round numbers. An agent has no such friction. It will park $1 for 30 minutes, move it, hedge it and move it again, through a thousand micro-transactions. Every one carries a fee, a hedge and a settlement on an altcoin network or app. One human deposit becomes a thousand onchain payments.</p>
+<p>That is why we call this the start of the catch-up trade. The infrastructure trade has run. The transaction trade is just starting.</p>
+</section>
+
+<section id="revenue">
+<p class="eyebrow">06 · Traction</p>
+<h2>Dot-com in 1999 was promise. Crypto in 2026 is revenue.</h2>
+<p>There is a distinction here that every seasoned equity investor will recognise. Calling 2021 a Crypto bull market is like calling 1999 a bull market for the internet. Yes, prices went up, but almost nothing worked. We could all have lived without Pets.com, which collapsed less than a year after its stock market listing. It was a market priced entirely on promise.</p>
+<p>This cycle is different because the applications earn real money. Pump.fun makes between one and five million dollars a day. Hyperliquid has made three to five million a day. Across the sector, onchain fees reached close to $20 billion in 2025, according to the venture firm 1kx, and the number of protocols earning any fees has risen from 125 in 2021 to 1,124.</p>
+<div class="figure" role="img" aria-label="2025 revenue in millions of dollars: Hyperliquid 961, Solana 844, Pump.fun 526, Near 180, Morpho 162, Aave 140.">
+<p class="ftitle">2025 revenue, $m</p>
+<p class="fsub">Applications in gold, networks in dark grey</p>
+<div class="hbar" title="Hyperliquid: $961m"><div class="lab hl">Hyperliquid</div><div class="track"><div class="fill hl" style="width:100%"></div></div><div class="val">961</div></div>
+<div class="hbar" title="Solana: $844m"><div class="lab">Solana</div><div class="track"><div class="fill dark" style="width:87.8%"></div></div><div class="val">844</div></div>
+<div class="hbar" title="Pump.fun: $526m"><div class="lab hl">Pump.fun</div><div class="track"><div class="fill hl" style="width:54.7%"></div></div><div class="val">526</div></div>
+<div class="hbar" title="Near: $180m"><div class="lab">Near</div><div class="track"><div class="fill dark" style="width:18.7%"></div></div><div class="val">180</div></div>
+<div class="hbar" title="Morpho: $162m"><div class="lab hl">Morpho</div><div class="track"><div class="fill hl" style="width:16.9%"></div></div><div class="val">162</div></div>
+<div class="hbar" title="Aave: $140m"><div class="lab hl">Aave</div><div class="track"><div class="fill hl" style="width:14.6%"></div></div><div class="val">140</div></div>
+<div class="legend"><span><i style="background:var(--accent)"></i>Applications</span><span><i style="background:var(--ink2)"></i>Networks</span></div>
+<p class="src">Sources: DefiLlama (Hyperliquid gross protocol revenue); CoinGecko (Pump.fun); Token Terminal via Dragonfly Asset Management (Solana, Near, Morpho, Aave).</p>
+</div>
+<p>Hyperliquid deserves a paragraph of its own. A team of about eleven people built a derivatives exchange that made more than $900 million of profit in 2025 without taking a penny of venture capital. That is around $100 million of revenue per employee, against roughly $7-8 million at Jane Street, one of the most profitable trading firms in the world. Hougan’s explanation is instructive: almost nothing Hyperliquid does is new on its own. It combined six or seven advances at once, wrapped them in a good product and let blockchain rails take it global from the first day.</p>
+<h3>The fastest companies ever to $100 million</h3>
+<p>That efficiency shows up in the most striking chart in this report. Ranked by the number of days from launch to $100 million in revenue, five of the six fastest companies ever are built on blockchain rails. Hyperliquid got there in 83 days. Lovable and Cursor, the darlings of the AI boom, took 262 and 355. Snowflake took over three years.</p>
+<div class="figure" role="img" aria-label="Days from launch to $100 million revenue. Blockchain: Hyperliquid 83, Axiom 117, PancakeSwap 121, Pump.fun 181, Photon 235, Uniswap 276. Traditional tech: Lovable 262, Cursor 355, Together AI 365, Wiz 519, Deel 567, Snowflake 1,207.">
+<p class="ftitle">Days from launch to $100m revenue</p>
+<p class="fsub">Blockchain companies in gold, traditional technology in grey</p>
+<div class="hbar" title="Hyperliquid: 83 days"><div class="lab hl">Hyperliquid</div><div class="track"><div class="fill hl" style="width:6.9%"></div></div><div class="val">83</div></div>
+<div class="hbar" title="Axiom: 117 days"><div class="lab hl">Axiom</div><div class="track"><div class="fill hl" style="width:9.7%"></div></div><div class="val">117</div></div>
+<div class="hbar" title="PancakeSwap: 121 days"><div class="lab hl">PancakeSwap</div><div class="track"><div class="fill hl" style="width:10%"></div></div><div class="val">121</div></div>
+<div class="hbar" title="Pump.fun: 181 days"><div class="lab hl">Pump.fun</div><div class="track"><div class="fill hl" style="width:15%"></div></div><div class="val">181</div></div>
+<div class="hbar" title="Photon: 235 days"><div class="lab hl">Photon</div><div class="track"><div class="fill hl" style="width:19.5%"></div></div><div class="val">235</div></div>
+<div class="hbar" title="Lovable: 262 days"><div class="lab">Lovable</div><div class="track"><div class="fill" style="width:21.7%"></div></div><div class="val">262</div></div>
+<div class="hbar" title="Uniswap: 276 days"><div class="lab hl">Uniswap</div><div class="track"><div class="fill hl" style="width:22.9%"></div></div><div class="val">276</div></div>
+<div class="hbar" title="Cursor: 355 days"><div class="lab">Cursor</div><div class="track"><div class="fill" style="width:29.4%"></div></div><div class="val">355</div></div>
+<div class="hbar" title="Together AI: 365 days"><div class="lab">Together AI</div><div class="track"><div class="fill" style="width:30.2%"></div></div><div class="val">365</div></div>
+<div class="hbar" title="Wiz: 519 days"><div class="lab">Wiz</div><div class="track"><div class="fill" style="width:43%"></div></div><div class="val">519</div></div>
+<div class="hbar" title="Deel: 567 days"><div class="lab">Deel</div><div class="track"><div class="fill" style="width:47%"></div></div><div class="val">567</div></div>
+<div class="hbar" title="Snowflake: 1,207 days"><div class="lab">Snowflake</div><div class="track"><div class="fill" style="width:100%"></div></div><div class="val">1,207</div></div>
+<div class="legend"><span><i style="background:var(--accent)"></i>Built on blockchain</span><span><i style="background:var(--bar-neutral)"></i>Traditional tech</span></div>
+<p class="src">Source: Frictionless Capital, Signal Summit; estimates from Blockworks, DefiLlama, Y Combinator, TechCrunch and others.</p>
+</div>
+<div class="aside">
+<h4>The third engine nobody planned for</h4>
+<p>Ran’s most memorable line describes what apps such as Pump.fun and FOMO have built: the world’s biggest casino having a baby with the world’s biggest social network. Social media runs on the small reward of a like. Onchain, every trade is public, so your standing comes from your profit and loss rather than your likes, and followers can copy you in real time. Ran calls this “social finance” the most addictive product he has ever seen. Hougan, like us, is more cautious. He is bearish on the returns of the people who copy-trade, but bullish on the theme itself, which he expects to grow ten or twenty times from here. Either way, it is a business that can only exist on these rails.</p>
+</div>
+</section>
+
+<section id="payback">
+<p class="eyebrow">07 · Value accrual</p>
+<h2>The payback era: tokens now pay their owners</h2>
+<p>For most of Crypto’s history, owning a token was like owning a share in a profitable company that never paid a dividend and kept printing new shares. Some of that was greed and some was regulation. Hougan points out that under the previous SEC leadership, any token that shared revenue with its holders risked being treated as an illegal securities offering. Uniswap, one of the most used applications in the industry, issued a token that carried voting rights and nothing else for exactly that reason.</p>
+<p>That has changed, and Jamie Coutts, Chief Crypto Analyst at Real Vision, has given it a name: Crypto’s payback era. For the first time, he argues, two things are happening together. Supply discipline is improving, with fewer new tokens issued and fewer large unlocks diluting holders. And protocols are returning value to token holders, not just to venture investors and insiders.</p>
+<div class="strip">
+<div><div class="num">3×</div><div class="lbl">Fees paid by users since 2022, $5bn to $15bn</div></div>
+<div><div class="num">2.9×</div><div class="lbl">Revenue kept by protocols since 2022</div></div>
+<div><div class="num">5.3×</div><div class="lbl">Value paid to token holders since 2022</div></div>
+<div><div class="num">~25%</div><div class="lbl">Of the top 100 tokens now pay back at scale</div></div>
+</div>
+<div class="figure" role="img" aria-label="Protocols paying revenue to holders: about 80 in early 2024, about 230 in September 2026.">
+<p class="ftitle">Protocols paying revenue to holders</p>
+<p class="fsub">Number of protocols</p>
+<div class="vbars">
+<div class="vbar" title="Early 2024: about 80"><div class="v">~80</div><div class="b" style="height:31%"></div></div>
+<div class="vbar" title="September 2026: about 230"><div class="v" style="color:var(--accent-strong)">~230</div><div class="b hl" style="height:88%"></div></div>
+</div>
+<div class="vlabels"><div>Early 2024</div><div><b>September 2026</b></div></div>
+<p class="src">Sources: DefiLlama via Dragonfly IC, October 2026; Jamie Coutts, Real Vision, Token 2049 (multiples since 2022).</p>
+</div>
+<p>The examples are now concrete. Hyperliquid uses its fees to buy back and burn its own token every day. Ethena sends 95% of its profits to buybacks. Uniswap buys back $100-150 million a year. Hougan suggests investors think of these tokens as exhaustible commodities, a supply that shrinks as it is used, and notes that Wall Street has known how to value exhaustible commodities since the 1930s. As we predicted in <a href="https://medium.com/dragonfly-asset-management/tokens-vs-shares-a-new-way-to-own-the-future-of-tech-536a781edfd0">Tokens vs. Shares</a> in January, tokens are increasingly taking on the properties of shares: voting rights, rewards for holders and liquidity from the earliest stage. For investors, that standardisation, and the new focus on tokenholders, makes them an ever more attractive way to share in the growth of the most successful altcoin networks.</p>
+<h3>Pressure in the pipe</h3>
+<p>Ran’s analogy for valuing tokens is one of the most useful in the industry. Think of a token as water in a pipe. Traditional investors measure the width of the pipe: every share that exists, multiplied by the price. In Crypto, that fully diluted figure can mislead badly. What matters is how narrow the pipe really is, after locked, unissued and staked tokens are removed, and how much buying pressure the protocol pushes through it.</p>
+<p>Hyperliquid illustrates it well. On a fully diluted basis it recently looked like an $89 billion company, against $52 billion for Coinbase. But only around $20 billion of its tokens were actually circulating, most of the rest will not be released for years, anyone listing a new market must lock up tens of millions of dollars of tokens, and a large share of fees buys tokens back every day. A narrow pipe with strong pressure behind it behaves very differently from a wide one. It is why we value every position on circulating market capitalisation, never on fully diluted value.</p>
+<h3>The fee switch gap</h3>
+<p>Tokens that combine fast-growing revenue, a clear sign of product-market fit, with rewards for their holders are very attractive. But as more of the successful altcoin networks and apps adopt this model, the most interesting opportunities sit one step earlier. One recent example is Collector Crypt, which stores Pokémon cards in a real vault and issues tokens that represent them, so collectors can trade cards in seconds instead of posting them. It earns large and growing fees but, when we invested, had not yet turned on the “fee switch” that shares them with tokenholders. We saw an opportunity in buying before it does. Finding networks with real users and revenue before the payback starts is a core part of our research process.</p>
+</section>
+
+<section id="winners">
+<p class="eyebrow">08 · Competitive dynamics</p>
+<h2>It’s early-stage tech: a few take most</h2>
+<p>Every great infrastructure wave produces a handful of enormous winners and a graveyard. The internet gave us Pets.com, and it also gave us Amazon and Google, which grew into behemoths once the infrastructure was good enough. The same story is under way in Crypto, and the numbers show how steep the funnel is.</p>
+<div class="figure" role="img" aria-label="About 1,500 investable protocols; 1,124 earned fees in 2025; about 230 share revenue with holders; about 20 returned over $10 million to holders in 2025.">
+<p class="ftitle">From the whole universe to the few that pay</p>
+<p class="fsub">Number of protocols</p>
+<div class="hbar tall" title="Investable protocols: about 1,500"><div class="lab">Investable</div><div class="track"><div class="fill" style="width:100%"></div></div><div class="val">1,500</div></div>
+<div class="hbar tall" title="Earned any fees in 2025: 1,124"><div class="lab">Earned fees</div><div class="track"><div class="fill" style="width:75%"></div></div><div class="val">1,124</div></div>
+<div class="hbar tall" title="Share revenue with holders: about 230"><div class="lab">Pay holders</div><div class="track"><div class="fill dark" style="width:15.3%"></div></div><div class="val">~230</div></div>
+<div class="hbar tall" title="Returned over $10m to holders in 2025: about 20"><div class="lab hl">Over $10m to holders</div><div class="track"><div class="fill hl" style="width:1.3%"></div></div><div class="val">~20</div></div>
+<p class="src">Sources: Dragonfly Asset Management (investable universe); 1kx onchain revenue report (fees, value returned); DefiLlama via Dragonfly IC, October 2026.</p>
+</div>
+<p>Within that funnel, value is migrating. The war between the base layers is largely over: Solana has won the high-performance lane, and Ethereum, through onramps such as Base and Robinhood, remains the institutions’ choice. Most of the remaining “me too” chains are ghost towns, losing ground on users and fees as network effects widen the winners’ lead. Yet many are still valued in the billions, a trap for investors who don’t look under the bonnet.</p>
+<p>Even Ethereum struggles to capture value. Its misstep was to solve scalability by letting “layer two” chains build on top, and they keep most of the fees. Robinhood’s new chain earned around $50 million in its first two weeks; Ethereum captured, by one estimate, about $50,000.</p>
+<p>As we explained last year in <a href="https://pouneh-dragonfly.github.io/new-money-machines/">The New Money Machines</a>, the winners are increasingly the applications, not the networks beneath them.</p>
+<p>Leadership is not permanent either. Hougan notes that the top venue for Crypto derivatives has changed hands repeatedly, from BitMEX to Binance to Hyperliquid, and that a better product can take share quickly. A sector where today’s champion can be overtaken in eighteen months is not one to buy and forget.</p>
+<h3>The trap: dead blockchains walking</h3>
+<p>The biggest danger for newcomers is buying what they remember. Our worry is that when the market runs, people will head straight for the famous names of past cycles and be “walking in to get slaughtered”, because many of those chains have few users, earn no revenue and have no plan to share any. Worse, abandoned networks with no active developers are increasingly easy targets for AI-driven hacks. Research and due diligence are everything.</p>
+<p>The dispersion is already extreme. In 2026 to the end of September, the equal-weighted index of the top 100 tokens rose 2.1%. Our fund rose 37%. Same sector, very different outcomes.</p>
+</section>
+
+<section id="valuation">
+<p class="eyebrow">09 · Valuation</p>
+<h2>How big could this get?</h2>
+<p>Ran Neuner’s maths is deliberately simple. Assume Bitcoin reaches $250,000 this cycle, about three times today and only twice its previous high. In the first Crypto bull market altcoins outperformed Bitcoin sixteen times, and in the second about six times. Assume a more modest 5.7 times this cycle, and the altcoin market grows roughly seventeenfold. He takes the total Crypto market to $20-30 trillion, and has suggested $50 trillion once agents arrive in force.</p>
+<p>Our own base case is far more conservative, and still compelling. We see the altcoin sector reaching around $8 trillion by 2030, eight times today. ARK Invest estimates more than $10 trillion over the same period.</p>
+<div class="figure" role="img" aria-label="Altcoin market value scenarios relative to today: today 1 times; Dragonfly by 2030 8 times; ARK by 2030 10 times; Ran Neuner this cycle about 17 times.">
+<p class="ftitle">Altcoin market value vs today</p>
+<p class="fsub">Multiple of today’s ~$1 trillion</p>
+<div class="vbars">
+<div class="vbar" title="Today: 1x"><div class="v">1x</div><div class="b" style="height:5%"></div></div>
+<div class="vbar" title="Dragonfly, by 2030: 8x"><div class="v">8x</div><div class="b dark" style="height:42%"></div></div>
+<div class="vbar" title="ARK, by 2030: 10x"><div class="v">10x</div><div class="b dark" style="height:53%"></div></div>
+<div class="vbar" title="Ran Neuner, this cycle: about 17x"><div class="v" style="color:var(--accent-strong)">~17x</div><div class="b hl" style="height:89%"></div></div>
+</div>
+<div class="vlabels"><div>Today</div><div>Dragonfly, by 2030</div><div>ARK, by 2030</div><div>Ran Neuner, this cycle</div></div>
+<p class="src">Scenarios, not forecasts. Sources: Dragonfly Asset Management; ARK Invest; Ran Neuner, Token 2049 Singapore, October 2026.</p>
+</div>
+</section>
+
+<section id="risks">
+<p class="eyebrow">10 · Risks</p>
+<h2>What could go wrong</h2>
+<p><b>Volatility is severe.</b> The altcoin market peaked near $1.7 trillion in October 2025 and fell more than 40% within months, with a single liquidation event on 10 October 2025 setting off much of the slide. Investors should expect drawdowns of that size again.</p>
+<p><b>Hype can outrun substance.</b> Robinhood’s chain shows how quickly it can turn. Daily revenue peaked near $8 million in early September 2026 and fell to under $0.25 million within two weeks as the meme-coin frenzy faded, although tokenised share holdings on the chain tripled over the same period.</p>
+<p><b>The agent economy is early.</b> Autonomous agent payments are still small, and some of today’s volume is not genuinely agentic. Card networks are also building agent tools of their own, so traditional rails will keep some of the traffic.</p>
+<p><b>Tokenised assets carry counterparty risk.</b> A tokenised share often gives exposure to the stock without legal ownership of it. Hougan’s advice is to stay with large, well-known issuers that have a great deal to lose until regulation catches up.</p>
+<p><b>Regulation remains unfinished.</b> The CLARITY Act failed in the Senate. The SEC is writing rules regardless and has become far more supportive, but politics can change direction.</p>
+<p><b>Token design can still destroy value.</b> Hougan believes unlocks have killed more projects than they have helped. A protocol can earn $100 million a year and still dilute holders if it issues $200 million of new tokens to keep users. Security failures and hacks remain a constant risk.</p>
+<p><b>Macro is not supportive.</b> The Federal Reserve raised rates in September 2026 and ten-year Treasury yields stand above 5%. Crypto has absorbed these shocks so far, but higher real rates weigh on all risk assets.</p>
+</section>
+
+<section id="fit">
+<p class="eyebrow">11 · How this fits the Dragonfly approach</p>
+<h2>A basket built for this sector</h2>
+<p>Everything above points to the same conclusion: an enormous opportunity, captured by a small number of winners, in a market that changes fast. That is the problem our fund is designed to solve.</p>
+<p>We hold a diversified basket of liquid tokens, long-only and without leverage, sized on the balance of risk and reward. Higher-risk positions are held smaller. Beyond sizing, our main risk levers are decades of technology investing experience, a disciplined process and position liquidity. Every candidate passes through what we call the four-box test. Is the user base growing, ideally exponentially? Does each new user make the network more valuable to the others? Is there real, sustainable and growing revenue? And is there a live or imminent mechanism that returns that revenue to holders? A token that ticks the first three boxes but not yet the fourth can be our most attractive opportunity, because the market has not priced the payback.</p>
+<p>The fund has rotated decisively towards applications, which now make up 61% of the portfolio. We explained that move when we made it, in <a href="https://pouneh-dragonfly.github.io/new-money-machines/">The New Money Machines</a>: the apps, not the base layers, are where the revenue now flows. We invest only in liquid tokens. Ran tells a cautionary tale of venture deals he joined years ago and still cannot exit, tokens locked for seven years that he calls his “KOL tax”. In a market this cheap and this liquid, we see no reason to lock up investors’ capital.</p>
+<p>Our team brings more than 25 years of institutional equity experience to the sector. Before founding Dragonfly, I built and scaled MUFG’s first technology fund and spent decades running large, diversified portfolios at major banks. We apply the same fundamental discipline to tokens. Our proprietary AI data dashboard gathers onchain and financial data across the entire liquid universe, so we can monitor every position continuously and spot step changes in users and revenue as they happen. It lets our research scale without a matching rise in headcount. AI does not replace the fund manager; it makes the fund manager better.</p>
+<div class="figure" role="img" aria-label="2026 return to 30 September: Dragonfly fund plus 37.0%, Nasdaq plus 15.6%, S&P 500 plus 11.9%, top 100 tokens equal weight plus 2.1%, Bitcoin minus 3.6%.">
+<p class="ftitle">2026 return to 30 September</p>
+<p class="fsub">Per cent</p>
+<div class="hbar" title="Dragonfly fund: +37.0%"><div class="lab hl">Dragonfly fund</div><div class="track"><div class="fill hl" style="width:100%"></div></div><div class="val">+37.0</div></div>
+<div class="hbar" title="Nasdaq: +15.6%"><div class="lab">Nasdaq</div><div class="track"><div class="fill" style="width:42.2%"></div></div><div class="val">+15.6</div></div>
+<div class="hbar" title="S&amp;P 500: +11.9%"><div class="lab">S&amp;P 500</div><div class="track"><div class="fill" style="width:32.2%"></div></div><div class="val">+11.9</div></div>
+<div class="hbar" title="Top 100 tokens, equal weight: +2.1%"><div class="lab">Top 100 tokens</div><div class="track"><div class="fill" style="width:5.7%"></div></div><div class="val">+2.1</div></div>
+<div class="hbar" title="Bitcoin: -3.6%"><div class="lab">Bitcoin</div><div class="track"><div class="fill" style="width:0;min-width:0"></div></div><div class="val">−3.6</div></div>
+<p class="src">Fund returns audited except September, a conservative estimate pending audit. Benchmarks: MarketVector Digital Assets 100 Equal Weight; TradingView. Past performance is not a reliable indicator of future results.</p>
+</div>
+<p>The structure is institutional throughout. The fund is domiciled in the Cayman Islands and managed by AK Jensen Investment Management, an FCA-authorised AIFM, with Apex Group as administrator, KPMG as auditor, Appleby as counsel and tokens held with Fireblocks, Coinbase and BitGo.</p>
+</section>
+
+</div>
+
+<div class="closing" id="conclusion">
+<div class="wrap">
+<p class="eyebrow">12 · Conclusion</p>
+<h2>Own the rails of the next $100 trillion</h2>
+<p>A few years ago, the question was whether Crypto was real. Today the big banks are building on it, BlackRock is writing about machine-native money, and the fastest-growing businesses in the world are being built on its rails. The question has changed to where the next layer of value is being created, and how to own it.</p>
+<p>Our answer is the altcoins: a $1 trillion sector that is becoming the settlement layer for tokenised assets and the payment layer for AI agents, with applications that already earn real revenue and have begun paying it back to their owners. Most of the sector will fail. The winners will be enormous. Telling one from the other is a full-time research job, and it is the one we do.</p>
+<p class="signoff">As long-term investors, it is immaterial, perhaps even advantageous, that this is not yet the consensus view.</p>
+<div class="author"><p><b>Pouneh Bligaard</b> is Founder and Chief Investment Officer of Dragonfly Asset Management. She spent more than 25 years in institutional fund management at MUFG and HSBC, including as Co-Head of European Equities at MUFG, where she built the bank’s first technology fund. To discuss the fund, contact Giada Narducci, Director of Business Development, at <a href="mailto:giada@dragonflydigitalassets.fund" style="color:#e6c99b">giada@dragonflydigitalassets.fund</a>.</p></div>
+</div>
+</div>
+</main>
+
+<footer>
+<div class="wrap">
+<h4>Important notice</h4>
+<p>This report is intended for professional investors as defined by MiFID II. It is a marketing communication and does not constitute investment advice or an offer or solicitation to invest. It is not based on the personal circumstances of any reader. Views and quotations attributed to third parties are their own. Scenarios and third-party estimates are illustrative and are not forecasts. Past performance is not a reliable indicator of future results. Digital assets are volatile and at a developmental stage; investors may lose all of their capital. Dragonfly Asset Management is not itself regulated by the FCA. The Dragonfly Digital Assets Fund it manages is FCA-authorised via its AIFM, AK Jensen Investment Management Ltd (FRN 439744). Please refer to the fund’s offering supplement before making any investment decision, and seek independent advice, including tax advice.</p>
+<p>© 2026 Dragonfly Asset Management. All rights reserved.</p>
+</div>
+</footer>
+</body>
+</html>
